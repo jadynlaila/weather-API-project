@@ -2,9 +2,14 @@ import React, { useState } from 'react'
 
 function DailyPage(props) {
     return (
-        <div>
+        <>
+        <div id="weatherAnimation" className="weatherAnimation">
+        </div>
+        <div id="weatherSlider" className="weatherSlider"></div>
+        <div id="shortWeatherInfo" className="shortWeatherInfo">
             
         </div>
+        </>
     )
 }
 
