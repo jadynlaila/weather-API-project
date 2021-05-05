@@ -11,7 +11,7 @@ function DailyPage(props) {
         <div id="weatherSlider" className="weatherSlider"> 
             <div className="my-5">
                 <label htmlFor="customRange1">Time of Day</label>
-                <input type="range" className="custom-range" id="customRange1" />
+                <input type="range" className="custom-range" id="customRange1"/>
                 {/* ^^ GETS CORDS OF SLIDER ^^ */}
             </div>
         </div>
