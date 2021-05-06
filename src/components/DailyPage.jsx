@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
-function DailyPage(props) {
+function DailyPage(weather ) {
     const [range, setRange] = useState(0);
+
+    console.log(weather);
 
     return (
         <>

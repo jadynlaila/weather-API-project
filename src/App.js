@@ -1705,7 +1705,7 @@ const App = () => {
   return (
     <>
       <Nav/>
-      <DailyPage weather={weather['hourly']['dt']}  />
+      <DailyPage weatherTime={weather.hourly} />
       <img src={SunIcon} alt="no image"/>
       <WeeklyPage />
     </>
