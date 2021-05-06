@@ -45,7 +45,7 @@ nav .navContainer .link {
   transition: 0.3s;
   cursor: pointer;
   background-image: none;
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
 }
 
@@ -69,5 +69,15 @@ nav .navContainer #week:hover {
 
 nav .navContainer #humid:hover {
   background-image: url(../images/humidity.svg);
+}
+
+@media (max-width: 576px) {
+  nav .navContainer {
+    width: 100%;
+  }
+  nav .navContainer .link:hover {
+    background-size: cover;
+    background-position: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
