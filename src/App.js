@@ -8,7 +8,6 @@ import React, { useState } from 'react'
 
 const App = () => {
 
-  const [weatherConditions, setweatherConditions] = useState('clear')
   const weather = {
 
     "lat": 33.53,
