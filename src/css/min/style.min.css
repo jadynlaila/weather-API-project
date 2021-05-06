@@ -4,27 +4,25 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: black;
 }
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-
 nav {
   width: 100%;
   height: 50px;
+  background-color: blanchedalmond;
   overflow: hidden;
 }
-
 nav .navContainer {
   height: 100%;
   width: 50%;
@@ -32,42 +30,15 @@ nav .navContainer {
   display: -ms-flexbox;
   display: flex;
 }
-
 nav .navContainer .link {
   height: 50px;
   width: 500px;
   font-weight: 500;
   text-align: center;
   line-height: 45px;
-  color: black;
-  border-bottom: rgba(0, 204, 255, 0.712) 0px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  cursor: pointer;
-  background-image: none;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-nav .navContainer .link:hover {
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: rgba(0, 204, 255, 0.411);
-  border-bottom: rgba(0, 204, 255, 0.712) solid 5px;
   color: white;
-  font-size: 115%;
 }
-
-nav .navContainer #home:hover {
-  background-image: url(../images/home.svg);
-}
-
-nav .navContainer #week:hover {
-  background-image: url(../images/weekly.svg);
-}
-
-nav .navContainer #humid:hover {
-  background-image: url(../images/humidity.svg);
+nav .navContainer .link:hover {
+  border-bottom: blueviolet solid 5px;
 }
 /*# sourceMappingURL=style.min.css.map */
