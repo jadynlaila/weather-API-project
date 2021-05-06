@@ -1701,9 +1701,6 @@ const App = () => {
       }
     ]
   }
-}
-
-function App() {
   return (
     <>
       <div id="app"></div>
@@ -1711,7 +1708,9 @@ function App() {
       <DailyPage />
       <WeeklyPage />
     </>
-  );
+  )
 }
+
+
 
 export default App;
