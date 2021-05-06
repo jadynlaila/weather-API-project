@@ -7,9 +7,7 @@ import React, { useState } from 'react'
 
 
 const App = () => {
-
   const weather = {
-
     "lat": 33.53,
     "lon": -112.18,
     "timezone": "America/Phoenix",
@@ -283,6 +281,7 @@ const App = () => {
         "precipitation": 0
       }
     ],
+    // #region [red]
     "hourly": [
       {
         "dt": 1620014400,
@@ -307,6 +306,7 @@ const App = () => {
         ],
         "pop": 0
       },
+      ////#endregion
       {
         "dt": 1620018000,
         "temp": 80.47,
@@ -1704,12 +1704,16 @@ const App = () => {
       }
     ]
   }
+
+  
+
   return (
     <>
       <Nav/>
       <DailyPage weatherTime={weather.hourly} />
       <img src={SunIcon} alt="no image"/>
-      <WeeklyPage />
+      <WeeklyPage hourlyWeather={ weather.hourly }/>
+      {console.log(weather.hourly[0].dt)}
     </>
   )
 }
