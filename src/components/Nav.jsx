@@ -4,9 +4,9 @@ function Nav() {
         <div>
             <nav>
                 <div className="navContainer">
-                    <div className="link">Test</div>
-                    <div className="link">Test</div>
-                    <div className="link">Test</div>
+                    <div className="link" id="home">Home</div>
+                    <div className="link" id="week">Weekly</div>
+                    <div className="link" id="humid">Humidity</div>
                 </div>
             </nav>
         </div>
