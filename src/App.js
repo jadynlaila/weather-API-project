@@ -2,10 +2,13 @@ import DailyPage from './components/DailyPage'
 import WeeklyPage from './components/WeeklyPage'
 import Nav from './components/Nav'
 import SunIcon from './images/sun.png'
+import React, { useState } from 'react'
+
 
 
 const App = () => {
 
+  const [weatherConditions, setweatherConditions] = useState('clear')
   const weather = {
 
     "lat": 33.53,
