@@ -1711,7 +1711,7 @@ const App = () => {
       <DailyPage weatherTime={weather.hourly} />
       <img src={SunIcon} alt="no image"/>
       <WeeklyPage hourlyWeather={ weather.hourly }/>
-      {console.log(weather.hourly[0].dt)}
+      {/* {console.log(weather.hourly[0].dt)} */}
     </>
   )
 }
