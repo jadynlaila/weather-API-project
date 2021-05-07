@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
-function DailyPage(props) {
+function DailyPage ( hourly ) {
     const [range, setRange] = useState(0);
+
+    // console.log(hourly);
 
     return (
         <>
@@ -10,7 +12,21 @@ function DailyPage(props) {
         <div id="weatherSlider" className="weatherSlider"> 
             <div className="my-5">
                 <label htmlFor="customRange1">Time of Day</label>
-                <input type="range" className="custom-range" id="customRange1" style={{width: "600px"}} min={0} max={24} value={range} onChange={(e) => {setRange(e.target.value); console.log(range)}} />
+                <input 
+                type="range" 
+                className="custom-range" 
+                id="customRange1" 
+                style={{width: "600px"}} 
+                min={0} 
+                max={24} 
+                value={range} 
+                onChange={(e) => 
+                {
+                    setRange(e.target.value);
+                    console.log(range);
+                    console.log(hourly.weatherTime[range]);
+                }
+                } />
                 {/* ^^ GETS CORDS OF SLIDER ^^ */}
             </div>
         </div>

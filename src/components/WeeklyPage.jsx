@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const WeeklyPage = props => {
+const WeeklyPage = () => {
     return (
         <div>
             
