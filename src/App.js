@@ -3,6 +3,7 @@ import WeeklyPage from './components/WeeklyPage'
 import Navigation from './components/Navigation'
 import SunIcon from './images/sun.png'
 import React, { useState } from 'react'
+import weather from "./weather.json"
 
 
 
@@ -17,7 +18,7 @@ const App = () => {
       <Navigation />
       { showDaily && <DailyPage />}
       { showDaily && <img src={SunIcon} alt="no image" />}
-      { showWeekly && <WeeklyPage />}
+      { showWeekly && <WeeklyPage weather={weather}/>}
       {/* {console.log(weather.hourly[0].dt)} */}
     </>
   )

@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 
-const WeeklyPage = (weather) => {
-    console.log(weather[1]);
+const WeeklyPage = ({weather}) => {
+    console.log(weather.current);
 
-    let weatherElements = JSON.parse(weather);
-    console.log(weatherElements);
     return (
         <>
         <div>

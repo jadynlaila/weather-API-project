@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 
 function DailyPage ( hourly ) {
     const [range, setRange] = useState(0);
+    const [hrTemp, setHrTemp] = useState(0)
+
     let dt = 0;
     let dtArr = [0];
-    let hrTemp = "";
+    // let hrTemp = "";
     let hrFeelLike = "";
     let hrHumidity = "";
     let hrClouds = "";
@@ -19,7 +21,7 @@ function DailyPage ( hourly ) {
         // console.log(currentSect);
         dt = currentSect.dt;
         dtArr.push(dt);
-        hrTemp = currentSect.temp;
+        setHrTemp(currentSect.temp);
         hrFeelLike = currentSect.feels_like;
         hrHumidity = currentSect.humidity;
         hrClouds = currentSect.clouds;
@@ -54,7 +56,7 @@ function DailyPage ( hourly ) {
             </div>
         </div>
         <div id="shortWeatherInfo" className="shortWeatherInfo" style={{backgroundColor:"RGBA(100, 100, 100, .2)", color:"white", height: "200px", width: "300px"}}>
-            <div className="dialyAvg"></div>
+            <div className="dailyAvg"></div>
             <div className="hourlyAvg">
                 <div className="tdDisplay">{dt}</div>
                 <div className="hrTemp">{hrTemp}</div>
