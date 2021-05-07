@@ -1710,10 +1710,9 @@ const App = () => {
   return (
     <>
       <Nav/>
-      <DailyPage weatherTime={weather.hourly} />
+      <DailyPage weather={weather.hourly} currentWeather={weather.current} />
       <img src={SunIcon} alt="no image"/>
       <WeeklyPage hourlyWeather={ weather.hourly }/>
-      {console.log(weather.hourly[0].dt)}
     </>
   )
 }
