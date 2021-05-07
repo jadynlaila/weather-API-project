@@ -1,7 +1,9 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import DailyPage from './components/DailyPage'
 import WeeklyPage from './components/WeeklyPage'
 import Nav from './components/Nav'
 import SunIcon from './images/sun.png'
+import Carousel from './components/Carousel'
 import React, { useState } from 'react'
 
 
@@ -1714,6 +1716,7 @@ const App = () => {
       <img src={SunIcon} alt="no image"/>
       <WeeklyPage hourlyWeather={ weather.hourly }/>
       {/* {console.log(weather.hourly[0].dt)} */}
+      <Carousel/>
     </>
   )
 }
