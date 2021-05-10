@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 //2. Get accurate DT by Day then Hr
 
 
-function DailyPage ( {slider} ) {
+function DailyPage ( {slider}, {dailyInfo}) {
     const [range, setRange] = useState(0);
     const [hrTemp, setHrTemp] = useState(slider[0].temp);
     const [dtHr, setdtHr] = useState(slider[0].dt)
@@ -17,6 +17,8 @@ function DailyPage ( {slider} ) {
     const [UV, setUV] = useState(slider[0].uvi);
     const [pressure, setPressure] = useState(slider[0].pressure);
     const [visibility, setVisibility] = useState(slider[0].visibility);
+    const [day, setday] = useState(0);
+    
     const [currentHr, setCurrentHr] = useState();
     const [currentDay, setCurrentDay] = useState(0);
 
@@ -31,7 +33,11 @@ function DailyPage ( {slider} ) {
         setFeelLike(currentSect.feels_like);
         setHumidity(currentSect.humidity);
         setClouds(currentSect.clouds);
-        console.log(currentSect.weather)
+        setwindSpeed(currentSect.wind_speed);
+        setchanceOfRain(currentSect.pop);
+        setUV(currentSect.uvi);
+        setPressure(currentSect.pressure);
+        setVisibility(currentSect.visibility);
         sethrWeather(currentSect.weather[0].main);        
     }
 

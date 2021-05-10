@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Navigation />
-      { showDaily && <DailyPage slider={ weather.hourly } />}
+      { showDaily && <DailyPage slider={ weather.hourly } dailyInfo={ weather.daily } />}
       { showDaily && <img src={SunIcon} alt="no image" />}
       { showWeekly && <WeeklyPage weather={weather}/>}
       <Button as="input" type="submit" value="Submit" />{' '}
