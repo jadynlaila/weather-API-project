@@ -24,8 +24,10 @@ function DailyPage ( {slider, dailyInfo}) {
 
 
        function getHourStats ( value ) {
-        console.log(value)
-        
+        console.log(value);
+        setCurrentHr(value);
+
+
     //     let currentSect = slider[value];
     //     console.log(slider);
     //     console.log(slider[value]);
@@ -70,7 +72,7 @@ function DailyPage ( {slider, dailyInfo}) {
         <div id="shortWeatherInfo" className="shortWeatherInfo" style={{backgroundColor:"RGBA(100, 100, 100, .2)", color:"white", height: "300px", width: "300px"}}>
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
-                {/* <div className="tdDisplay">dt: {dtHr}</div>
+                <div className="tdDisplay">dt: {}</div>
                 <div className="hrTemp">temp: {hrTemp}</div>
                 <div className="hrFeelLike">feels like: {feelLike}</div>
                 <div className="hrHumidity">humidity: {humidity}%</div>
@@ -80,7 +82,7 @@ function DailyPage ( {slider, dailyInfo}) {
                 <div className="hrWeather">Chance of Rain: {chanceOfRain}</div>
                 <div className="hrWeather">UV: {UV}</div>
                 <div className="hrWeather">pressure: {pressure}</div>
-                <div className="hrWeather">visibility: {visibility}</div> */}
+                <div className="hrWeather">visibility: {visibility}</div>
             </div>
         </div>
         </>
