@@ -7,8 +7,6 @@ import { Button } from 'react-bootstrap'
 import React, { useState } from 'react'
 import weather from "./weather.json"
 
-
-
 const App = () => {
   const [showWeekly, setShowWeekly] = useState(false);
   const [showDaily, setShowDaily] = useState(true);
@@ -32,6 +30,5 @@ const App = () => {
     </>
   )
 }
-
 
 export default App;
