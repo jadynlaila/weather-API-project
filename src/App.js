@@ -3,6 +3,7 @@ import DailyPage from './components/DailyPage'
 import WeeklyPage from './components/WeeklyPage'
 import Navigation from './components/Navigation'
 import SunIcon from './images/sun.png'
+import {Button} from 'react-bootstrap'
 import React, { useState } from 'react'
 import weather from "./weather.json"
 
@@ -18,6 +19,7 @@ const App = () => {
       { showDaily && <DailyPage />}
       { showDaily && <img src={SunIcon} alt="no image" />}
       { showWeekly && <WeeklyPage weather={weather}/>}
+      <Button as="input" type="submit" value="Submit" />{' '}
       {/* {console.log(weather.hourly[0].dt)} */}
     </>
   )

@@ -51,7 +51,7 @@ function DailyPage ( hourly ) {
                     // console.log(hourly.weatherTime[range]);
                     getHourStats(e.target.value);
                 }} 
-                 />
+                />
                 {/* ^^ GETS CORDS OF SLIDER ^^ */}
             </div>
         </div>
