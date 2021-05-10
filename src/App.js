@@ -12,14 +12,13 @@ import weather from "./weather.json"
 const App = () => {
   const [showWeekly, setShowWeekly] = useState(false);
   const [showDaily, setShowDaily] = useState(true);
-
-
   return (
     <>
-      <Navigation
-        onShowDaily={() => {
-          setShowDaily(!showDaily);
-        }}
+      <DailyPage slider={weather.hourly} dailyInfo={weather.daily} />
+      <Navigation onShowDaily={() => {
+        setShowDaily(!showDaily);
+        setShowWeekly(!showWeekly);
+      }}
         showDaily={showDaily}
 
         onShowWeekly={() => {
