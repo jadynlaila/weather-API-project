@@ -7,26 +7,22 @@ import { Button } from 'react-bootstrap'
 import React, { useState } from 'react'
 import weather from "./weather.json"
 
-
-
 const App = () => {
   const [showWeekly, setShowWeekly] = useState(false);
   const [showDaily, setShowDaily] = useState(true);
   return (
     <>
-    { showDaily && <DailyPage slider={ weather.hourly } dailyInfo={ weather.daily } />}
       <Navigation onShowDaily={() =>{
         setShowDaily(!showDaily);
         setShowWeekly(!showWeekly);
       }}
         showDaily={showDaily}
 
-        onOpenWeekly={() => {
+        onShowWeekly={() => {
           setShowWeekly(!showWeekly)
         }}
         showWeekly={showWeekly} />
-      { showDaily && <DailyPage />}
-      { showDaily && <DailyPage slider={ weather.hourly } />}
+      { showDaily && <DailyPage slider={weather.hourly} dailyInfo={weather.daily}/>}
       { showDaily && <img src={SunIcon} alt="no image" />}
       { showWeekly && <WeeklyPage weather={weather} />}
       <Button as="input" type="submit" value="Submit" />{' '}
@@ -34,6 +30,5 @@ const App = () => {
     </>
   )
 }
-
 
 export default App;
