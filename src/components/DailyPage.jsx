@@ -4,42 +4,42 @@ import React, { useState } from 'react'
 //2. Get accurate DT by Day then Hr
 
 
-function DailyPage ( {slider}, {dailyInfo}) {
+function DailyPage ( {slider, dailyInfo}) {
+    // console.log(slider[0].temp);
+    // const [hrTemp, setHrTemp] = useState(slider[0].temp);
+    // const [dtHr, setdtHr] = useState(slider[0].dt)
+    // const [feelLike, setFeelLike] = useState(slider[0].feels_like);
+    // const [humidity, setHumidity] = useState(slider[0].humidity);
+    // const [clouds, setClouds] = useState(slider[0].clouds);
+    // const [hrWeather, sethrWeather] = useState(slider[0].weather[0].main);
+    // const [windSpeed, setwindSpeed] = useState(slider[0].wind_speed);
+    // const [chanceOfRain, setchanceOfRain] = useState(slider[0].pop);
+    // const [UV, setUV] = useState(slider[0].uvi);
+    // const [pressure, setPressure] = useState(slider[0].pressure);
+    // const [visibility, setVisibility] = useState(slider[0].visibility);
+    // const [day, setday] = useState(0);
     const [range, setRange] = useState(0);
-    const [hrTemp, setHrTemp] = useState(slider[0].temp);
-    const [dtHr, setdtHr] = useState(slider[0].dt)
-    const [feelLike, setFeelLike] = useState(slider[0].feels_like);
-    const [humidity, setHumidity] = useState(slider[0].humidity);
-    const [clouds, setClouds] = useState(slider[0].clouds);
-    const [hrWeather, sethrWeather] = useState(slider[0].weather[0].main);
-    const [windSpeed, setwindSpeed] = useState(slider[0].wind_speed);
-    const [chanceOfRain, setchanceOfRain] = useState(slider[0].pop);
-    const [UV, setUV] = useState(slider[0].uvi);
-    const [pressure, setPressure] = useState(slider[0].pressure);
-    const [visibility, setVisibility] = useState(slider[0].visibility);
-    const [day, setday] = useState(0);
-    
-    const [currentHr, setCurrentHr] = useState();
+    const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
 
 
-    function getHourStats ( value ) {
+       function getHourStats ( value ) {
         console.log(value)
-        let currentSect = slider[value];
-        console.log(slider);
-        console.log(slider[value]);
-        setdtHr(currentSect.dt);
-        setHrTemp(currentSect.temp);
-        setFeelLike(currentSect.feels_like);
-        setHumidity(currentSect.humidity);
-        setClouds(currentSect.clouds);
-        setwindSpeed(currentSect.wind_speed);
-        setchanceOfRain(currentSect.pop);
-        setUV(currentSect.uvi);
-        setPressure(currentSect.pressure);
-        setVisibility(currentSect.visibility);
-        sethrWeather(currentSect.weather[0].main);        
-    }
+    //     let currentSect = slider[value];
+    //     console.log(slider);
+    //     console.log(slider[value]);
+    //     setdtHr(currentSect.dt);
+    //     setHrTemp(currentSect.temp);
+    //     setFeelLike(currentSect.feels_like);
+    //     setHumidity(currentSect.humidity);
+    //     setClouds(currentSect.clouds);
+    //     setwindSpeed(currentSect.wind_speed);
+    //     setchanceOfRain(currentSect.pop);
+    //     setUV(currentSect.uvi);
+    //     setPressure(currentSect.pressure);
+    //     setVisibility(currentSect.visibility);
+    //     sethrWeather(currentSect.weather[0].main);        
+        }
 
     return (
         <>
@@ -69,7 +69,7 @@ function DailyPage ( {slider}, {dailyInfo}) {
         <div id="shortWeatherInfo" className="shortWeatherInfo" style={{backgroundColor:"RGBA(100, 100, 100, .2)", color:"white", height: "300px", width: "300px"}}>
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
-                <div className="tdDisplay">dt: {dtHr}</div>
+                {/* <div className="tdDisplay">dt: {dtHr}</div>
                 <div className="hrTemp">temp: {hrTemp}</div>
                 <div className="hrFeelLike">feels like: {feelLike}</div>
                 <div className="hrHumidity">humidity: {humidity}%</div>
@@ -79,7 +79,7 @@ function DailyPage ( {slider}, {dailyInfo}) {
                 <div className="hrWeather">Chance of Rain: {chanceOfRain}</div>
                 <div className="hrWeather">UV: {UV}</div>
                 <div className="hrWeather">pressure: {pressure}</div>
-                <div className="hrWeather">visibility: {visibility}</div>
+                <div className="hrWeather">visibility: {visibility}</div> */}
             </div>
         </div>
         </>
