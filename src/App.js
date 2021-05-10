@@ -14,8 +14,8 @@ const App = () => {
   const [showDaily, setShowDaily] = useState(true);
   return (
     <>
-      <DailyPage slider={weather.hourly} dailyInfo={weather.daily} />
-      <Navigation onShowDaily={() => {
+    { showDaily && <DailyPage slider={ weather.hourly } dailyInfo={ weather.daily } />}
+      <Navigation onShowDaily={() =>{
         setShowDaily(!showDaily);
         setShowWeekly(!showWeekly);
       }}
