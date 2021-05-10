@@ -14,7 +14,6 @@ const App = () => {
   const [showDaily, setShowDaily] = useState(true);
   return (
     <>
-    { showDaily && <DailyPage slider={ weather.hourly } dailyInfo={ weather.daily } />}
       <Navigation onShowDaily={() =>{
         setShowDaily(!showDaily);
         setShowWeekly(!showWeekly);
@@ -25,8 +24,7 @@ const App = () => {
           setShowWeekly(!showWeekly)
         }}
         showWeekly={showWeekly} />
-      { showDaily && <DailyPage />}
-      { showDaily && <DailyPage slider={weather.hourly} />}
+      { showDaily && <DailyPage slider={weather.hourly} dailyInfo={weather.daily}/>}
       { showDaily && <img src={SunIcon} alt="no image" />}
       { showWeekly && <WeeklyPage weather={weather} />}
       <Button as="input" type="submit" value="Submit" />{' '}
