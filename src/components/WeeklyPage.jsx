@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-const WeeklyPage = () => {
-
+const WeeklyPage = ({weather}) => {
+    console.log(weather.current);
 
     return (
         <>
