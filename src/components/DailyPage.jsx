@@ -25,6 +25,7 @@ function DailyPage ( {slider, dailyInfo}) {
 
        function getHourStats ( value ) {
         console.log(value)
+        
     //     let currentSect = slider[value];
     //     console.log(slider);
     //     console.log(slider[value]);
