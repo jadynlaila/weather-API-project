@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 //2. Get accurate DT by Day then Hr
 
 
-function DailyPage ( {slider, dailyInfo}) {
+function DailyPage ( {slider, dailyInfo, sunImg}) {
 
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
@@ -40,6 +40,7 @@ function DailyPage ( {slider, dailyInfo}) {
                 />
             </div>
         </div>
+        <img src={sunImg} alt="no image" />
         <div id="shortWeatherInfo" className="shortWeatherInfo">
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
