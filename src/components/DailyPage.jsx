@@ -25,7 +25,7 @@ function DailyPage ( {slider, dailyInfo}) {
 
        function getHourStats ( value ) {
         console.log(value);
-        setCurrentHr(value);
+        setCurrentHr(slider[value]);
 
 
     //     let currentSect = slider[value];
@@ -33,7 +33,7 @@ function DailyPage ( {slider, dailyInfo}) {
     //     console.log(slider[value]);
     //     setdtHr(currentSect.dt);
     //     setHrTemp(currentSect.temp);
-    //     setFeelLike(currentSect.feels_like);
+    //     setFeelLike(currentSect.feels_like);`
     //     setHumidity(currentSect.humidity);
     //     setClouds(currentSect.clouds);
     //     setwindSpeed(currentSect.wind_speed);
@@ -46,7 +46,7 @@ function DailyPage ( {slider, dailyInfo}) {
 
     return (
         <>
-        <div id="weatherAnimation" className="weatherAnimation">
+        <div id="weatherAnimation" className="weatherAnimation"> 
         </div>
         <div id="weatherSlider" className="weatherSlider"> 
             <div className="my-5">
@@ -64,6 +64,7 @@ function DailyPage ( {slider, dailyInfo}) {
                     console.log(e.target.value);
                     // console.log(hourly.weatherTime[range]);
                     getHourStats(e.target.value);
+                    // console.log(currentHr.weather)
                 }} 
                 />
                 {/* ^^ GETS CORDS OF SLIDER ^^ */}
@@ -72,17 +73,17 @@ function DailyPage ( {slider, dailyInfo}) {
         <div id="shortWeatherInfo" className="shortWeatherInfo" style={{backgroundColor:"RGBA(100, 100, 100, .2)", color:"white", height: "300px", width: "300px"}}>
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
-                <div className="tdDisplay">dt: {}</div>
-                <div className="hrTemp">temp: {hrTemp}</div>
-                <div className="hrFeelLike">feels like: {feelLike}</div>
-                <div className="hrHumidity">humidity: {humidity}%</div>
-                <div className="hrClouds">cloudiness: {clouds}%</div>
-                <div className="hrWeather">weather conditions: {hrWeather}</div>
-                <div className="hrWeather">Winds Speed: {windSpeed}</div>
-                <div className="hrWeather">Chance of Rain: {chanceOfRain}</div>
-                <div className="hrWeather">UV: {UV}</div>
-                <div className="hrWeather">pressure: {pressure}</div>
-                <div className="hrWeather">visibility: {visibility}</div>
+                <div className="tdDisplay">dt: {currentHr.dt}</div>
+                <div className="hrTemp">temp: {currentHr.temp}</div>
+                <div className="hrFeelLike">feels like: {currentHr.feels_like}</div>
+                <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
+                <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
+                <div className="hrWeather">weather conditions: {currentHr.weather}</div>
+                <div className="hrWeather">Winds Speed: {currentHr.wind_speed}</div>
+                <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
+                <div className="hrWeather">UV: {currentHr.uvi}</div>
+                <div className="hrWeather">pressure: {currentHr.pressure}</div>
+                <div className="hrWeather">visibility: {currentHr.visibility}</div>
             </div>
         </div>
         </>
