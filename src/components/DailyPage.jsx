@@ -11,11 +11,31 @@ function DailyPage ( {slider, dailyInfo}) {
     const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
     const [testHr, setTestHr] = useState(0);
+    const [formattedTime, setFormattedTime] = useState(0)
+    const [formattedHour, setformattedHour] = useState([])
 
     function getHourStats ( value ) {
         setTestHr(value);
         setCurrentHr(slider[value]);   
         }
+
+    // function getGMTTime (timeStamp) {
+    //     const dateObj = new Date(timeStamp * 1000);
+    //     const date = dateObj.getUTCDate().toString().padStart(2,0);
+    //     const month = dateObj.getUTCMonth().toString().padStart(2,0);
+    //     const hours = dateObj.getUTCHours().toString().padStart(2,0);
+    //     const minutes = dateObj.getUTCMinutes().toString().padStart(2,0);
+    //     const year = dateObj.getUTCFullYear().toString().padStart(2,0);
+    //     setFormattedTime([minutes, hours, date, month, year]);
+    //     //referenced all the different values by saying formattedTime[whateveryouneed]
+
+    // }
+    function getGMTTime(timestamp){
+        const dateWOConv = 
+        setFormattedTime(new Date(UNIX_timestamp).toLocaleDateString("en-US"));
+        setformattedHour(new Date(UNIX_timestamp).toLocaleTimeString("en-US"))
+        // expected output "8/30/2017" 
+      }
 
 
     return (
@@ -37,6 +57,7 @@ function DailyPage ( {slider, dailyInfo}) {
                     setRange(e.target.value);
                     console.log(e.target.value);
                     getHourStats(e.target.value);
+                    getGMTTime(slider[range].dt)
                 }} 
                 />
             </div>
@@ -44,7 +65,7 @@ function DailyPage ( {slider, dailyInfo}) {
         <div id="shortWeatherInfo" className="shortWeatherInfo">
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
-                <div className="tdDisplay">dt: {currentHr.dt}</div>
+                <div className="tdDisplay">dt: {formattedTime}</div>
                 <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
                 <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
                 <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
