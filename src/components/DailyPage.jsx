@@ -21,10 +21,12 @@ function DailyPage ( {slider, dailyInfo}) {
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
+    const [testHr, setTestHr] = useState(0)
 
 
        function getHourStats ( value ) {
         console.log(value);
+        setTestHr(value);
         setCurrentHr(slider[value]);
 
 
@@ -78,7 +80,7 @@ function DailyPage ( {slider, dailyInfo}) {
                 <div className="hrFeelLike">feels like: {currentHr.feels_like}</div>
                 <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
                 <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
-                <div className="hrWeather">weather conditions: {currentHr.weather}</div>
+                <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
                 <div className="hrWeather">Winds Speed: {currentHr.wind_speed}</div>
                 <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
                 <div className="hrWeather">UV: {currentHr.uvi}</div>
