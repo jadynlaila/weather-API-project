@@ -13,19 +13,22 @@ const App = () => {
   return (
     <>
       <Navigation onShowDaily={() =>{
-        setShowDaily(!showDaily);
-        setShowWeekly(!showWeekly);
+        // setShowDaily(!showDaily);
+        // setShowWeekly(!showWeekly);
+        setShowWeekly(false);
+        setShowDaily(true);
       }}
         showDaily={showDaily}
 
         onShowWeekly={() => {
-          setShowWeekly(!showWeekly)
+          setShowWeekly(true);
+          setShowDaily(false);
         }}
         showWeekly={showWeekly} />
       { showDaily && <DailyPage slider={weather.hourly} dailyInfo={weather.daily}/>}
       { showDaily && <img src={SunIcon} alt="no image" />}
       { showWeekly && <WeeklyPage weather={weather} />}
-      <Button as="input" type="submit" value="Submit" />{' '}
+      {/* <Button as="input" type="submit" value="Submit" />{' '} */}
       {/* {console.log(weather.hourly[0].dt)} */}
     </>
   )

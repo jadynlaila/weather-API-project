@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-function Nav(onShowDaily, showDaily, onShowWeekly, showWeekly) {
+function Nav({onShowDaily, showDaily, onShowWeekly, showWeekly}) {
     return (
         <div>
             <nav>
