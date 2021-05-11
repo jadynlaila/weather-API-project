@@ -62,7 +62,14 @@ nav{
     }
 }
 
-
+#weatherSection{
+    display: flex;
+    
+    justify-content: space-between;
+    img{
+        width: 500px;
+    }
+}
 
 
 @media (max-width: 576px){
