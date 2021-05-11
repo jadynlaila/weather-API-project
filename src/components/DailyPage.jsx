@@ -5,45 +5,16 @@ import React, { useState } from 'react'
 
 
 function DailyPage ( {slider, dailyInfo}) {
-    // console.log(slider[0].temp);
-    // const [hrTemp, setHrTemp] = useState(slider[0].temp);
-    // const [dtHr, setdtHr] = useState(slider[0].dt)
-    // const [feelLike, setFeelLike] = useState(slider[0].feels_like);
-    // const [humidity, setHumidity] = useState(slider[0].humidity);
-    // const [clouds, setClouds] = useState(slider[0].clouds);
-    // const [hrWeather, sethrWeather] = useState(slider[0].weather[0].main);
-    // const [windSpeed, setwindSpeed] = useState(slider[0].wind_speed);
-    // const [chanceOfRain, setchanceOfRain] = useState(slider[0].pop);
-    // const [UV, setUV] = useState(slider[0].uvi);
-    // const [pressure, setPressure] = useState(slider[0].pressure);
-    // const [visibility, setVisibility] = useState(slider[0].visibility);
-    // const [day, setday] = useState(0);
+
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
     const [testHr, setTestHr] = useState(0)
 
-
        function getHourStats ( value ) {
         console.log(value);
         setTestHr(value);
-        setCurrentHr(slider[value]);
-
-
-    //     let currentSect = slider[value];
-    //     console.log(slider);
-    //     console.log(slider[value]);
-    //     setdtHr(currentSect.dt);
-    //     setHrTemp(currentSect.temp);
-    //     setFeelLike(currentSect.feels_like);`
-    //     setHumidity(currentSect.humidity);
-    //     setClouds(currentSect.clouds);
-    //     setwindSpeed(currentSect.wind_speed);
-    //     setchanceOfRain(currentSect.pop);
-    //     setUV(currentSect.uvi);
-    //     setPressure(currentSect.pressure);
-    //     setVisibility(currentSect.visibility);
-    //     sethrWeather(currentSect.weather[0].main);        
+        setCurrentHr(slider[value]);   
         }
 
     return (
@@ -64,15 +35,12 @@ function DailyPage ( {slider, dailyInfo}) {
                 onChange={(e) => {
                     setRange(e.target.value);
                     console.log(e.target.value);
-                    // console.log(hourly.weatherTime[range]);
                     getHourStats(e.target.value);
-                    // console.log(currentHr.weather)
                 }} 
                 />
-                {/* ^^ GETS CORDS OF SLIDER ^^ */}
             </div>
         </div>
-        <div id="shortWeatherInfo" className="shortWeatherInfo" style={{backgroundColor:"RGBA(100, 100, 100, .2)", color:"white", height: "300px", width: "300px"}}>
+        <div id="shortWeatherInfo" className="shortWeatherInfo">
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
                 <div className="tdDisplay">dt: {currentHr.dt}</div>
