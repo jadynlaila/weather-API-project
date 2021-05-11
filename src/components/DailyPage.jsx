@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 // 1. Make Tempurature Round and Feel like round
 //2. Get accurate DT by Day then Hr
 
@@ -9,13 +10,13 @@ function DailyPage ( {slider, dailyInfo}) {
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
-    const [testHr, setTestHr] = useState(0)
+    const [testHr, setTestHr] = useState(0);
 
-       function getHourStats ( value ) {
-        console.log(value);
+    function getHourStats ( value ) {
         setTestHr(value);
         setCurrentHr(slider[value]);   
         }
+
 
     return (
         <>
@@ -44,8 +45,8 @@ function DailyPage ( {slider, dailyInfo}) {
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
                 <div className="tdDisplay">dt: {currentHr.dt}</div>
-                <div className="hrTemp">temp: {currentHr.temp}</div>
-                <div className="hrFeelLike">feels like: {currentHr.feels_like}</div>
+                <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
+                <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
                 <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
                 <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
                 <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
