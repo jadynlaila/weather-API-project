@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { AiOutlineLeft } from "react-icons/ai";
-import { AiOutlineRight } from "react-icons/ai";
+// import { AiOutlineLeft } from "react-icons/ai";
+// import { AiOutlineRight } from "react-icons/ai";
 
 
 // 1. Make Tempurature Round and Feel like round
@@ -73,7 +73,7 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
                 />
             </div>
         </div>
-        <div id="shortWeatherInfo" className="shortWeatherInfo">
+            {/* <div id="shortWeatherInfo" className="shortWeatherInfo">
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
                 <div className="tdDisplay">dt: {formattedHour}</div>
@@ -87,31 +87,38 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
                 <div className="hrWeather">UV: {currentHr.uvi}</div>
                 <div className="hrWeather">pressure: {currentHr.pressure}</div>
                 <div className="hrWeather">visibility: {currentHr.visibility}</div>
-            </div>
+            </div> */}
             <Container id="weatherSection">
                 <img src={sunImg} />
-                <div id="shortWeatherInfo" className="shortWeatherInfo">
-                    <div className="hourlyAvg">
-                        <Row id="temp">
-                            <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
-                        </Row>
-                        <Row id="weatherTopRight">
-                            <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
-                            <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
-                            <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
+                {/* <div id="shortWeatherInfo" className="shortWeatherInfo"> */}
+                    {/* <div className="hourlyAvg"> */}
+                        <Row id="shortWeatherInfo" className="shortWeatherInfo">
+                            <Row >
+                                <Col id="tempSpaceInfo" lg="4.5" md="4">
+                                    <Row className="hrTemp">{Math.round(currentHr.temp)}</Row>
+                                </Col>
+                                <Col id="topRightInfo" lg="2" md="2" >
+                                    <Row className="hrHumidity">humidity: {currentHr.humidity}%</Row>
+                                    <Row className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</Row>
+                                    <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>
+                                    <Row className="hrWeather">UV: {currentHr.uvi}</Row>
+                                </Col>
+                            </Row>
+                            <Row id="bottomInfo" lg="2" md="2">
+                                <Row className="tdDisplay">dt: {currentHr.dt}</Row>
+                                <Row className="hrClouds">cloudiness: {currentHr.clouds}%</Row>
+                                <Row className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</Row>
+                                <Row className="hrWeather">Winds Speed: {currentHr.wind_speed}</Row>
+                                <Row className="hrWeather">pressure: {currentHr.pressure}</Row>
+                                <Row className="hrWeather">visibility: {currentHr.visibility}</Row>
+                            </Row>
                         </Row>
 
-                        <div className="tdDisplay">dt: {currentHr.dt}</div>
-                        <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
-                        <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
-                        <div className="hrWeather">Winds Speed: {currentHr.wind_speed}</div>
-                        <div className="hrWeather">UV: {currentHr.uvi}</div>
-                        <div className="hrWeather">pressure: {currentHr.pressure}</div>
-                        <div className="hrWeather">visibility: {currentHr.visibility}</div>
-                    </div>
-                </div>
+
+                    {/* </div> */}
+                {/* </div> */}
             </Container>
-            </div>
+            {/* </div> */}
         </>
     )
 }

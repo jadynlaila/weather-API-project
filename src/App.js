@@ -19,7 +19,6 @@ const App = () => {
         setShowDaily(true);
       }}
         showDaily={showDaily}
-
         onShowWeekly={() => {
           setShowWeekly(true);
           setShowDaily(false);
