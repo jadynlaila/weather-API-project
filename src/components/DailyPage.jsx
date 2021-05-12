@@ -52,7 +52,6 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
                             <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
                             <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
                         </Row>
-
                         <div className="tdDisplay">dt: {currentHr.dt}</div>
                         <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
                         <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
