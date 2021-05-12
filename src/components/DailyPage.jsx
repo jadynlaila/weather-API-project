@@ -14,38 +14,38 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
     const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
     const [testHr, setTestHr] = useState(0);
-    const [formattedTime, setFormattedTime] = useState(0)
-    const [formattedHour, setformattedHour] = useState([])
+    const [formattedTime, setFormattedTime] = useState(0);
+    const [formattedHour, setformattedHour] = useState([]);
+
+    console.log(dailyInfo[1]);
 
     function getHourStats(value) {
-        setTestHr(value);
-        setCurrentHr(slider[value]);
+        setTestHr(Number(value)+3);
+        setCurrentHr(slider[Number(value)+3]);
     }
 
-    // function getGMTTime (timeStamp) {
-    //     const dateObj = new Date(timeStamp * 1000);
-    //     const date = dateObj.getUTCDate().toString().padStart(2,0);
-    //     const month = dateObj.getUTCMonth().toString().padStart(2,0);
-    //     const hours = dateObj.getUTCHours().toString().padStart(2,0);
-    //     const minutes = dateObj.getUTCMinutes().toString().padStart(2,0);
-    //     const year = dateObj.getUTCFullYear().toString().padStart(2,0);
-    //     setFormattedTime([minutes, hours, date, month, year]);
-    //     //referenced all the different values by saying formattedTime[whateveryouneed]
-
-    // }
     function getGMTTime(timestamp){
-        
         timestamp = timestamp*1000;
         setFormattedTime(new Date(timestamp).toLocaleDateString("en-US"));
         setformattedHour(new Date(timestamp).toLocaleTimeString("en-US"))
-        // expected output "8/30/2017" 
-      }
+    }
 
-    // function orderHrlyTime(date){
-    //     if(date  )
-    // }
-    
+    function sunrise(curTime) {
+        // let sunriseTime = dailyInfo[0].sunrise;
+        // sunriseTime = new Date(sunriseTime).toLocaleTimeString("en-US");
+        // let rounded = Math.round(sunriseTime.getMinutes());
 
+        // sunriseTime = Math.round(sunriseTime);
+        // console.log(sunriseTime);
+        let sunrise = dailyInfo[1].sunrise;
+        let sunset = dailyInfo[1].sunset;
+        console.log(sunrise, sunset);
+        // let timeArrs = [(dailyInfo[1].sunrise), (dailyInfo[1].sunset)];
+        // for(let i of timeArrs){
+        //     console.log(timeArrs[i]);
+        // }
+    }
+    sunrise();
 
     return (
         <>
@@ -53,22 +53,22 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
         </div>
         <div id="weatherSlider" className="weatherSlider"> 
             <div className="my-5">
-                <AiOutlineLeft className="leftDateBtn"/>
-                <label htmlFor="customRange1">Time of Day</label>
-                <AiOutlineRight className="rightDateBtn"/>
+                <label htmlFor="customRange1">May 3 2021</label>
+                <div className="hourDisplay">{formattedHour}</div>
                 <input 
                 type="range" 
                 className="custom-range" 
                 id="customRange1" 
                 style={{width: "600px"}} 
                 min={0} 
-                max={24} 
+                max={23} 
                 value={range}
                 onChange={(e) => {
-                    setRange(e.target.value);
+                    setRange(Math.round(e.target.value));
                     console.log(e.target.value);
-                    getHourStats(e.target.value);
-                    getGMTTime(slider[e.target.value].dt)
+                    getHourStats(Math.round(e.target.value));
+                    getGMTTime(slider[Math.round(Number(e.target.value)+3)].dt)
+                    
                 }} 
                 />
             </div>
