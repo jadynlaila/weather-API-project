@@ -7,12 +7,16 @@
     color: black;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
         "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 code {
@@ -64,12 +68,42 @@ nav{
 
 #weatherSection{
     display: flex;
-    
+    margin: none;
+    padding: none;
+    font-family: monospace;
+    .shortWeatherInfo{
+        background-color: rgb(223, 237, 255);
+    }   
+    .hrTemp{
+        font-size: 90px;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    #tempSpaceInfo{
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    #topRightInfo{
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+
+    }
+    #bottomInfo{
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+
+    }
     justify-content: space-between;
     img{
-        width: 500px;
+        width: 50%;
     }
 }
+
+
 
 
 @media (max-width: 576px){
