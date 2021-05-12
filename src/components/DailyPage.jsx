@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import { AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineRight } from "react-icons/ai";
+
 
 // 1. Make Tempurature Round and Feel like round
 //2. Get accurate DT by Day then Hr
@@ -31,11 +34,17 @@ function DailyPage ( {slider, dailyInfo}) {
 
     // }
     function getGMTTime(timestamp){
-        const dateWOConv = 
-        setFormattedTime(new Date(UNIX_timestamp).toLocaleDateString("en-US"));
-        setformattedHour(new Date(UNIX_timestamp).toLocaleTimeString("en-US"))
+        
+        timestamp = timestamp*1000;
+        setFormattedTime(new Date(timestamp).toLocaleDateString("en-US"));
+        setformattedHour(new Date(timestamp).toLocaleTimeString("en-US"))
         // expected output "8/30/2017" 
       }
+
+    // function orderHrlyTime(date){
+    //     if(date  )
+    // }
+    
 
 
     return (
@@ -44,7 +53,9 @@ function DailyPage ( {slider, dailyInfo}) {
         </div>
         <div id="weatherSlider" className="weatherSlider"> 
             <div className="my-5">
+                <AiOutlineLeft className="leftDateBtn"/>
                 <label htmlFor="customRange1">Time of Day</label>
+                <AiOutlineRight className="rightDateBtn"/>
                 <input 
                 type="range" 
                 className="custom-range" 
@@ -57,7 +68,7 @@ function DailyPage ( {slider, dailyInfo}) {
                     setRange(e.target.value);
                     console.log(e.target.value);
                     getHourStats(e.target.value);
-                    getGMTTime(slider[range].dt)
+                    getGMTTime(slider[e.target.value].dt)
                 }} 
                 />
             </div>
@@ -65,7 +76,7 @@ function DailyPage ( {slider, dailyInfo}) {
         <div id="shortWeatherInfo" className="shortWeatherInfo">
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
-                <div className="tdDisplay">dt: {formattedTime}</div>
+                <div className="tdDisplay">dt: {formattedHour}</div>
                 <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
                 <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
                 <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
