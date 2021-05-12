@@ -8,7 +8,7 @@ import { AiOutlineRight } from "react-icons/ai";
 //2. Get accurate DT by Day then Hr
 
 
-function DailyPage ( {slider, dailyInfo}) {
+function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
 
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
@@ -17,10 +17,10 @@ function DailyPage ( {slider, dailyInfo}) {
     const [formattedTime, setFormattedTime] = useState(0)
     const [formattedHour, setformattedHour] = useState([])
 
-    function getHourStats ( value ) {
+    function getHourStats(value) {
         setTestHr(value);
-        setCurrentHr(slider[value]);   
-        }
+        setCurrentHr(slider[value]);
+    }
 
     // function getGMTTime (timeStamp) {
     //     const dateObj = new Date(timeStamp * 1000);
@@ -88,7 +88,30 @@ function DailyPage ( {slider, dailyInfo}) {
                 <div className="hrWeather">pressure: {currentHr.pressure}</div>
                 <div className="hrWeather">visibility: {currentHr.visibility}</div>
             </div>
-        </div>
+            <Container id="weatherSection">
+                <img src={sunImg} />
+                <div id="shortWeatherInfo" className="shortWeatherInfo">
+                    <div className="hourlyAvg">
+                        <Row id="temp">
+                            <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
+                        </Row>
+                        <Row id="weatherTopRight">
+                            <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
+                            <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
+                            <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
+                        </Row>
+
+                        <div className="tdDisplay">dt: {currentHr.dt}</div>
+                        <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
+                        <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
+                        <div className="hrWeather">Winds Speed: {currentHr.wind_speed}</div>
+                        <div className="hrWeather">UV: {currentHr.uvi}</div>
+                        <div className="hrWeather">pressure: {currentHr.pressure}</div>
+                        <div className="hrWeather">visibility: {currentHr.visibility}</div>
+                    </div>
+                </div>
+            </Container>
+            </div>
         </>
     )
 }

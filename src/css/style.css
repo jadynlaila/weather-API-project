@@ -71,6 +71,19 @@ nav .navContainer #humid:hover {
   background-image: url(../images/humidity.svg);
 }
 
+#weatherSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#weatherSection img {
+  width: 500px;
+}
+
 @media (max-width: 576px) {
   nav .navContainer {
     width: 100%;
