@@ -17,15 +17,14 @@ const App = () => {
         setShowWeekly(!showWeekly);
       }}
         showDaily={showDaily}
-
         onShowWeekly={() => {
           setShowWeekly(!showWeekly)
         }}
         showWeekly={showWeekly} />
-      { showDaily && <DailyPage slider={weather.hourly} dailyInfo={weather.daily}/>}
+      <WeeklyPage/>
+      {/* { showDaily && <DailyPage slider={weather.hourly} dailyInfo={weather.daily}/>}
       { showDaily && <img src={SunIcon} alt="no image" />}
-      { showWeekly && <WeeklyPage weather={weather} />}
-      <Button as="input" type="submit" value="Submit" />{' '}
+      <Button as="input" type="submit" value="Submit" />{' '} */}
       {/* {console.log(weather.hourly[0].dt)} */}
     </>
   )
