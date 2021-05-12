@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { AiOutlineLeft } from "react-icons/ai";
-import { AiOutlineRight } from "react-icons/ai";
+// import { AiOutlineLeft } from "react-icons/ai";
+// import { AiOutlineRight } from "react-icons/ai";
 
 
 // 1. Make Tempurature Round and Feel like round
