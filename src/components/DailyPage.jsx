@@ -1,54 +1,61 @@
 import React, { useState } from 'react'
 
+// import { AiOutlineLeft } from "react-icons/ai";
+// import { AiOutlineRight } from "react-icons/ai";
+
+
 // 1. Make Tempurature Round and Feel like round
 //2. Get accurate DT by Day then Hr
 
 
-function DailyPage ( {slider, dailyInfo}) {
-    // console.log(slider[0].temp);
-    // const [hrTemp, setHrTemp] = useState(slider[0].temp);
-    // const [dtHr, setdtHr] = useState(slider[0].dt)
-    // const [feelLike, setFeelLike] = useState(slider[0].feels_like);
-    // const [humidity, setHumidity] = useState(slider[0].humidity);
-    // const [clouds, setClouds] = useState(slider[0].clouds);
-    // const [hrWeather, sethrWeather] = useState(slider[0].weather[0].main);
-    // const [windSpeed, setwindSpeed] = useState(slider[0].wind_speed);
-    // const [chanceOfRain, setchanceOfRain] = useState(slider[0].pop);
-    // const [UV, setUV] = useState(slider[0].uvi);
-    // const [pressure, setPressure] = useState(slider[0].pressure);
-    // const [visibility, setVisibility] = useState(slider[0].visibility);
-    // const [day, setday] = useState(0);
+function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
+
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
+    const [testHr, setTestHr] = useState(0);
+    const [formattedTime, setFormattedTime] = useState(0)
+    const [formattedHour, setformattedHour] = useState([])
 
+    function getHourStats(value) {
+        setTestHr(value);
+        setCurrentHr(slider[value]);
+    }
 
-       function getHourStats ( value ) {
-        console.log(value)
+    // function getGMTTime (timeStamp) {
+    //     const dateObj = new Date(timeStamp * 1000);
+    //     const date = dateObj.getUTCDate().toString().padStart(2,0);
+    //     const month = dateObj.getUTCMonth().toString().padStart(2,0);
+    //     const hours = dateObj.getUTCHours().toString().padStart(2,0);
+    //     const minutes = dateObj.getUTCMinutes().toString().padStart(2,0);
+    //     const year = dateObj.getUTCFullYear().toString().padStart(2,0);
+    //     setFormattedTime([minutes, hours, date, month, year]);
+    //     //referenced all the different values by saying formattedTime[whateveryouneed]
+
+    // }
+    function getGMTTime(timestamp){
         
-    //     let currentSect = slider[value];
-    //     console.log(slider);
-    //     console.log(slider[value]);
-    //     setdtHr(currentSect.dt);
-    //     setHrTemp(currentSect.temp);
-    //     setFeelLike(currentSect.feels_like);
-    //     setHumidity(currentSect.humidity);
-    //     setClouds(currentSect.clouds);
-    //     setwindSpeed(currentSect.wind_speed);
-    //     setchanceOfRain(currentSect.pop);
-    //     setUV(currentSect.uvi);
-    //     setPressure(currentSect.pressure);
-    //     setVisibility(currentSect.visibility);
-    //     sethrWeather(currentSect.weather[0].main);        
-        }
+        timestamp = timestamp*1000;
+        setFormattedTime(new Date(timestamp).toLocaleDateString("en-US"));
+        setformattedHour(new Date(timestamp).toLocaleTimeString("en-US"))
+        // expected output "8/30/2017" 
+      }
+
+    // function orderHrlyTime(date){
+    //     if(date  )
+    // }
+    
+
 
     return (
         <>
-        <div id="weatherAnimation" className="weatherAnimation">
+        <div id="weatherAnimation" className="weatherAnimation"> 
         </div>
         <div id="weatherSlider" className="weatherSlider"> 
             <div className="my-5">
+                {/* <AiOutlineLeft className="leftDateBtn"/> */}
                 <label htmlFor="customRange1">Time of Day</label>
+                {/* <AiOutlineRight className="rightDateBtn"/> */}
                 <input 
                 type="range" 
                 className="custom-range" 
@@ -60,29 +67,51 @@ function DailyPage ( {slider, dailyInfo}) {
                 onChange={(e) => {
                     setRange(e.target.value);
                     console.log(e.target.value);
-                    // console.log(hourly.weatherTime[range]);
                     getHourStats(e.target.value);
+                    getGMTTime(slider[e.target.value].dt)
                 }} 
                 />
-                {/* ^^ GETS CORDS OF SLIDER ^^ */}
             </div>
         </div>
-        <div id="shortWeatherInfo" className="shortWeatherInfo" style={{backgroundColor:"RGBA(100, 100, 100, .2)", color:"white", height: "300px", width: "300px"}}>
+        <div id="shortWeatherInfo" className="shortWeatherInfo">
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
-                {/* <div className="tdDisplay">dt: {dtHr}</div>
-                <div className="hrTemp">temp: {hrTemp}</div>
-                <div className="hrFeelLike">feels like: {feelLike}</div>
-                <div className="hrHumidity">humidity: {humidity}%</div>
-                <div className="hrClouds">cloudiness: {clouds}%</div>
-                <div className="hrWeather">weather conditions: {hrWeather}</div>
-                <div className="hrWeather">Winds Speed: {windSpeed}</div>
-                <div className="hrWeather">Chance of Rain: {chanceOfRain}</div>
-                <div className="hrWeather">UV: {UV}</div>
-                <div className="hrWeather">pressure: {pressure}</div>
-                <div className="hrWeather">visibility: {visibility}</div> */}
+                <div className="tdDisplay">dt: {formattedHour}</div>
+                <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
+                <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
+                <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
+                <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
+                <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
+                <div className="hrWeather">Winds Speed: {currentHr.wind_speed}</div>
+                <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
+                <div className="hrWeather">UV: {currentHr.uvi}</div>
+                <div className="hrWeather">pressure: {currentHr.pressure}</div>
+                <div className="hrWeather">visibility: {currentHr.visibility}</div>
             </div>
-        </div>
+            <Container id="weatherSection">
+                <img src={sunImg} />
+                <div id="shortWeatherInfo" className="shortWeatherInfo">
+                    <div className="hourlyAvg">
+                        <Row id="temp">
+                            <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
+                        </Row>
+                        <Row id="weatherTopRight">
+                            <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
+                            <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
+                            <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
+                        </Row>
+
+                        <div className="tdDisplay">dt: {currentHr.dt}</div>
+                        <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
+                        <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
+                        <div className="hrWeather">Winds Speed: {currentHr.wind_speed}</div>
+                        <div className="hrWeather">UV: {currentHr.uvi}</div>
+                        <div className="hrWeather">pressure: {currentHr.pressure}</div>
+                        <div className="hrWeather">visibility: {currentHr.visibility}</div>
+                    </div>
+                </div>
+            </Container>
+            </div>
         </>
     )
 }
