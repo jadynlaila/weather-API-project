@@ -4,7 +4,8 @@
 ::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: black;
 }
 
@@ -29,6 +30,8 @@ nav {
 nav .navContainer {
   height: 100%;
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -40,6 +43,7 @@ nav .navContainer .link {
   line-height: 45px;
   color: black;
   border-bottom: rgba(0, 204, 255, 0.712) 0px;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
   background-image: none;
@@ -70,44 +74,50 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: none;
   padding: none;
   font-family: monospace;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #weatherSection .shortWeatherInfo {
   background-color: #dfedff;
+  height: 90%;
+  width: 60%;
 }
 
 #weatherSection .hrTemp {
   font-size: 90px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0;
   margin: 0;
 }
 
-#weatherSection #tempSpaceInfo {
-  justify-content: center;
+#weatherSection .title {
+  text-align: center;
   padding: 0;
   margin: 0;
 }
 
-#weatherSection #topRightInfo {
-  justify-content: center;
+#weatherSection .titleText {
+  text-align: center;
   padding: 0;
   margin: 0;
 }
 
-#weatherSection #bottomInfo {
-  justify-content: center;
+#weatherSection .hrWeather {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0;
   margin: 0;
-}
-
-#weatherSection img {
-  width: 50%;
 }
 
 @media (max-width: 576px) {
@@ -124,11 +134,17 @@ nav .navContainer #humid:hover {
   margin-top: 50px;
   width: 100%;
   height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .container .arrows {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -138,15 +154,18 @@ nav .navContainer #humid:hover {
   background-image: url(../images/arrow.svg);
   background-size: cover;
   background-position: center;
-  transform: scale(1.1) rotate(180deg);
+  -webkit-transform: scale(1.1) rotate(180deg);
+          transform: scale(1.1) rotate(180deg);
   background-color: rgba(0, 204, 255, 0.712);
   border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .container .arrows .arrowUp:hover {
-  transform: scale(1.15) rotate(180deg);
+  -webkit-transform: scale(1.15) rotate(180deg);
+          transform: scale(1.15) rotate(180deg);
 }
 
 .container .arrows .arrowDown {
@@ -156,15 +175,18 @@ nav .navContainer #humid:hover {
   background-image: url(../images/arrow.svg);
   background-size: cover;
   background-position: center;
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   background-color: rgba(0, 204, 255, 0.712);
   border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .container .arrows .arrowDown:hover {
-  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .container .weatherInfo {
@@ -179,14 +201,21 @@ nav .navContainer #humid:hover {
   background-color: #c9c9c9;
   border-radius: 20px;
   position: relative;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 50% 50%;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
   overflow: hidden;
 }
 
 .container .weatherInfo .current .tempImg {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   grid-row: 1 / 3;
   background-image: url(../images/humidity.svg);
   background-size: contain;
@@ -195,7 +224,11 @@ nav .navContainer #humid:hover {
 }
 
 .container .weatherInfo .current .high {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
   grid-column: 2 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1 / 2;
   font-weight: 1;
   font-size: 40px;
@@ -204,7 +237,11 @@ nav .navContainer #humid:hover {
 }
 
 .container .weatherInfo .current .low {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
   grid-column: 3 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1 / 2;
   font-weight: 1;
   font-size: 40px;
@@ -213,7 +250,11 @@ nav .navContainer #humid:hover {
 }
 
 .container .weatherInfo .current .weekDay {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
   grid-column: 2 / 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2 / 3;
   font-weight: 1;
   font-size: 40px;
@@ -222,7 +263,11 @@ nav .navContainer #humid:hover {
 }
 
 .container .weatherInfo .current .weatherType {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
   grid-column: 4 / 5;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   grid-row: 1 / 3;
   font-weight: 1;
   font-size: 30px;
