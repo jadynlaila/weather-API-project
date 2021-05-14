@@ -73,7 +73,7 @@ nav{
     font-family: monospace;
     .shortWeatherInfo{
         background-color: rgb(223, 237, 255);
-        height: 90%;
+        height: 115%;
         width: 60%;
     }   
     .hrTemp{
@@ -100,6 +100,23 @@ nav{
 
     }
     justify-content: space-between;
+
+    #img{
+        background-image: url(../images/sun.svg);
+        background-position: center;
+        height: 400px;
+        width: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    input{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .my-5{
+        text-align: center;
+        }
     
 }
 

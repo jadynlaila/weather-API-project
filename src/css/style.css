@@ -87,7 +87,7 @@ nav .navContainer #humid:hover {
 
 #weatherSection .shortWeatherInfo {
   background-color: #dfedff;
-  height: 90%;
+  height: 115%;
   width: 60%;
 }
 
@@ -118,6 +118,25 @@ nav .navContainer #humid:hover {
           justify-content: center;
   padding: 0;
   margin: 0;
+}
+
+#weatherSection #img {
+  background-image: url(../images/sun.svg);
+  background-position: center;
+  height: 400px;
+  width: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#weatherSection input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#weatherSection .my-5 {
+  text-align: center;
 }
 
 @media (max-width: 576px) {
