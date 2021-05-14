@@ -11,7 +11,7 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
 
     const [switchingTimes, setSwitchingTimes] = useState([]);
 
-    console.log(dailyInfo[1]);
+    // console.log(dailyInfo[1]);
 
     function getHourStats(value) {
         setTestHr(Number(value)+3);
@@ -28,7 +28,6 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
 
         let sunrise = dailyInfo[1].sunrise;
         let sunset = dailyInfo[1].sunset;
-        console.log(sunrise, sunset);
 
         sunrise = sunrise*1000;
         sunrise = new Date(sunrise).toLocaleTimeString("en-US");
@@ -43,12 +42,70 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
             str = str[0];
             return str;
         }
-        let roundedSunrise = [Number(roundTimes(sunrise))-1, roundTimes(sunrise)]
-        let roundedSunset = [Number(roundTimes(sunset))-1, roundTimes(sunset)]
+        let roundedSunrise = roundTimes(sunrise);
+        let roundedSunset = Number(roundTimes(sunset))+12;
+        let darkRange = [];
+        let dayRange = [];
 
+        for(let i = 1; i<=24; i++){
+            if(i >= roundedSunrise && i < roundedSunset){
+                dayRange.push(i);
+            }else{
+                darkRange.push(i);
+            }
+        }
+        console.log(dayRange);
+
+        let numBefore = Number(switchingTimes[Number(switchingTimes.length) -1]);
+        // console.log(numBefore, curTime);
+        //TRUE if in DAY 
+        //FAlSE if in NIGHT
+
+        if(switchingTimes.length > 1){
+            let firstRange = false;
+            let secondRange = false;
+            for(let num of dayRange){
+                if(numBefore == dayRange[num]){
+                firstRange = true;
+                }
+                if(curTime == dayRange[num]){
+                secondRange = true;
+                }
+            }
+            if(firstRange == true && secondRange == false){
+            console.log(`it went from day to night`);
+            }else if(firstRange == true && secondRange == true){
+            console.log("NO CHANGE DAY")
+            }else if(firstRange == false && secondRange == true){
+            console.log("it went from night to day")
+            }else{
+            console.log("NO CHANGE NIGHT")
+            }
+        }
         
 
-        console.log(roundedSunrise, roundedSunset);
+
+        // if(switchingTimes.length > 1){
+        //     //code for the first click since array isnt set up yet
+        //     let numBefore = switchingTimes[Number(switchingTimes.length) -1];
+        //     console.log(numBefore, curTime);
+        //     if(numBefore > roundedSunrise && curTime < roundedSunset){
+        //         console.log("no change animation DAY");
+        //     }else if((numBefore < roundedSunrise && curTime < roundedSunrise) || (numBefore > roundedSunset && curTime > roundedSunset)){
+        //         console.log("no change animation NIGHT")
+        //     }
+        //     else if(numBefore<roundedSunrise && curTime > roundedSunrise && curTime < roundedSunset){
+        //         console.log("sunrise animation");
+        //     }else if(numBefore < roundedSunset && curTime < roundedSunset && curTime > roundedSunrise){
+        //         console.log("sunrise animation")
+        //     }else if(numBefore>roundedSunset && curTime>roundedSunset){
+        //         console.log("sunset animation")
+        //     }else if(numBefore > roundedSunrise && curTime < roundedSunrise){
+        //         console.log("sunset animation")
+        //     }else{
+        //         console.log("broken");
+        //     }
+        // }
         
     }
     return (
@@ -69,11 +126,11 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
                 value={range}
                 onChange={(e) => {
                     setRange(Math.round(e.target.value));
-                    console.log(e.target.value);
+                    // console.log(e.target.value);
                     getHourStats(Math.round(e.target.value));
                     getGMTTime(slider[Math.round(Number(e.target.value)+3)].dt);
                     setSwitchingTimes([...switchingTimes, e.target.value]);
-                    sunChecker();
+                    sunChecker(e.target.value);
                 }} 
                 />
             </div>
