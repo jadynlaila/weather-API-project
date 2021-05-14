@@ -1,14 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-// import { AiOutlineLeft } from "react-icons/ai";
-// import { AiOutlineRight } from "react-icons/ai";
-
-
-// 1. Make Tempurature Round and Feel like round
-//2. Get accurate DT by Day then Hr
-
-
-function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
+function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, cloud2 }) {
 
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
@@ -16,6 +8,8 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
     const [testHr, setTestHr] = useState(0);
     const [formattedTime, setFormattedTime] = useState(0);
     const [formattedHour, setformattedHour] = useState([]);
+
+    const [switchingTimes, setSwitchingTimes] = useState([]);
 
     console.log(dailyInfo[1]);
 
@@ -30,23 +24,33 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
         setformattedHour(new Date(timestamp).toLocaleTimeString("en-US"))
     }
 
-    function sunrise(curTime) {
-        // let sunriseTime = dailyInfo[0].sunrise;
-        // sunriseTime = new Date(sunriseTime).toLocaleTimeString("en-US");
-        // let rounded = Math.round(sunriseTime.getMinutes());
+    function sunChecker(curTime) {
 
-        // sunriseTime = Math.round(sunriseTime);
-        // console.log(sunriseTime);
         let sunrise = dailyInfo[1].sunrise;
         let sunset = dailyInfo[1].sunset;
         console.log(sunrise, sunset);
-        // let timeArrs = [(dailyInfo[1].sunrise), (dailyInfo[1].sunset)];
-        // for(let i of timeArrs){
-        //     console.log(timeArrs[i]);
-        // }
-    }
-    sunrise();
 
+        sunrise = sunrise * 1000;
+        sunrise = new Date(sunrise).toLocaleTimeString("en-US");
+        sunset = sunset * 1000;
+        sunset = new Date(sunset).toLocaleTimeString("en-US");
+        function roundTimes(date) {
+            let str = `${date}`;
+            str = str.split(`:`);
+            if (str[1] > 0) {
+                str[0] = Number(str[0]) + 1
+            }
+            str = str[0];
+            return str;
+        }
+        let roundedSunrise = [Number(roundTimes(sunrise)) - 1, roundTimes(sunrise)]
+        let roundedSunset = [Number(roundTimes(sunset)) - 1, roundTimes(sunset)]
+
+
+
+        console.log(roundedSunrise, roundedSunset);
+
+    }
     return (
         <>
             <div id="weatherAnimation" className="weatherAnimation">
@@ -67,13 +71,14 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
                             setRange(Math.round(e.target.value));
                             console.log(e.target.value);
                             getHourStats(Math.round(e.target.value));
-                            getGMTTime(slider[Math.round(Number(e.target.value) + 3)].dt)
-
+                            getGMTTime(slider[Math.round(Number(e.target.value) + 3)].dt);
+                            setSwitchingTimes([...switchingTimes, e.target.value]);
+                            sunChecker();
                         }}
                     />
                 </div>
-            </div>
-            {/* <div id="shortWeatherInfo" className="shortWeatherInfo">
+                </div>
+                {/* <div id="shortWeatherInfo" className="shortWeatherInfo">
             <div className="dailyAvg"></div>
             <div className="hourlyAvg">
                 <div className="tdDisplay">dt: {formattedHour}</div>
@@ -88,40 +93,40 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container }) {
                 <div className="hrWeather">pressure: {currentHr.pressure}</div>
                 <div className="hrWeather">visibility: {currentHr.visibility}</div>
             </div> */}
-            <Container id="weatherSection">
-                <Row lg="9">
-                    <img src={sunImg} />
-                </Row>
-                {/* <div id="shortWeatherInfo" className="shortWeatherInfo"> */}
-                {/* <div className="hourlyAvg"> */}
-                <Row id="shortWeatherInfo" className="shortWeatherInfo" >
-                    <Row >
-                        <Col id="tempSpaceInfo" lg="8" md="4">
-                            <Row className="hrTemp">{Math.round(currentHr.temp)}</Row>
-                        </Col>
-                        <Col id="topRightInfo" lg="4" md="2" >
-                            <Row className="hrWeather">humidity: {currentHr.humidity}%</Row>
-                            <Row className="hrWeather">feels like: {Math.round(currentHr.feels_like)}</Row>
-                            <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>
-                            <Row className="hrWeather">UV: {currentHr.uvi}</Row>
-                        </Col>
+                <Container id="weatherSection">
+                    <Row lg="9">
+                        <img src={sunImg} />
                     </Row>
-                    <Row id="bottomInfo" lg="3" md="2">
-                        <Row className="hrWeather"><span className="title">dt:</span><span className="titleText">{currentHr.dt}</span></Row>
-                        <Row className="hrWeather"><span className="title">cloudiness:</span><span className="titleText">{currentHr.clouds}%</span></Row>
-                        <Row className="hrWeather"><span className="title">weather conditions:</span><span className="titleText">{slider[testHr].weather[0].main}</span></Row>
-                        <Row className="hrWeather"><span className="title">Winds Speed:</span><span className="titleText">{currentHr.wind_speed}</span></Row>
-                        <Row className="hrWeather"><span className="title">pressure:</span><span className="titleText">{currentHr.pressure}</span></Row>
-                        <Row className="hrWeather"><span className="title">visibility:</span><span className="titleText">{currentHr.visibility}</span></Row>
+                    {/* <div id="shortWeatherInfo" className="shortWeatherInfo"> */}
+                    {/* <div className="hourlyAvg"> */}
+                    <Row id="shortWeatherInfo" className="shortWeatherInfo" >
+                        <Row >
+                            <Col id="tempSpaceInfo" lg="8" md="4">
+                                <Row className="hrTemp">{Math.round(currentHr.temp)}</Row>
+                            </Col>
+                            <Col id="topRightInfo" lg="4" md="2" >
+                                <Row className="hrWeather">humidity: {currentHr.humidity}%</Row>
+                                <Row className="hrWeather">feels like: {Math.round(currentHr.feels_like)}</Row>
+                                <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>
+                                <Row className="hrWeather">UV: {currentHr.uvi}</Row>
+                            </Col>
+                        </Row>
+                        <Row id="bottomInfo" lg="3" md="2">
+                            <Row className="hrWeather"><span className="title">dt:</span><span className="titleText">{currentHr.dt}</span></Row>
+                            <Row className="hrWeather"><span className="title">cloudiness:</span><span className="titleText">{currentHr.clouds}%</span></Row>
+                            <Row className="hrWeather"><span className="title">weather conditions:</span><span className="titleText">{slider[testHr].weather[0].main}</span></Row>
+                            <Row className="hrWeather"><span className="title">Winds Speed:</span><span className="titleText">{currentHr.wind_speed}</span></Row>
+                            <Row className="hrWeather"><span className="title">pressure:</span><span className="titleText">{currentHr.pressure}</span></Row>
+                            <Row className="hrWeather"><span className="title">visibility:</span><span className="titleText">{currentHr.visibility}</span></Row>
+                        </Row>
                     </Row>
-                </Row>
 
 
+                    {/* </div> */}
+                    {/* </div> */}
+
+                </Container>
                 {/* </div> */}
-                {/* </div> */}
-
-            </Container>
-            {/* </div> */}
         </>
     )
 }
