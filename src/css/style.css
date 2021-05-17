@@ -77,8 +77,6 @@ nav .navContainer #humid:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: none;
-  padding: none;
   font-family: monospace;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -89,6 +87,13 @@ nav .navContainer #humid:hover {
   background-color: #dfedff;
   height: 115%;
   width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
 }
 
 #weatherSection .hrTemp {
@@ -97,13 +102,30 @@ nav .navContainer #humid:hover {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0;
-  margin: 0;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: auto 0;
 }
 
 #weatherSection .title {
   text-align: center;
   padding: 0;
   margin: 0;
+  font-size: 1.3rem;
+}
+
+#weatherSection #tempSpaceInfo {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#weatherSection #topRightInfo {
+  -ms-grid-column-align: left;
+      justify-self: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #weatherSection .titleText {
@@ -112,16 +134,7 @@ nav .navContainer #humid:hover {
   margin: 0;
 }
 
-#weatherSection .hrWeather {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-
 #weatherSection #img {
-  background-image: url(../images/sun.svg);
   background-position: center;
   height: 400px;
   width: 400px;

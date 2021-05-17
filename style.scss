@@ -68,41 +68,48 @@ nav{
 
 #weatherSection{
     display: flex;
-    margin: none;
-    padding: none;
+
     font-family: monospace;
+    
     .shortWeatherInfo{
         background-color: rgb(223, 237, 255);
         height: 115%;
         width: 60%;
+        display: flex;
+        justify-content: center;
+        margin: 0;
     }   
+    
     .hrTemp{
         font-size: 90px;
         justify-content: center;
         padding: 0;
-        margin: 0;
+        align-content: center;
+        margin: auto 0;
     }
     .title{
         text-align: center;
         padding: 0;
         margin: 0;
+        font-size: 1.3rem;
+    }
+    #tempSpaceInfo{
+        align-self: center;
+    }
+    #topRightInfo{
+        justify-self: left;
+        align-self: center;
     }
     .titleText{
         text-align: center;
         padding: 0;
         margin: 0;
-
     }
-    .hrWeather{
-        justify-content: center;
-        padding: 0;
-        margin: 0;
 
-    }
     justify-content: space-between;
 
     #img{
-        background-image: url(../images/sun.svg);
+        // background-image: url(../images/sun.svg);
         background-position: center;
         height: 400px;
         width: 400px;
