@@ -110,6 +110,8 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
     }
     return (
         <>
+        <Container id="weatherSection">
+            <Row id="leftSide">
         <div id="weatherAnimation" className="weatherAnimation"> 
         </div>
         <div id="weatherSlider" className="weatherSlider"> 
@@ -153,29 +155,32 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
                     <Row>
                         <Col id="img" src={sunImg}> </Col>
                     </Row>
-                {/* </Row> */}
+
+                </Row>
 
                 {/* <div id="shortWeatherInfo" className="shortWeatherInfo"> */}
                 {/* <div className="hourlyAvg"> */}
                 <Row id="shortWeatherInfo" className="shortWeatherInfo" >
-                    <Row >
-                        <Col id="tempSpaceInfo" lg="8" md="4">
+                    <Row id="top">
+                        <Col id="tempSpaceInfo" lg="6" md="4">
                             <Row className="hrTemp">{Math.round(currentHr.temp)}</Row>
                         </Col>
-                        <Col id="topRightInfo" lg="4" md="2" >
-                            <Row className="hrWeather">humidity: {currentHr.humidity}%</Row>
-                            <Row className="hrWeather">feels like: {Math.round(currentHr.feels_like)}</Row>
+                        <Col id="topRightInfo" lg="6" md="2" >
+                            
+                            <Row className="hrWeather">Date: {currentHr.dt}</Row>
+                            <Row className="hrWeather">Feels Like: {Math.round(currentHr.feels_like)}</Row>
                             <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>
                             <Row className="hrWeather">UV: {currentHr.uvi}</Row>
+                            
                         </Col>
                     </Row>
-                    <Row id="bottomInfo" lg="3" md="2">
-                        <Row className="hrWeather"><span className="title">dt:</span><span className="titleText">{currentHr.dt}</span></Row>
-                        <Row className="hrWeather"><span className="title">cloudiness:</span><span className="titleText">{currentHr.clouds}%</span></Row>
-                        <Row className="hrWeather"><span className="title">weather conditions:</span><span className="titleText">{slider[testHr].weather[0].main}</span></Row>
-                        <Row className="hrWeather"><span className="title">Winds Speed:</span><span className="titleText">{currentHr.wind_speed}</span></Row>
-                        <Row className="hrWeather"><span className="title">pressure:</span><span className="titleText">{currentHr.pressure}</span></Row>
-                        <Row className="hrWeather"><span className="title">visibility:</span><span className="titleText">{currentHr.visibility}</span></Row>
+                    <Row id="bottomInfo" lg="3" >
+                        <Row className="hrWeather"><span className="title">Humidity:</span><span className="titleText">{currentHr.humidity}%</span></Row>
+                        <Row className="hrWeather"><span className="title">Cloudiness:</span><span className="titleText">{currentHr.clouds}%</span></Row>
+                        <Row className="hrWeather"><span className="title">Weather:</span><span className="titleText">{slider[testHr].weather[0].main}</span></Row>
+                        <Row className="hrWeather"><span className="title">Wind Speed:</span><span className="titleText">{currentHr.wind_speed}</span></Row>
+                        <Row className="hrWeather"><span className="title">Pressure:</span><span className="titleText">{currentHr.pressure}</span></Row>
+                        <Row className="hrWeather"><span className="title">Visibility:</span><span className="titleText">{currentHr.visibility}</span></Row>
                     </Row>
                 </Row>
 
@@ -183,7 +188,7 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
                 {/* </div> */}
                 {/* </div> */}
 
-            {/* </Container> */}
+            </Container>
             {/* </div> */}
         </>
     )
