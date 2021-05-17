@@ -216,10 +216,16 @@ nav .navContainer #humid:hover {
 .container .weatherInfo .current .tempImg {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
-  background-image: url(../images/humidity.svg);
+  background-image: url(../images/sun.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  margin: 5px;
+  transition: 0.8s ease-in-out;
+}
+
+.container .weatherInfo .current .tempImg:hover {
+  transform: rotate(360deg);
 }
 
 .container .weatherInfo .current .high {
@@ -259,6 +265,7 @@ nav .navContainer #humid:hover {
 }
 
 .container .weatherInfo .sub {
+  overflow: hidden;
   margin-top: 30px;
   height: 120px;
   width: 60%;
@@ -267,5 +274,35 @@ nav .navContainer #humid:hover {
   background-color: #c9c9c9;
   border-radius: 20px;
   position: relative;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 50%;
+}
+
+.container .weatherInfo .sub .tempImg {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background-image: url(../images/sun.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 5px;
+  transition: 0.8s ease-in-out;
+}
+
+.container .weatherInfo .sub .tempImg:hover {
+  transform: rotate(360deg);
+}
+
+.container .weatherInfo .sub .high {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container .weatherInfo .sub .low {
+  color: white;
+  font-size: 30px;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
