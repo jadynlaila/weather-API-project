@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import sunImg from '../images/sun.svg';
+import cloud1 from '../images/cloud1.svg'
+import cloud2 from '../images/cloud2.svg'
 
-function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, cloud2 }) {
+function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
 
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
@@ -8,10 +11,17 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
     const [testHr, setTestHr] = useState(0);
     const [formattedTime, setFormattedTime] = useState(0);
     const [formattedHour, setformattedHour] = useState([]);
+    const [animation, setAnimation] = useState("none");
+    const [initialStuff, setInitialStuff] = useState(true);
+    const [dayOrNight, setdayOrNight] = useState(false);
+
+    if(initialStuff == true){
+        getHourStats(0);
+        setInitialStuff(false);
+        getGMTTime(slider[Math.round(Number(0)+3)].dt)
+    }
 
     const [switchingTimes, setSwitchingTimes] = useState([]);
-
-    // console.log(dailyInfo[1]);
 
     function getHourStats(value) {
         setTestHr(Number(value) + 3);
@@ -54,62 +64,41 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
                 darkRange.push(i);
             }
         }
-        console.log(dayRange);
 
         let numBefore = Number(switchingTimes[Number(switchingTimes.length) -1]);
-        // console.log(numBefore, curTime);
-        //TRUE if in DAY 
-        //FAlSE if in NIGHT
 
         if(switchingTimes.length > 1){
             let firstRange = false;
             let secondRange = false;
-            for(let num of dayRange){
-                if(numBefore == dayRange[num]){
+            for(let num = 0; num < dayRange.length; num++){
+                if(Number(numBefore) == Number(dayRange[num])){
                 firstRange = true;
                 }
-                if(curTime == dayRange[num]){
+                if(Number(curTime) == Number(dayRange[num])){
                 secondRange = true;
                 }
             }
             if(firstRange == true && secondRange == false){
             console.log(`it went from day to night`);
+            setAnimation("dayToNight");
             }else if(firstRange == true && secondRange == true){
-            console.log("NO CHANGE DAY")
+            console.log("NO CHANGE DAY");
+            setAnimation("none");
             }else if(firstRange == false && secondRange == true){
             console.log("it went from night to day")
+            setAnimation("nightToDay");
             }else{
             console.log("NO CHANGE NIGHT")
+            setAnimation("none");
             }
         }
         
-
-
-        // if(switchingTimes.length > 1){
-        //     //code for the first click since array isnt set up yet
-        //     let numBefore = switchingTimes[Number(switchingTimes.length) -1];
-        //     console.log(numBefore, curTime);
-        //     if(numBefore > roundedSunrise && curTime < roundedSunset){
-        //         console.log("no change animation DAY");
-        //     }else if((numBefore < roundedSunrise && curTime < roundedSunrise) || (numBefore > roundedSunset && curTime > roundedSunset)){
-        //         console.log("no change animation NIGHT")
-        //     }
-        //     else if(numBefore<roundedSunrise && curTime > roundedSunrise && curTime < roundedSunset){
-        //         console.log("sunrise animation");
-        //     }else if(numBefore < roundedSunset && curTime < roundedSunset && curTime > roundedSunrise){
-        //         console.log("sunrise animation")
-        //     }else if(numBefore>roundedSunset && curTime>roundedSunset){
-        //         console.log("sunset animation")
-        //     }else if(numBefore > roundedSunrise && curTime < roundedSunrise){
-        //         console.log("sunset animation")
-        //     }else{
-        //         console.log("broken");
-        //     }
-        // }
         
     }
     return (
         <>
+        <Container id="weatherSection">
+            <Row id="leftSide">
         <div id="weatherAnimation" className="weatherAnimation"> 
         </div>
         <div id="weatherSlider" className="weatherSlider"> 
@@ -126,37 +115,29 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
                 value={range}
                 onChange={(e) => {
                     setRange(Math.round(e.target.value));
-                    // console.log(e.target.value);
                     getHourStats(Math.round(e.target.value));
                     getGMTTime(slider[Math.round(Number(e.target.value)+3)].dt);
                     setSwitchingTimes([...switchingTimes, e.target.value]);
                     sunChecker(e.target.value);
+                    if(e.target.value >= 6 && e.target.value < 20){
+                        setdayOrNight(true);
+                    }else{
+                        setdayOrNight(false);
+
+                    }
                 }} 
                 />
             </div>
         </div>
-            {/* <div id="shortWeatherInfo" className="shortWeatherInfo">
-            <div className="dailyAvg"></div>
-            <div className="hourlyAvg">
-                <div className="tdDisplay">dt: {formattedHour}</div>
-                <div className="hrTemp">temp: {Math.round(currentHr.temp)}</div>
-                <div className="hrFeelLike">feels like: {Math.round(currentHr.feels_like)}</div>
-                <div className="hrHumidity">humidity: {currentHr.humidity}%</div>
-                <div className="hrClouds">cloudiness: {currentHr.clouds}%</div>
-                <div className="hrWeather">weather conditions: {slider[testHr].weather[0].main}</div>
-                <div className="hrWeather">Winds Speed: {currentHr.wind_speed}</div>
-                <div className="hrWeather">Chance of Rain: {currentHr.pop}</div>
-                <div className="hrWeather">UV: {currentHr.uvi}</div>
-                <div className="hrWeather">pressure: {currentHr.pressure}</div>
-                <div className="hrWeather">visibility: {currentHr.visibility}</div>
-            </div> */}
-                    <Row>
-                        <Col id="img" src={sunImg}> </Col>
-                    </Row>
-                {/* </Row> */}
-
-                {/* <div id="shortWeatherInfo" className="shortWeatherInfo"> */}
-                {/* <div className="hourlyAvg"> */}
+                {dayOrNight ?
+                    (<Row>
+                        <Col id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`}}> </Col>
+                    </Row>) :
+                    (<Row>
+                        <Col id="img" src={cloud1} alt="moon Image" style={{backgroundImage: `url('${cloud1}')`}}> </Col>
+                    </Row>)
+                }
+                </Row>
                 <Row id="shortWeatherInfo" className="shortWeatherInfo" >
                     <Row >
                         <Col id="tempSpaceInfo" lg="8" md="4">
@@ -170,7 +151,7 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
                         </Col>
                     </Row>
                     <Row id="bottomInfo" lg="3" md="2">
-                        <Row className="hrWeather"><span className="title">dt:</span><span className="titleText">{currentHr.dt}</span></Row>
+                        <Row className="hrWeather"><span className="title">dt:</span><span className="titleText">{formattedHour}</span></Row>
                         <Row className="hrWeather"><span className="title">cloudiness:</span><span className="titleText">{currentHr.clouds}%</span></Row>
                         <Row className="hrWeather"><span className="title">weather conditions:</span><span className="titleText">{slider[testHr].weather[0].main}</span></Row>
                         <Row className="hrWeather"><span className="title">Winds Speed:</span><span className="titleText">{currentHr.wind_speed}</span></Row>
@@ -183,7 +164,7 @@ function DailyPage({ slider, dailyInfo, sunImg, Col, Row, Container, cloud1, clo
                 {/* </div> */}
                 {/* </div> */}
 
-            {/* </Container> */}
+            </Container>
             {/* </div> */}
         </>
     )
