@@ -29,7 +29,7 @@ const App = () => {
         
       { showDaily && <DailyPage cloud1={ cloud1 } cloud2={ cloud2 } slider={weather.hourly} dailyInfo={weather.daily} sunImg={SunIcon} Col={Col} Container={Container} Row={Row}/>}
       {/* { showDaily && <img src={SunIcon} alt="no image" />} */}
-      { showWeekly && <WeeklyPage weather={weather} />}
+      { showWeekly && <WeeklyPage/>}
       {/* <Button as="input" type="submit" value="Submit" />{' '} */}
     </>
   )

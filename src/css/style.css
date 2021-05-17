@@ -178,6 +178,7 @@ nav .navContainer #humid:hover {
   background-color: rgba(0, 204, 255, 0.712);
   border-radius: 50%;
   cursor: pointer;
+  opacity: 100%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -199,6 +200,7 @@ nav .navContainer #humid:hover {
   background-color: rgba(0, 204, 255, 0.712);
   border-radius: 50%;
   cursor: pointer;
+  opacity: 100%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
