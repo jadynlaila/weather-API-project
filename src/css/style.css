@@ -71,8 +71,6 @@ nav .navContainer #humid:hover {
 
 #weatherSection {
   display: flex;
-  margin: none;
-  padding: none;
   font-family: monospace;
   justify-content: space-between;
 }
@@ -81,29 +79,37 @@ nav .navContainer #humid:hover {
   background-color: #dfedff;
   height: 115%;
   width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
 #weatherSection .hrTemp {
   font-size: 90px;
   justify-content: center;
   padding: 0;
-  margin: 0;
+  align-content: center;
+  margin: auto 0;
 }
 
 #weatherSection .title {
   text-align: center;
   padding: 0;
   margin: 0;
+  font-size: 1.3rem;
+}
+
+#weatherSection #tempSpaceInfo {
+  align-self: center;
+}
+
+#weatherSection #topRightInfo {
+  justify-self: left;
+  align-self: center;
 }
 
 #weatherSection .titleText {
   text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
-#weatherSection .hrWeather {
-  justify-content: center;
   padding: 0;
   margin: 0;
 }
