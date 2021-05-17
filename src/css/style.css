@@ -87,6 +87,8 @@ nav .navContainer #humid:hover {
 
 #weatherSection .shortWeatherInfo {
   background-color: #dfedff;
+  height: 115%;
+  width: 60%;
 }
 
 #weatherSection .hrTemp {
@@ -98,7 +100,19 @@ nav .navContainer #humid:hover {
   margin: 0;
 }
 
-#weatherSection #tempSpaceInfo {
+#weatherSection .title {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#weatherSection .titleText {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#weatherSection .hrWeather {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -106,24 +120,23 @@ nav .navContainer #humid:hover {
   margin: 0;
 }
 
-#weatherSection #topRightInfo {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  margin: 0;
+#weatherSection #img {
+  background-image: url(../images/sun.svg);
+  background-position: center;
+  height: 400px;
+  width: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-#weatherSection #bottomInfo {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  margin: 0;
+#weatherSection input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#weatherSection img {
-  width: 50%;
+#weatherSection .my-5 {
+  text-align: center;
 }
 
 @media (max-width: 576px) {
