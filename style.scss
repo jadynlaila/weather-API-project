@@ -196,10 +196,15 @@ nav{
             .tempImg{
                 grid-column: 1 / 2;
                 grid-row: 1 / 3;
-                background-image: url(../images/humidity.svg);
+                background-image: url(../images/sun.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
+                margin: 5px;
+                transition: 0.8s ease-in-out;
+                &:hover{
+                    transform: rotate(360deg);
+                }
             }
             .high{
                 grid-column: 2 / 3;
@@ -235,6 +240,7 @@ nav{
             }
         }
         .sub{
+            overflow: hidden;
             margin-top: 30px;
             height: 120px;
             width: 60%;
@@ -243,6 +249,32 @@ nav{
             background-color: rgb(201, 201, 201);
             border-radius: 20px;
             position: relative;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 50%;
+            .tempImg{
+                grid-column: 1 / 2;
+                grid-row: 1 / 3;
+                background-image: url(../images/sun.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin: 5px;
+                transition: 0.8s ease-in-out;
+                &:hover{
+                    transform: rotate(360deg);
+                }
+            }
+            .high{
+                color: white;
+                font-size: 30px;
+                text-align: center;
+            }
+            .low{
+                color: white;
+                font-size: 30px;
+                text-align: center;
+            }
         }
     }
 }

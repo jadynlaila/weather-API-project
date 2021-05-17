@@ -238,10 +238,18 @@ nav .navContainer #humid:hover {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / 3;
-  background-image: url(../images/humidity.svg);
+  background-image: url(../images/sun.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  margin: 5px;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+
+.container .weatherInfo .current .tempImg:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 .container .weatherInfo .current .high {
@@ -297,6 +305,7 @@ nav .navContainer #humid:hover {
 }
 
 .container .weatherInfo .sub {
+  overflow: hidden;
   margin-top: 30px;
   height: 120px;
   width: 60%;
@@ -305,5 +314,44 @@ nav .navContainer #humid:hover {
   background-color: #c9c9c9;
   border-radius: 20px;
   position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+  -ms-grid-rows: 50%;
+      grid-template-rows: 50%;
+}
+
+.container .weatherInfo .sub .tempImg {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  background-image: url(../images/sun.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 5px;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+
+.container .weatherInfo .sub .tempImg:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.container .weatherInfo .sub .high {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container .weatherInfo .sub .low {
+  color: white;
+  font-size: 30px;
+  text-align: center;
 }
 /*# sourceMappingURL=style.min.css.map */
