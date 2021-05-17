@@ -135,7 +135,6 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection #img {
-  background-image: url(../images/sun.svg);
   background-position: center;
   height: 400px;
   width: 400px;
