@@ -24,10 +24,10 @@ const App = () => {
           setShowDaily(false);
         }}
         showWeekly={showWeekly} />
-        
-      { showDaily && <DailyPage slider={weather.hourly} dailyInfo={weather.daily} sunImg={SunIcon} Col={Col} Container={Container} Row={Row}/>}
+        <WeeklyPage/>
+      {/* { showDaily && <DailyPage slider={weather.hourly} dailyInfo={weather.daily} sunImg={SunIcon} Col={Col} Container={Container} Row={Row}/>} */}
       {/* { showDaily && <img src={SunIcon} alt="no image" />} */}
-      { showWeekly && <WeeklyPage weather={weather} />}
+      {/* { showWeekly && <WeeklyPage weather={weather} />} */}
       {/* <Button as="input" type="submit" value="Submit" />{' '} */}
     </>
   )
