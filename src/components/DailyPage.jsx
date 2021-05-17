@@ -131,10 +131,14 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
         </div>
                 {dayOrNight ?
                     (<Row>
-                        <Col id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`}}> </Col>
+                        <Col id="img" src={sunImg} > 
+                            <div id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`}}></div>
+                        </Col>
                     </Row>) :
                     (<Row>
-                        <Col id="img" src={cloud1} alt="moon Image" style={{backgroundImage: `url('${cloud1}')`}}> </Col>
+                        <Col id="img" src={cloud1} alt="moon Image"> 
+                        <div id="img" style={{backgroundImage: `url('${cloud1}')`}}></div>
+                        </Col>
                     </Row>)
                 }
                 </Row>

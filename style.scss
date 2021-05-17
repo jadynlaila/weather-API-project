@@ -108,6 +108,9 @@ nav{
         width: 400px;
         background-size: contain;
         background-repeat: no-repeat;
+        #img{
+            position: absolute;
+        }
     }
     input{
         display: block;

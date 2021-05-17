@@ -116,6 +116,10 @@ nav .navContainer #humid:hover {
   background-repeat: no-repeat;
 }
 
+#weatherSection #img #img {
+  position: absolute;
+}
+
 #weatherSection input {
   display: block;
   margin-right: auto;
