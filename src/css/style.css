@@ -134,6 +134,14 @@ nav .navContainer #humid:hover {
   margin: 0;
 }
 
+#weatherSection #bottomInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
 #weatherSection #img {
   background-position: center;
   height: 400px;
