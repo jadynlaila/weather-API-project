@@ -123,20 +123,26 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
                                         setdayOrNight(true);
                                     } else {
                                         setdayOrNight(false);
-
                                     }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    {dayOrNight ?
-                        (<Row>
-                            <Col id="img" src={sunImg} style={{ backgroundImage: `url('${sunImg}')` }}> </Col>
-                        </Row>) :
-                        (<Row>
-                            <Col id="img" src={cloud1} alt="moon Image" style={{ backgroundImage: `url('${cloud1}')` }}> </Col>
-                        </Row>)
-                    }
+                }} 
+                />
+            </div>
+        </div>
+                {dayOrNight ?
+                    (<Row>
+                        <Col id="img" src={sunImg} > 
+                            <div id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`}}></div>
+                        </Col>
+                    </Row>) :
+                    (<Row>
+                        <Col id="img" src={cloud1} alt="moon Image">
+                            {animation ? 
+                                <div id="img" style={{backgroundImage: `url('${cloud1}')`, transition:".5s"}}></div>:
+                                <div id="img" style={{backgroundImage: `url('${cloud1}')`, transition:"none"}}></div>
+                            }
+                        </Col>
+                    </Row>)
+                }
                 </Row>
                 <Row id="shortWeatherInfo" className="shortWeatherInfo" >
                     <Row id="top">
@@ -144,8 +150,8 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
                             <Row className="hrTemp">{Math.round(currentHr.temp)}</Row>
                         </Col>
                         <Col id="topRightInfo" lg="6" md="2" >
-
-                            <Row className="hrWeather">Date: {currentHr.dt}</Row>
+                            
+                            <Row className="hrWeather">Date: {formattedTime}</Row>
                             <Row className="hrWeather">Feels Like: {Math.round(currentHr.feels_like)}</Row>
                             <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>
                             <Row className="hrWeather">UV: {currentHr.uvi}</Row>
