@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import sunImg from '../images/sun.svg';
-import cloud1 from '../images/cloud1.svg'
-import cloud2 from '../images/cloud2.svg'
+import cloud1 from '../images/cloud1.svg';
+import cloud2 from '../images/cloud2.svg';
+import moonImg from '../images/Moon.svg';
 
-function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
+
+function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
 
     const [range, setRange] = useState(0);
     const [currentHr, setCurrentHr] = useState(0);
@@ -14,6 +16,10 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
     const [animation, setAnimation] = useState("none");
     const [initialStuff, setInitialStuff] = useState(true);
     const [dayOrNight, setdayOrNight] = useState(false);
+    const [sunRiseAlert, setSunRiseAlert] = useState(false);
+    const [sunRise, setsunRise] = useState("")
+    const [sunSetAlert, setSunSetAlert] = useState(false);
+    const [sunSet, setsunSet] = useState("")
 
     if (initialStuff == true) {
         getHourStats(0);
@@ -31,7 +37,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
     function getGMTTime(timestamp) {
         timestamp = timestamp * 1000;
         setFormattedTime(new Date(timestamp).toLocaleDateString("en-US"));
-        setformattedHour(new Date(timestamp).toLocaleTimeString("en-US"))
+        setformattedHour(new Date(timestamp).toLocaleTimeString("en-US"));
     }
 
     function sunChecker(curTime) {
@@ -41,8 +47,11 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
 
         sunrise = sunrise * 1000;
         sunrise = new Date(sunrise).toLocaleTimeString("en-US");
+        setsunRise(sunrise);
         sunset = sunset * 1000;
         sunset = new Date(sunset).toLocaleTimeString("en-US");
+        setsunSet(sunset);
+
         function roundTimes(date) {
             let str = `${date}`;
             str = str.split(`:`);
@@ -93,8 +102,20 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
             }
         }
 
+        
+
 
     }
+        function checkForSun (numb) {
+                if(numb > 3 && numb < 9){
+                    setSunRiseAlert(true)
+                }else if(numb > 16 && numb < 22){
+                    setSunSetAlert(true)
+                }else{
+                    setSunSetAlert(false);
+                    setSunRiseAlert(false);
+                }
+            }
     return (
         <>
             <Container id="weatherSection">
@@ -124,33 +145,43 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
                                     } else {
                                         setdayOrNight(false);
                                     }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    {dayOrNight ?
-                        (<Row>
-                            <Col id="img" src={sunImg} >
-                                <div id="img" src={sunImg} style={{ backgroundImage: `url('${sunImg}')` }}></div>
-                            </Col>
-                        </Row>) :
-                        (<Row>
-                            <Col id="img" src={cloud1} alt="moon Image">
-                                {animation ?
-                                    <div id="img" style={{ backgroundImage: `url('${cloud1}')`, transition: ".5s" }}></div> :
-                                    <div id="img" style={{ backgroundImage: `url('${cloud1}')`, transition: "none" }}></div>
-                                }
-                            </Col>
-                        </Row>)
-                    }
+                                    checkForSun(Number(e.target.value));
+                }} 
+                />
+            </div>
+        </div>
+
+                {dayOrNight ?
+                    (<Row>
+                        <Col id="img" src={sunImg} > 
+                            {animation ? 
+                                <div id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`, transition:".5s"}}></div>:
+                                <div id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`, transition:"none"}}></div>
+                            }
+                        </Col>
+                    </Row>) :
+                    (<Row>
+                        <Col id="img" src={cloud1} alt="moon Image">
+                            {animation ? 
+                                <div id="img" style={{backgroundImage: `url('${moonImg}')`, transition:".5s", zIndex: "-10"}}></div>:
+                                <div id="img" style={{backgroundImage: `url('${moonImg}')`, transition:"none", zIndex: "-10"}}></div>
+                            }
+                        </Col>
+                    </Row>)
+                }   
+                
                 </Row>
                 <Row id="shortWeatherInfo" className="shortWeatherInfo" >
                     <Row id="top" >
                         <Col id="tempSpaceInfo" lg="6" md="4">
                             <Row className="hrTemp rounded-circle">{Math.round(currentHr.temp)}</Row>
                         </Col>
-                        <Col id="topRightInfo" lg="6" md="2">
-
+                        <Col id="topRightAlert">
+                            {sunRiseAlert && <Row className="alertText">Sunrise at: {sunRise}</Row>}
+                            {sunSetAlert && <Row className="alertText">Sunset at: {sunSet}</Row>}
+                        </Col>
+                        <Col id="topRightInfo" lg="6" md="2" >
+                            
                             <Row className="hrWeather">Date: {formattedTime}</Row>
                             <Row className="hrWeather">Feels Like: {Math.round(currentHr.feels_like)}</Row>
                             <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>

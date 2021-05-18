@@ -3,7 +3,7 @@ import DailyPage from './components/DailyPage'
 import WeeklyPage from './components/WeeklyPage'
 import Navigation from './components/Navigation'
 import SunIcon from './images/sun.svg'
-import { Col, Row, Container  } from 'react-bootstrap'
+import { Col, Row, Container, Carousel  } from 'react-bootstrap'
 import React, { useState } from 'react'
 import weather from "./weather.json"
 import firstCloud from "./images/cloud1.svg"
@@ -27,7 +27,7 @@ const App = () => {
         }}
         showWeekly={showWeekly} />
         
-      { showDaily && <DailyPage cloud1={ firstCloud } cloud2={ secondCloud } slider={weather.hourly} dailyInfo={weather.daily} sunImg={SunIcon} Col={Col} Container={Container} Row={Row}/>}
+      { showDaily && <DailyPage cloud1={ firstCloud } cloud2={ secondCloud } slider={weather.hourly} dailyInfo={weather.daily} sunImg={SunIcon} Col={Col} Container={Container} Row={Row} Carousel={Carousel}/>}
       {/* { showDaily && <img src={SunIcon} alt="no image" />} */}
       { showWeekly && <WeeklyPage/>}
       {/* <Button as="input" type="submit" value="Submit" />{' '} */}
