@@ -1,13 +1,13 @@
 *,
 ::before,
-::after{
+::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: black;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
     margin: 0;
@@ -15,23 +15,22 @@ body {
         "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: "Roboto", sans-serif;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-nav{
+nav {
     width: 100%;
     height: 50px;
     overflow: hidden;
-    .navContainer{
+    .navContainer {
         height: 100%;
         width: 50%;
         display: flex;
-        .link{
+        .link {
             height: 50px;
             width: 500px;
             font-weight: 500;
@@ -44,7 +43,7 @@ nav{
             background-image: none;
             background-position: right;
             background-repeat: no-repeat;
-            &:hover{
+            &:hover {
                 background-position: left;
                 background-repeat: no-repeat;
                 background-size: contain;
@@ -54,95 +53,111 @@ nav{
                 font-size: 115%;
             }
         }
-        #home:hover{
+        #home:hover {
             background-image: url(../images/home.svg);
         }
-        #week:hover{
+        #week:hover {
             background-image: url(../images/weekly.svg);
         }
-        #humid:hover{
+        #humid:hover {
             background-image: url(../images/humidity.svg);
         }
     }
 }
 
-#weatherSection{
+#weatherSection {
+
+    // rgb(223, 237, 255)
     display: flex;
 
     font-family: monospace;
-    
-    .shortWeatherInfo{
-        background-color: rgb(223, 237, 255);
+
+    .shortWeatherInfo {
+        background-color: lightsteelblue;
         height: 115%;
         width: 60%;
         display: flex;
         justify-content: center;
         margin: 0;
-    }   
-    
-    .hrTemp{
-        font-size: 90px;
-        justify-content: center;
-        padding: 0;
-        align-content: center;
-        margin: auto 0;
-    }
-    .title{
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        font-size: 1.3rem;
-    }
-    #tempSpaceInfo{
-        align-self: center;
-    }
-    #topRightInfo{
-        justify-self: left;
-        align-self: center;
-    }
-    .titleText{
-        text-align: center;
-        padding: 0;
-        margin: 0;
-    }
-    #bottomInfo{
-        display: flex;
-        align-content: center;
+
+        #top {
+            border-bottom: solid black 1px;
+            .hrTemp {
+                font-size: 90px;
+                justify-content: center;
+                padding: 0;
+                align-content: center;
+                margin: auto 0;
+                background-color: blue;
+                color: white;
+            }
+            #tempSpaceInfo {
+                align-self: center;
+            }
+            #topRightInfo {
+                justify-self: left;
+                align-self: center;
+            }
+            .hrWeather {
+                background-color: steelblue;
+                color: white;
+                justify-content: center;
+            }
+        }
+
+        #bottomInfo {
+            display: flex;
+            align-content: center;
+            .hrWeather {
+                background-color: rgb(223, 237, 255);
+                color: white;
+                justify-content: center;
+            }
+
+            .title {
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                font-size: 1.3rem;
+            }
+
+            .titleText {
+                text-align: center;
+                padding: 0;
+                margin: 0;
+            }
+        }
     }
 
     justify-content: space-between;
 
-    #img{
+    #img {
         // background-image: url(../images/sun.svg);
         background-position: center;
         height: 400px;
         width: 400px;
         background-size: contain;
         background-repeat: no-repeat;
-        #img{
+        #img {
             position: absolute;
         }
     }
-    input{
+    input {
         display: block;
         margin-right: auto;
         margin-left: auto;
     }
-    .my-5{
+    .my-5 {
         text-align: center;
-        }
-    
+    }
 }
 
-
-
-
-@media (max-width: 576px){
-    nav{
-        .navContainer{
+@media (max-width: 576px) {
+    nav {
+        .navContainer {
             width: 100%;
-            .link{
-                &:hover{
+            .link {
+                &:hover {
                     background-size: cover;
                     background-position: center;
                 }
@@ -151,15 +166,15 @@ nav{
     }
 }
 
-.container{
+.container {
     margin-top: 50px;
     width: 100%;
     height: 500px;
     display: flex;
-    .arrows{
+    .arrows {
         width: fit-content;
         height: fit-content;
-        .arrowUp{
+        .arrowUp {
             height: 50px;
             width: 50px;
             background-image: url(../images/arrow.svg);
@@ -171,11 +186,11 @@ nav{
             cursor: pointer;
             opacity: 100%;
             transition: 0.3s;
-            &:hover{
+            &:hover {
                 transform: scale(1.15) rotate(180deg);
             }
         }
-        .arrowDown{
+        .arrowDown {
             margin-top: 20px;
             height: 50px;
             width: 50px;
@@ -188,14 +203,14 @@ nav{
             cursor: pointer;
             opacity: 100%;
             transition: 0.3s;
-            &:hover{
+            &:hover {
                 transform: scale(1.15);
             }
         }
     }
-    .weatherInfo{
+    .weatherInfo {
         width: 100%;
-        .current{
+        .current {
             height: 150px;
             width: 100%;
             margin-left: 15px;
@@ -207,7 +222,7 @@ nav{
             grid-template-columns: 25% 25% 25% 25%;
             grid-template-rows: 50% 50%;
             overflow: hidden;
-            .tempImg{
+            .tempImg {
                 grid-column: 1 / 2;
                 grid-row: 1 / 3;
                 background-image: url(../images/sun.svg);
@@ -216,11 +231,11 @@ nav{
                 background-position: center;
                 margin: 5px;
                 transition: 0.8s ease-in-out;
-                &:hover{
+                &:hover {
                     transform: rotate(360deg);
                 }
             }
-            .high{
+            .high {
                 grid-column: 2 / 3;
                 grid-row: 1 / 2;
                 font-weight: 1;
@@ -228,7 +243,7 @@ nav{
                 text-align: left;
                 color: white;
             }
-            .low{
+            .low {
                 grid-column: 3 / 4;
                 grid-row: 1 / 2;
                 font-weight: 1;
@@ -236,7 +251,7 @@ nav{
                 text-align: left;
                 color: white;
             }
-            .weekDay{
+            .weekDay {
                 grid-column: 2 / 3;
                 grid-row: 2 / 3;
                 font-weight: 1;
@@ -244,7 +259,7 @@ nav{
                 text-align: left;
                 color: white;
             }
-            .weatherType{
+            .weatherType {
                 grid-column: 4 / 5;
                 grid-row: 1 / 3;
                 font-weight: 1;
@@ -253,7 +268,7 @@ nav{
                 color: white;
             }
         }
-        .sub{
+        .sub {
             overflow: hidden;
             margin-top: 30px;
             height: 120px;
@@ -266,7 +281,7 @@ nav{
             display: grid;
             grid-template-columns: 30% 70%;
             grid-template-rows: 50%;
-            .tempImg{
+            .tempImg {
                 grid-column: 1 / 2;
                 grid-row: 1 / 3;
                 background-image: url(../images/sun.svg);
@@ -275,16 +290,16 @@ nav{
                 background-position: center;
                 margin: 5px;
                 transition: 0.8s ease-in-out;
-                &:hover{
+                &:hover {
                     transform: rotate(360deg);
                 }
             }
-            .high{
+            .high {
                 color: white;
                 font-size: 30px;
                 text-align: center;
             }
-            .low{
+            .low {
                 color: white;
                 font-size: 30px;
                 text-align: center;

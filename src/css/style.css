@@ -14,7 +14,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 code {
@@ -84,7 +84,7 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection .shortWeatherInfo {
-  background-color: #dfedff;
+  background-color: lightsteelblue;
   height: 115%;
   width: 60%;
   display: -webkit-box;
@@ -96,7 +96,11 @@ nav .navContainer #humid:hover {
   margin: 0;
 }
 
-#weatherSection .hrTemp {
+#weatherSection .shortWeatherInfo #top {
+  border-bottom: solid black 1px;
+}
+
+#weatherSection .shortWeatherInfo #top .hrTemp {
   font-size: 90px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -105,22 +109,17 @@ nav .navContainer #humid:hover {
   -ms-flex-line-pack: center;
       align-content: center;
   margin: auto 0;
+  background-color: blue;
+  color: white;
 }
 
-#weatherSection .title {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  font-size: 1.3rem;
-}
-
-#weatherSection #tempSpaceInfo {
+#weatherSection .shortWeatherInfo #top #tempSpaceInfo {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-#weatherSection #topRightInfo {
+#weatherSection .shortWeatherInfo #top #topRightInfo {
   -ms-grid-column-align: left;
       justify-self: left;
   -ms-flex-item-align: center;
@@ -128,18 +127,41 @@ nav .navContainer #humid:hover {
       align-self: center;
 }
 
-#weatherSection .titleText {
-  text-align: center;
-  padding: 0;
-  margin: 0;
+#weatherSection .shortWeatherInfo #top .hrWeather {
+  background-color: steelblue;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-#weatherSection #bottomInfo {
+#weatherSection .shortWeatherInfo #bottomInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+#weatherSection .shortWeatherInfo #bottomInfo .hrWeather {
+  background-color: #dfedff;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#weatherSection .shortWeatherInfo #bottomInfo .title {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+#weatherSection .shortWeatherInfo #bottomInfo .titleText {
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 #weatherSection #img {

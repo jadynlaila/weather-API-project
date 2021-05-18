@@ -124,33 +124,33 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
                                     } else {
                                         setdayOrNight(false);
                                     }
-                }} 
-                />
-            </div>
-        </div>
-                {dayOrNight ?
-                    (<Row>
-                        <Col id="img" src={sunImg} > 
-                            <div id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`}}></div>
-                        </Col>
-                    </Row>) :
-                    (<Row>
-                        <Col id="img" src={cloud1} alt="moon Image">
-                            {animation ? 
-                                <div id="img" style={{backgroundImage: `url('${cloud1}')`, transition:".5s"}}></div>:
-                                <div id="img" style={{backgroundImage: `url('${cloud1}')`, transition:"none"}}></div>
-                            }
-                        </Col>
-                    </Row>)
-                }
+                                }}
+                            />
+                        </div>
+                    </div>
+                    {dayOrNight ?
+                        (<Row>
+                            <Col id="img" src={sunImg} >
+                                <div id="img" src={sunImg} style={{ backgroundImage: `url('${sunImg}')` }}></div>
+                            </Col>
+                        </Row>) :
+                        (<Row>
+                            <Col id="img" src={cloud1} alt="moon Image">
+                                {animation ?
+                                    <div id="img" style={{ backgroundImage: `url('${cloud1}')`, transition: ".5s" }}></div> :
+                                    <div id="img" style={{ backgroundImage: `url('${cloud1}')`, transition: "none" }}></div>
+                                }
+                            </Col>
+                        </Row>)
+                    }
                 </Row>
                 <Row id="shortWeatherInfo" className="shortWeatherInfo" >
-                    <Row id="top">
+                    <Row id="top" >
                         <Col id="tempSpaceInfo" lg="6" md="4">
-                            <Row className="hrTemp">{Math.round(currentHr.temp)}</Row>
+                            <Row className="hrTemp rounded-circle">{Math.round(currentHr.temp)}</Row>
                         </Col>
-                        <Col id="topRightInfo" lg="6" md="2" >
-                            
+                        <Col id="topRightInfo" lg="6" md="2">
+
                             <Row className="hrWeather">Date: {formattedTime}</Row>
                             <Row className="hrWeather">Feels Like: {Math.round(currentHr.feels_like)}</Row>
                             <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>
@@ -160,15 +160,15 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container }) {
                     </Row>
                     <Row id="bottomInfo">
                         <Col className="bottomCols">
-                            <div lg="4" className="hrWeather flex-column"><div className="title">Humidity:</div><div className="titleText">{currentHr.humidity}%</div></div>
-                            <div lg="4" className="hrWeather flex-column"><div className="title">Cloudiness:</div><div className="titleText">{currentHr.clouds}%</div></div>
+                            <div lg="4" className="hrWeather flex-column mb-xl-5"><div className="title">Humidity:</div><div className="titleText">{currentHr.humidity}%</div></div>
+                            <div lg="4" className="hrWeather flex-column "><div className="title">Cloudiness:</div><div className="titleText">{currentHr.clouds}%</div></div>
                         </Col>
                         <Col className="bottomCols">
-                            <div lg="4" className="hrWeather flex-column"><div className="title">Weather:</div><div className="titleText">{slider[testHr].weather[0].main}</div></div>
+                            <div lg="4" className="hrWeather flex-column mb-xl-5"><div className="title">Weather:</div><div className="titleText">{slider[testHr].weather[0].main}</div></div>
                             <div lg="4" className="hrWeather flex-column"><div className="title">Wind Speed:</div><div className="titleText">{currentHr.wind_speed}</div></div>
                         </Col>
                         <Col className="bottomCols">
-                            <div lg="4" className="hrWeather flex-column"><div className="title">Pressure:</div><div className="titleText">{currentHr.pressure}</div></div>
+                            <div lg="4" className="hrWeather flex-column mb-xl-5"><div className="title">Pressure:</div><div className="titleText">{currentHr.pressure}</div></div>
                             <div lg="4" className="hrWeather flex-column"><div className="title">Visibility:</div><div className="titleText">{currentHr.visibility}</div></div>
                         </Col>
                     </Row>
