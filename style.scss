@@ -134,6 +134,53 @@ nav {
     .weatherContainer{
         background-color: red;
         text-align: center;
+        .topInfo{
+            Col{
+                #topTemp{
+
+                }
+                #topDate{
+
+                }
+            }
+        }
+        .middleInfo{
+            Col{
+                .info{
+
+                }
+                #info1{
+
+                }
+                #info2{
+
+                }
+                #info3{
+
+                }
+            }
+        }
+        .bottomInfo{
+            Col{
+                
+                div{
+                    
+                }
+            }
+            .iconBottom{
+
+            }
+            #icon1{
+
+            }
+            #icon2{
+
+            }
+            #icon3{
+
+            }
+        }
+
     }
     justify-content: space-between;
 
