@@ -109,12 +109,12 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
         }
     }
 
-    function checkUVAlert (){
-            setuviAlertExtr(false);
-            setuviAlert(false);
-        if(currentHr.uvi >= 8){
+    function checkUVAlert() {
+        setuviAlertExtr(false);
+        setuviAlert(false);
+        if (currentHr.uvi >= 8) {
             setuviAlertExtr(true);
-        }else if(currentHr.uvi >= 6){
+        } else if (currentHr.uvi >= 6) {
             setuviAlert(true);
         }
     }
@@ -131,15 +131,21 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
         }
     }
 
-    function showAtmosphere(){
+    const [showContent, setShowContent] = useState({
+        "atmosphere": false,
+        "weather": false,
+        "condition": false
+    })
+    function showAtmosphere() {
 
     }
-    function showWeather(){
+    function showWeather() {
 
     }
-    function showCondition(){
-        
+    function showCondition() {
+
     }
+    console.log(showContent);
     return (
         <>
             <Container id="weatherSection">
@@ -208,7 +214,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                 {sunRiseAlert && <div className="alert">
                                     <div className="alertName">Sunrise Alert</div>
                                     <div className="alertText">{sunRise}</div>
-                                    </div>}
+                                </div>}
                                 {sunSetAlert && <div className="alert">
                                     <div className="alertName">Senset Alert</div>
                                     <div className="alertText">{sunSet}</div>
@@ -226,22 +232,41 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     </Row>
                     <Row className="middleInfo">
                         <Col lg={12}>
-                            <div className="info" id="info1">info 1 </div>
-                            <div className="info" id="info2">info 2</div>
-                            <div className="info" id="info3">info 3</div>
+                            {showContent['atmosphere'] &&
+                                <>
+                                    <div className="info" id="info1">UV: {currentHr.uvi}</div>
+                                    <div className="info" id="info2">Pressure: {currentHr.pressure}</div>
+                                    <div className="info" id="info3">Humidity: {currentHr.humidity}%</div>
+                                </>
+                            }
+                            {showContent['weather'] &&
+                                <>
+                                    <div className="info" id="info1">Weather: {slider[testHr].weather[0].main}</div>
+                                    <div className="info" id="info2">Chance of Rain: {currentHr.pop}</div>
+                                    <div className="info" id="info3">Clouds: {currentHr.clouds}%</div>
+                                </>
+                            }
+                            {showContent['condition'] &&
+                                <>
+                                    <div className="info" id="info1">Visibility: {currentHr.visibility}</div>
+                                    <div className="info" id="info2">Feels Like: {Math.round(currentHr.feels_like)}</div>
+                                    <div className="info" id="info3">Wind Speed: {currentHr.wind_speed}</div>
+                                </>
+                            }
+
                         </Col>
                     </Row>
                     <Row className="bottomInfo">
                         <Col lg="4">
-                            <div id="icon1" className="iconBottom"><FiWind/></div>
+                            <div id="icon1" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': true, 'weather': false }) }}><FiWind /></div>
                             <div>atmosphere</div>
                         </Col>
                         <Col lg="4">
-                            <div id="icon2" className="iconBottom"><TiWeatherSunny/></div>
+                            <div id="icon2" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': false, 'weather': true }) }}><TiWeatherSunny /></div>
                             <div>weather</div>
                         </Col>
                         <Col lg="4">
-                            <div id="icon3" className="iconBottom"><WiDayRainWind/></div>
+                            <div id="icon3" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': true, 'atmosphere': false, 'weather': false }) }}><WiDayRainWind /></div>
                             <div>conditions</div>
                         </Col>
                     </Row>
