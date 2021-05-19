@@ -132,7 +132,7 @@ nav {
     // }
 
     .weatherContainer{
-        background-color: red;
+        background-color: blue;
         text-align: center;
         .topInfo{
             Col{
@@ -141,6 +141,33 @@ nav {
                 }
                 #topDate{
 
+                }
+            }
+            .col-lg-7{
+                .alertBox{
+                    background-color: rgb(189, 217, 230);
+                    height: 100px;
+                    margin: 5px;
+
+                    .alertBoxName{
+                        background-color: rgb(116, 159, 199);
+                        padding: 3px;
+                        text-align: left;
+                        padding-left: 5px;
+                    }
+
+                    .alert{
+                        height: 30px;
+                        margin: 2.5px;
+                        .alertName{
+                            font-size: small;
+                            background-color: slateblue;
+                        }
+                        .alertText{
+                            font-size: smaller;
+                            background-color: white;
+                        }
+                    }
                 }
             }
         }

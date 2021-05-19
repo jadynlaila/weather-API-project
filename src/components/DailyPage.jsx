@@ -19,7 +19,9 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     const [sunRiseAlert, setSunRiseAlert] = useState(false);
     const [sunRise, setsunRise] = useState("")
     const [sunSetAlert, setSunSetAlert] = useState(false);
-    const [sunSet, setsunSet] = useState("")
+    const [sunSet, setsunSet] = useState("");
+    const [uviAlertExtr, setuviAlertExtr] = useState(false);
+    const [uviAlert, setuviAlert] = useState(false)
 
     if (initialStuff == true) {
         getHourStats(0);
@@ -101,11 +103,19 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                 setAnimation("none");
             }
         }
-
-
-
-
     }
+
+    function checkUVAlert (){
+            setuviAlertExtr(false);
+            setuviAlert(false);
+        if(currentHr.uvi >= 8){
+            setuviAlertExtr(true);
+        }else if(currentHr.uvi >= 6){
+            setuviAlert(true);
+        }
+    }
+
+
     function checkForSun(numb) {
         if (numb > 3 && numb < 9) {
             setSunRiseAlert(true)
@@ -146,6 +156,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                         setdayOrNight(false);
                                     }
                                     checkForSun(Number(e.target.value));
+                                    checkUVAlert();
                                 }}
                             />
                         </div>
@@ -173,11 +184,31 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                 </Col>
                 <Col className="weatherContainer rightSide lg-4">
                     <Row className="topInfo">
-                        <Col lg={4}>
+                        <Col lg={5}>
                             <div id="topTemp">temp</div>
                             <div id="topDate">date</div>
                         </Col>
-                        <Col lg={8}>alerts</Col>
+                        <Col lg={7}>
+                            <div className="alertBox">
+                                <div className="alertBoxName">Alerts:</div>
+                                {sunRiseAlert && <div className="alert">
+                                    <div className="alertName">Sunrise Alert</div>
+                                    <div className="alertText">{sunRise}</div>
+                                    </div>}
+                                {sunSetAlert && <div className="alert">
+                                    <div className="alertName">Senset Alert</div>
+                                    <div className="alertText">{sunSet}</div>
+                                </div>}
+                                {uviAlert && <div className="alert" id="uviNormal">
+                                    <div className="alertName">UV Alert</div>
+                                    <div className="alertText">There is a HIGH UV index!</div>
+                                </div>}
+                                {uviAlertExtr && <div className="alert" id="uviExtr">
+                                    <div className="alertName">UV Alert</div>
+                                    <div className="alertText">There is an EXTREMELY HIGH UV index!</div>
+                                </div>}
+                            </div>
+                        </Col>
                     </Row>
                     <Row className="middleInfo">
                         <Col lg={12}>
