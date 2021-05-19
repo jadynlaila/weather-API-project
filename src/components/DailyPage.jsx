@@ -3,6 +3,10 @@ import sunImg from '../images/sun.svg';
 import cloud1 from '../images/cloud1.svg';
 import cloud2 from '../images/cloud2.svg';
 import moonImg from '../images/Moon.svg';
+import { TiWeatherSunny } from 'react-icons/ti';
+import { WiDayRainWind } from 'react-icons/wi';
+import { FiWind } from 'react-icons/fi';
+
 
 
 function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
@@ -19,7 +23,9 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     const [sunRiseAlert, setSunRiseAlert] = useState(false);
     const [sunRise, setsunRise] = useState("")
     const [sunSetAlert, setSunSetAlert] = useState(false);
-    const [sunSet, setsunSet] = useState("")
+    const [sunSet, setsunSet] = useState("");
+    const [uviAlertExtr, setuviAlertExtr] = useState(false);
+    const [uviAlert, setuviAlert] = useState(false)
 
     if (initialStuff == true) {
         getHourStats(0);
@@ -101,25 +107,43 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                 setAnimation("none");
             }
         }
+    }
 
-        
+    function checkUVAlert (){
+            setuviAlertExtr(false);
+            setuviAlert(false);
+        if(currentHr.uvi >= 8){
+            setuviAlertExtr(true);
+        }else if(currentHr.uvi >= 6){
+            setuviAlert(true);
+        }
+    }
 
+
+    function checkForSun(numb) {
+        if (numb > 3 && numb < 9) {
+            setSunRiseAlert(true)
+        } else if (numb > 16 && numb < 22) {
+            setSunSetAlert(true)
+        } else {
+            setSunSetAlert(false);
+            setSunRiseAlert(false);
+        }
+    }
+
+    function showAtmosphere(){
 
     }
-        function checkForSun (numb) {
-                if(numb > 3 && numb < 9){
-                    setSunRiseAlert(true)
-                }else if(numb > 16 && numb < 22){
-                    setSunSetAlert(true)
-                }else{
-                    setSunSetAlert(false);
-                    setSunRiseAlert(false);
-                }
-            }
+    function showWeather(){
+
+    }
+    function showCondition(){
+        
+    }
     return (
         <>
             <Container id="weatherSection">
-                <Row id="leftSide">
+                <Col id="leftSide" lg="8">
                     <div id="weatherAnimation" className="weatherAnimation">
                     </div>
                     <div id="weatherSlider" className="weatherSlider">
@@ -146,13 +170,14 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                         setdayOrNight(false);
                                     }
                                     checkForSun(Number(e.target.value));
-                }} 
-                />
-            </div>
-        </div>
+                                    checkUVAlert();
+                                }}
+                            />
+                        </div>
+                    </div>
 
-                {dayOrNight ?
-                    (<Row className="imageAnimator">
+                    {dayOrNight ?
+                        (<Row>
                         <Col className="imageContain" id="img" src={sunImg} > 
                             {animation? 
                             <div className="wrap">
@@ -173,11 +198,78 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                 ''
                             }
                         </Col>
-                    </Row>)
-                }
-                
-                </Row>
-                <Row id="shortWeatherInfo" className="shortWeatherInfo" >
+                        </Row>)
+                    }
+
+                </Col>
+                <Col className="weatherContainer rightSide lg-4">
+                    <Row className="topInfo">
+                        <Col lg={5}>
+                            <div id="topTemp">{Math.round(currentHr.temp)}</div>
+                            <div id="topDate">{formattedTime}</div>
+                        </Col>
+                        <Col lg={7}>
+                            <div className="alertBox">
+                                <div className="alertBoxName">Alerts:</div>
+                                {sunRiseAlert && <div className="alert">
+                                    <div className="alertName">Sunrise Alert</div>
+                                    <div className="alertText">{sunRise}</div>
+                                    </div>}
+                                {sunSetAlert && <div className="alert">
+                                    <div className="alertName">Senset Alert</div>
+                                    <div className="alertText">{sunSet}</div>
+                                </div>}
+                                {uviAlert && <div className="alert" id="uviNormal">
+                                    <div className="alertName">UV Alert</div>
+                                    <div className="alertText">There is a HIGH UV index!</div>
+                                </div>}
+                                {uviAlertExtr && <div className="alert" id="uviExtr">
+                                    <div className="alertName">UV Alert</div>
+                                    <div className="alertText">There is an EXTREMELY HIGH UV index!</div>
+                                </div>}
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className="middleInfo">
+                        <Col lg={12}>
+                            <div className="info" id="info1">info 1 </div>
+                            <div className="info" id="info2">info 2</div>
+                            <div className="info" id="info3">info 3</div>
+                        </Col>
+                    </Row>
+                    <Row className="bottomInfo">
+                        <Col lg="4">
+                            <div id="icon1" className="iconBottom"><FiWind/></div>
+                            <div>atmosphere</div>
+                        </Col>
+                        <Col lg="4">
+                            <div id="icon2" className="iconBottom"><TiWeatherSunny/></div>
+                            <div>weather</div>
+                        </Col>
+                        <Col lg="4">
+                            <div id="icon3" className="iconBottom"><WiDayRainWind/></div>
+                            <div>conditions</div>
+                        </Col>
+                    </Row>
+                </Col>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* <Row id="shortWeatherInfo" className="shortWeatherInfo" >
                     <Row id="top" >
                         <Col id="tempSpaceInfo" lg="6" md="4">
                             <Row className="hrTemp rounded-circle">{Math.round(currentHr.temp)}</Row>
@@ -187,7 +279,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                             {sunSetAlert && <Row className="alertText">Sunset at: {sunSet}</Row>}
                         </Col>
                         <Col id="topRightInfo" lg="6" md="2" >
-                            
+
                             <Row className="hrWeather">Date: {formattedTime}</Row>
                             <Row className="hrWeather">Feels Like: {Math.round(currentHr.feels_like)}</Row>
                             <Row className="hrWeather">Chance of Rain: {currentHr.pop}</Row>
@@ -209,7 +301,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                             <div lg="4" className="hrWeather flex-column"><div className="title">Visibility:</div><div className="titleText">{currentHr.visibility}</div></div>
                         </Col>
                     </Row>
-                </Row>
+                </Row> */}
 
 
                 {/* </div> */}

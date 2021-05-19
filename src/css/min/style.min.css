@@ -84,85 +84,68 @@ nav .navContainer #humid:hover {
           justify-content: space-between;
 }
 
-#weatherSection .shortWeatherInfo {
-  background-color: lightsteelblue;
-  height: 115%;
-  width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0;
-}
-
-#weatherSection .shortWeatherInfo #top {
-  border-bottom: solid black 1px;
-}
-
-#weatherSection .shortWeatherInfo #top .hrTemp {
-  font-size: 90px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  margin: auto 0;
+#weatherSection .weatherContainer {
   background-color: blue;
-  color: white;
+  text-align: center;
 }
 
-#weatherSection .shortWeatherInfo #top #tempSpaceInfo {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-#weatherSection .shortWeatherInfo #top #topRightInfo {
-  -ms-grid-column-align: left;
-      justify-self: left;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-#weatherSection .shortWeatherInfo #top .hrWeather {
-  background-color: steelblue;
-  color: white;
+#weatherSection .weatherContainer .topInfo {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 10%;
 }
 
-#weatherSection .shortWeatherInfo #bottomInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
+#weatherSection .weatherContainer .topInfo #topTemp {
+  font-size: 4.5rem;
 }
 
-#weatherSection .shortWeatherInfo #bottomInfo .hrWeather {
-  background-color: #dfedff;
-  color: white;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+#weatherSection .weatherContainer .topInfo #topDate {
+  font-size: 1rem;
 }
 
-#weatherSection .shortWeatherInfo #bottomInfo .title {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  font-size: 1.3rem;
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox {
+  background-color: #bdd9e6;
+  height: 100px;
+  margin: 5px;
 }
 
-#weatherSection .shortWeatherInfo #bottomInfo .titleText {
-  text-align: center;
-  padding: 0;
-  margin: 0;
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertBoxName {
+  background-color: #749fc7;
+  padding: 3px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alert {
+  height: 30px;
+  margin: 2.5px;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alert .alertName {
+  font-size: small;
+  background-color: slateblue;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alert .alertText {
+  font-size: smaller;
+  background-color: white;
+}
+
+#weatherSection .weatherContainer .middleInfo {
+  margin-bottom: 5%;
+}
+
+#weatherSection .weatherContainer .middleInfo .info {
+  font-size: 45px;
+}
+
+#weatherSection .weatherContainer .bottomInfo div {
+  font-size: 10px;
+}
+
+#weatherSection .weatherContainer .bottomInfo .iconBottom {
+  font-size: 3rem;
 }
 
 #weatherSection #img {
