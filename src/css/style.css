@@ -98,6 +98,7 @@ nav .navContainer #humid:hover {
   background-color: #bdd9e6;
   height: 100px;
   margin: 5px;
+  border-radius: 3px;
 }
 
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertBoxName {
@@ -105,21 +106,23 @@ nav .navContainer #humid:hover {
   padding: 3px;
   text-align: left;
   padding-left: 5px;
+  border-radius: 3px 3px 0px 0px;
+  z-index: 5;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alert {
-  height: 30px;
-  margin: 2.5px;
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert {
+  overflow-y: scroll;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alert .alertName {
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .alertName {
   font-size: small;
   background-color: slateblue;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alert .alertText {
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .alertText {
   font-size: smaller;
   background-color: white;
+  border: 1px black solid;
 }
 
 #weatherSection .weatherContainer .middleInfo {

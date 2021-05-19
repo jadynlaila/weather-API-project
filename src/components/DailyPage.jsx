@@ -205,22 +205,24 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                         <Col lg={7}>
                             <div className="alertBox">
                                 <div className="alertBoxName">Alerts:</div>
-                                {sunRiseAlert && <div className="alert">
-                                    <div className="alertName">Sunrise Alert</div>
-                                    <div className="alertText">{sunRise}</div>
+                                <div className="alertMessages">
+                                    {sunRiseAlert && <div className="alert">
+                                        <div className="alertName">Sunrise Alert</div>
+                                        <div className="alertText">{sunRise}</div>
+                                        </div>}
+                                    {sunSetAlert && <div className="alert">
+                                        <div className="alertName">Senset Alert</div>
+                                        <div className="alertText">{sunSet}</div>
                                     </div>}
-                                {sunSetAlert && <div className="alert">
-                                    <div className="alertName">Senset Alert</div>
-                                    <div className="alertText">{sunSet}</div>
-                                </div>}
-                                {uviAlert && <div className="alert" id="uviNormal">
-                                    <div className="alertName">UV Alert</div>
-                                    <div className="alertText">There is a HIGH UV index!</div>
-                                </div>}
-                                {uviAlertExtr && <div className="alert" id="uviExtr">
-                                    <div className="alertName">UV Alert</div>
-                                    <div className="alertText">There is an EXTREMELY HIGH UV index!</div>
-                                </div>}
+                                    {uviAlert && <div className="alert" id="uviNormal">
+                                        <div className="alertName">UV Alert</div>
+                                        <div className="alertText">There is a HIGH UV index!</div>
+                                    </div>}
+                                    {uviAlertExtr && <div className="alert" id="uviExtr">
+                                        <div className="alertName">UV Alert</div>
+                                        <div className="alertText">There is an EXTREMELY HIGH UV index!</div>
+                                    </div>}
+                                </div>
                             </div>
                         </Col>
                     </Row>
