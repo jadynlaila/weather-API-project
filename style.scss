@@ -306,3 +306,41 @@ nav {
         }
     }
 }
+
+.imageContain{
+    display: flex;
+    justify-content: center;
+    .wrap{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.185);
+        border-radius: 20px;
+        padding: {
+            top: 10px;
+            bottom: 10px;
+        };
+        .bgImg{
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            transition: .4s ease-in-out;
+            top: 0px;
+            bottom: 0px;
+            opacity: 100%;
+        }
+        #sunHide{
+            top: 300px;
+            opacity: 0%;
+        }
+        #moon{
+            top: -280px;
+        }
+        #moonHide{
+            opacity: 0%;
+        }
+    }
+}

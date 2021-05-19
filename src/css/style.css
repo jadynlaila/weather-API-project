@@ -390,4 +390,50 @@ nav .navContainer #humid:hover {
   font-size: 30px;
   text-align: center;
 }
+
+.imageContain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.imageContain .wrap {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.185);
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.imageContain .wrap .bgImg {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  top: 0px;
+  bottom: 0px;
+  opacity: 100%;
+}
+
+.imageContain .wrap #sunHide {
+  top: 300px;
+  opacity: 0%;
+}
+
+.imageContain .wrap #moon {
+  top: -280px;
+}
+
+.imageContain .wrap #moonHide {
+  opacity: 0%;
+}
 /*# sourceMappingURL=style.css.map */

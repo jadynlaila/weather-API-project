@@ -88,7 +88,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                 }
             }
             if (firstRange == true && secondRange == false) {
-                console.log(`it went from day to night`);
+                console.log("it went from day to night");
                 setAnimation("dayToNight");
             } else if (firstRange == true && secondRange == true) {
                 console.log("NO CHANGE DAY");
@@ -152,23 +152,29 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
         </div>
 
                 {dayOrNight ?
-                    (<Row>
-                        <Col id="img" src={sunImg} > 
-                            {animation ? 
-                                <div id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`, transition:".5s"}}></div>:
-                                <div id="img" src={sunImg} style={{backgroundImage: `url('${sunImg}')`, transition:"none"}}></div>
+                    (<Row className="imageAnimator">
+                        <Col className="imageContain" id="img" src={sunImg} > 
+                            {animation? 
+                            <div className="wrap">
+                                <div className="bgImg" id="sun" style={{backgroundImage: `url('${sunImg}')`}}></div>
+                                <div className="bgImg" id="moonHide" style={{backgroundImage: `url('${moonImg}')`}}></div>
+                            </div>:
+                                ''
                             }
                         </Col>
                     </Row>) :
-                    (<Row>
-                        <Col id="img" src={cloud1} alt="moon Image">
-                            {animation ? 
-                                <div id="img" style={{backgroundImage: `url('${moonImg}')`, transition:".5s", zIndex: "-10"}}></div>:
-                                <div id="img" style={{backgroundImage: `url('${moonImg}')`, transition:"none", zIndex: "-10"}}></div>
+                    (<Row className="imageAnimator">
+                        <Col className="imageContain" id="img" src={moonImg}  > 
+                        {animation? 
+                            <div className="wrap">
+                                <div className="bgImg" id="sunHide" style={{backgroundImage: `url('${sunImg}')`}}></div>
+                                <div className="bgImg" id="moon" style={{backgroundImage: `url('${moonImg}')`}}></div>
+                            </div>:
+                                ''
                             }
                         </Col>
                     </Row>)
-                }   
+                }
                 
                 </Row>
                 <Row id="shortWeatherInfo" className="shortWeatherInfo" >
