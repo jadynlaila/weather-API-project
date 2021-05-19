@@ -4,9 +4,8 @@ import JSON from '../weather.json'
 const WeeklyPage = ({}) => {
     const [counter, setCounter] = useState(0)
     const [date, setDate] = useState([`Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`, `Sunday`]);
-    const [box1, setBox1] = useState(true);
-    const [box2, setBox2] = useState(true);
-    const [box3, setBox3] = useState(true);
+    const [subDis, setSubDis] = useState(1);
+    const [bottomCount, setBottomCount] = useState(0);
 
     const timeStamp = JSON.daily[counter].dt;
     const dateObj = new Date(timeStamp * 1000);
@@ -15,63 +14,133 @@ const WeeklyPage = ({}) => {
     const day = dateObj.getUTCDay().toString().padStart(2,0)
     const info = JSON.daily;
 
-    function checkBox(num){
-        if(num > 5){
-            setBox1(false);
-        }else{
-            setBox1(true);
-        }
-
-        if(num > 4){
-            setBox2(false);
-        }else{
-            setBox2(true);
-        }
-
-        if(num > 3){
-            setBox3(false);
-        }
-        else{
-            setBox3(true);
-        }
-    }
-
     return (
         <>
             <div className="container">
                     <div className="arrows">
-                        <div onClick={() => counter != 0 ? (setCounter(counter - 1), console.log(box1), document.getElementById('arrowDown').style.opacity = '100%', checkBox(counter)) : (document.getElementById('arrowUp').style.opacity = '50%', checkBox(counter))} className="arrowUp" id="arrowUp"></div>
-                        <div onClick={() => counter != 7 ? (setCounter(counter + 1), console.log(box1), document.getElementById('arrowUp').style.opacity = '100%', checkBox(counter)) : (document.getElementById('arrowDown').style.opacity = '50%', checkBox(counter))} className="arrowDown" id="arrowDown"></div>
+                        <div onClick={() => counter != 0 ? (setCounter(counter - 1), setBottomCount(bottomCount - 120), setSubDis(subDis - 1), document.getElementById('arrowDown').style.opacity = '100%') : (document.getElementById('arrowUp').style.opacity = '50%')} className="arrowUp" id="arrowUp"></div>
+                        <div onClick={() => counter != 7 ? (setCounter(counter + 1), setBottomCount(bottomCount + 120), setSubDis(subDis + 1), document.getElementById('arrowUp').style.opacity = '100%') : (document.getElementById('arrowDown').style.opacity = '50%')} className="arrowDown" id="arrowDown"></div>
                     </div>
                     <div className="weatherInfo">
-                        <div className="current">
+                        {subDis == 1 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `0px`}}>
                             <div className="tempImg"></div>
-                            <div className="high">H: {info[counter].temp.max}</div>
-                            <div className="low">L: {info[counter].temp.min}</div>
-                            <div className="weatherType">The day will be {info[counter].weather[0].main}</div>
-                            <div className="weekDay">{date[counter]}</div>
-                        </div>
-                        {box1 ? 
-                            <div className="sub">
+                            <div className="high">H: {info[0].temp.max}</div>
+                            <div className="low">L: {info[0].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[0]}</div>
+                        </div> : subDis != 1 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
                             <div className="tempImg"></div>
-                            <div className="high">Hight: {info[counter + 1].temp.max}</div>
-                            <div className="low">Low: {info[counter + 1].temp.min}</div>
-                            <div className="weekDay">{date[counter + 1]}</div>
-                        </div> : ''}
-                        {box2 ? 
-                            <div className="sub">
+                            <div className="high">Hight: {info[0].temp.max}</div>
+                            <div className="low">Low: {info[0].temp.min}</div>
+                        </div> : ''
+                    }
+
+                        {subDis == 2 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `${bottomCount}px`}}>
                             <div className="tempImg"></div>
-                            <div className="high">Hight: {info[counter + 2].temp.max}</div>
-                            <div className="low">Low: {info[counter + 2].temp.min}</div>
-                            <div className="weekDay">{date[counter + 2]}</div>
-                        </div> : ''}
-                        {box3 ? 
-                            <div className="sub">
+                            <div className="high">H: {info[1].temp.max}</div>
+                            <div className="low">L: {info[1].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[1]}</div>
+                        </div> : subDis != 2 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
                             <div className="tempImg"></div>
-                            <div className="high">Hight: {info[counter + 3].temp.max}</div>
-                            <div className="low">Low: {info[counter + 3].temp.min}</div>
-                            <div className="weekDay">{date[counter + 3]}</div>
-                        </div> : ''}
+                            <div className="high">H: {info[1].temp.max}</div>
+                            <div className="low">L: {info[1].temp.min}</div>
+                        </div> : ''
+                        }
+
+                        {subDis == 3 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[2].temp.max}</div>
+                            <div className="low">L: {info[2].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[2]}</div>
+                        </div> : subDis != 3 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[2].temp.max}</div>
+                            <div className="low">L: {info[2].temp.min}</div>
+                        </div> : ''
+                        }
+
+                        {subDis == 4 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[3].temp.max}</div>
+                            <div className="low">L: {info[3].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[3]}</div>
+                        </div> : subDis != 4 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[3].temp.max}</div>
+                            <div className="low">L: {info[3].temp.min}</div>
+                        </div> : ''
+                        }
+
+                        {subDis == 5 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[4].temp.max}</div>
+                            <div className="low">L: {info[4].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[4]}</div>
+                        </div> : subDis != 5 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[4].temp.max}</div>
+                            <div className="low">L: {info[4].temp.min}</div>
+                        </div> : ''
+                        }
+
+                        {subDis == 6 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[5].temp.max}</div>
+                            <div className="low">L: {info[5].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[5]}</div>
+                        </div> : subDis != 6 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[5].temp.max}</div>
+                            <div className="low">L: {info[5].temp.min}</div>
+                        </div> : ''
+                        }
+
+                        {subDis == 7 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[6].temp.max}</div>
+                            <div className="low">L: {info[6].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[6]}</div>
+                        </div> : subDis != 7 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[6].temp.max}</div>
+                            <div className="low">L: {info[6].temp.min}</div>
+                        </div> : ''
+                        }
+
+                        {subDis == 8 ?
+                        <div className="weeklyWeather" id="subOff" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[7].temp.max}</div>
+                            <div className="low">L: {info[7].temp.min}</div>
+                            <div className="weatherType">The day will be {info[0].weather[0].main}</div>
+                            <div className="weekDay">{date[7]}</div>
+                        </div> : subDis != 8 ?
+                        <div className="weeklyWeather" id="subOn" style={{bottom: `${bottomCount}px`}}>
+                            <div className="tempImg"></div>
+                            <div className="high">H: {info[7].temp.max}</div>
+                            <div className="low">L: {info[7].temp.min}</div>
+                        </div> : ''
+                        }
                     </div>
             </div>
         </>
