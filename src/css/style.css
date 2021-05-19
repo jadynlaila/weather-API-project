@@ -81,6 +81,19 @@ nav .navContainer #humid:hover {
   text-align: center;
 }
 
+#weatherSection .weatherContainer .topInfo {
+  justify-content: center;
+  margin-bottom: 10%;
+}
+
+#weatherSection .weatherContainer .topInfo #topTemp {
+  font-size: 4.5rem;
+}
+
+#weatherSection .weatherContainer .topInfo #topDate {
+  font-size: 1rem;
+}
+
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox {
   background-color: #bdd9e6;
   height: 100px;
@@ -107,6 +120,22 @@ nav .navContainer #humid:hover {
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alert .alertText {
   font-size: smaller;
   background-color: white;
+}
+
+#weatherSection .weatherContainer .middleInfo {
+  margin-bottom: 5%;
+}
+
+#weatherSection .weatherContainer .middleInfo .info {
+  font-size: 45px;
+}
+
+#weatherSection .weatherContainer .bottomInfo div {
+  font-size: 10px;
+}
+
+#weatherSection .weatherContainer .bottomInfo .iconBottom {
+  font-size: 3rem;
 }
 
 #weatherSection #img {

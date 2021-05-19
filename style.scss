@@ -135,14 +135,14 @@ nav {
         background-color: blue;
         text-align: center;
         .topInfo{
-            Col{
-                #topTemp{
-
-                }
-                #topDate{
-
-                }
-            }
+            justify-content: center;
+            #topTemp{
+                font-size: 4.5rem;
+            }   
+            #topDate{
+                font-size: 1rem;
+            }   
+            margin-bottom: 10%;
             .col-lg-7{
                 .alertBox{
                     background-color: rgb(189, 217, 230);
@@ -172,8 +172,8 @@ nav {
             }
         }
         .middleInfo{
-            Col{
                 .info{
+                    font-size: 45px;
 
                 }
                 #info1{
@@ -185,27 +185,18 @@ nav {
                 #info3{
 
                 }
-            }
+            margin-bottom: 5%;
         }
         .bottomInfo{
-            Col{
                 
                 div{
-                    
+                        font-size: 10px;
                 }
-            }
+            
             .iconBottom{
-
+                font-size: 3rem;
             }
-            #icon1{
-
-            }
-            #icon2{
-
-            }
-            #icon3{
-
-            }
+           
         }
 
     }

@@ -3,6 +3,10 @@ import sunImg from '../images/sun.svg';
 import cloud1 from '../images/cloud1.svg';
 import cloud2 from '../images/cloud2.svg';
 import moonImg from '../images/Moon.svg';
+import { TiWeatherSunny } from 'react-icons/ti';
+import { WiDayRainWind } from 'react-icons/wi';
+import { FiWind } from 'react-icons/fi';
+
 
 
 function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
@@ -126,6 +130,16 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
             setSunRiseAlert(false);
         }
     }
+
+    function showAtmosphere(){
+
+    }
+    function showWeather(){
+
+    }
+    function showCondition(){
+        
+    }
     return (
         <>
             <Container id="weatherSection">
@@ -185,8 +199,8 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                 <Col className="weatherContainer rightSide lg-4">
                     <Row className="topInfo">
                         <Col lg={5}>
-                            <div id="topTemp">temp</div>
-                            <div id="topDate">date</div>
+                            <div id="topTemp">{Math.round(currentHr.temp)}</div>
+                            <div id="topDate">{formattedTime}</div>
                         </Col>
                         <Col lg={7}>
                             <div className="alertBox">
@@ -219,15 +233,15 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     </Row>
                     <Row className="bottomInfo">
                         <Col lg="4">
-                            <div id="icon1" className="iconBottom">icon</div>
+                            <div id="icon1" className="iconBottom"><FiWind/></div>
                             <div>atmosphere</div>
-                            </Col>
+                        </Col>
                         <Col lg="4">
-                            <div id="icon2" className="iconBottom">icon</div>
+                            <div id="icon2" className="iconBottom"><TiWeatherSunny/></div>
                             <div>weather</div>
                         </Col>
                         <Col lg="4">
-                            <div id="icon3" className="iconBottom">icon</div>
+                            <div id="icon3" className="iconBottom"><WiDayRainWind/></div>
                             <div>conditions</div>
                         </Col>
                     </Row>
