@@ -72,64 +72,68 @@ nav {
 
     font-family: monospace;
 
-    .shortWeatherInfo {
-        background-color: lightsteelblue;
-        height: 115%;
-        width: 60%;
-        display: flex;
-        justify-content: center;
-        margin: 0;
+    // .shortWeatherInfo {
+    //     background-color: lightsteelblue;
+    //     height: 115%;
+    //     width: 60%;
+    //     display: flex;
+    //     justify-content: center;
+    //     margin: 0;
 
-        #top {
-            border-bottom: solid black 1px;
-            .hrTemp {
-                font-size: 90px;
-                justify-content: center;
-                padding: 0;
-                align-content: center;
-                margin: auto 0;
-                background-color: blue;
-                color: white;
-            }
-            #tempSpaceInfo {
-                align-self: center;
-            }
+    //     #top {
+    //         border-bottom: solid black 1px;
+    //         .hrTemp {
+    //             font-size: 90px;
+    //             justify-content: center;
+    //             padding: 0;
+    //             align-content: center;
+    //             margin: auto 0;
+    //             background-color: blue;
+    //             color: white;
+    //         }
+    //         #tempSpaceInfo {
+    //             align-self: center;
+    //         }
             
-            #topRightInfo {
-                justify-self: left;
-                align-self: center;
-            }
-            .hrWeather {
-                background-color: steelblue;
-                color: white;
-                justify-content: center;
-            }
-        }
+    //         #topRightInfo {
+    //             justify-self: left;
+    //             align-self: center;
+    //         }
+    //         .hrWeather {
+    //             background-color: steelblue;
+    //             color: white;
+    //             justify-content: center;
+    //         }
+    //     }
 
-        #bottomInfo {
-            display: flex;
-            align-content: center;
-            .hrWeather {
-                background-color: rgb(223, 237, 255);
-                color: white;
-                justify-content: center;
-            }
+    //     #bottomInfo {
+    //         display: flex;
+    //         align-content: center;
+    //         .hrWeather {
+    //             background-color: rgb(223, 237, 255);
+    //             color: white;
+    //             justify-content: center;
+    //         }
 
-            .title {
-                text-align: center;
-                padding: 0;
-                margin: 0;
-                font-size: 1.3rem;
-            }
+    //         .title {
+    //             text-align: center;
+    //             padding: 0;
+    //             margin: 0;
+    //             font-size: 1.3rem;
+    //         }
 
-            .titleText {
-                text-align: center;
-                padding: 0;
-                margin: 0;
-            }
-        }
+    //         .titleText {
+    //             text-align: center;
+    //             padding: 0;
+    //             margin: 0;
+    //         }
+    //     }
+    // }
+
+    .weatherContainer{
+        background-color: red;
+        text-align: center;
     }
-
     justify-content: space-between;
 
     #img {
