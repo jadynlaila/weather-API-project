@@ -3,6 +3,10 @@ import sunImg from '../images/sun.svg';
 import cloud1 from '../images/cloud1.svg';
 import cloud2 from '../images/cloud2.svg';
 import moonImg from '../images/Moon.svg';
+import { TiWeatherSunny } from 'react-icons/ti';
+import { WiDayRainWind } from 'react-icons/wi';
+import { FiWind } from 'react-icons/fi';
+
 
 
 function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
@@ -19,8 +23,8 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     const [sunRiseAlert, setSunRiseAlert] = useState(false);
     const [sunRise, setsunRise] = useState("")
     const [sunSetAlert, setSunSetAlert] = useState(false);
-    const [sunSet, setsunSet] = useState("")
-
+    const [sunSet, setsunSet] = useState("");
+    
     if (initialStuff == true) {
         getHourStats(0);
         setInitialStuff(false);
@@ -116,6 +120,16 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
             setSunRiseAlert(false);
         }
     }
+
+    function showAtmosphere(){
+
+    }
+    function showWeather(){
+
+    }
+    function showCondition(){
+        
+    }
     return (
         <>
             <Container id="weatherSection">
@@ -173,11 +187,14 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                 </Col>
                 <Col className="weatherContainer rightSide lg-4">
                     <Row className="topInfo">
-                        <Col lg={4}>
-                            <div id="topTemp">temp</div>
-                            <div id="topDate">date</div>
+                        <Col lg={5}>
+                            <div className="">
+                                <div id="topTemp">{Math.round(currentHr.temp)}</div>
+                                <div id="topDate">{formattedTime}</div>
+                            </div>
+
                         </Col>
-                        <Col lg={8}>alerts</Col>
+                        <Col lg={7}>alerts</Col>
                     </Row>
                     <Row className="middleInfo">
                         <Col lg={12}>
@@ -188,15 +205,15 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     </Row>
                     <Row className="bottomInfo">
                         <Col lg="4">
-                            <div id="icon1" className="iconBottom">icon</div>
+                            <div id="icon1" className="iconBottom"><FiWind/></div>
                             <div>atmosphere</div>
-                            </Col>
+                        </Col>
                         <Col lg="4">
-                            <div id="icon2" className="iconBottom">icon</div>
+                            <div id="icon2" className="iconBottom"><TiWeatherSunny/></div>
                             <div>weather</div>
                         </Col>
                         <Col lg="4">
-                            <div id="icon3" className="iconBottom">icon</div>
+                            <div id="icon3" className="iconBottom"><WiDayRainWind/></div>
                             <div>conditions</div>
                         </Col>
                     </Row>

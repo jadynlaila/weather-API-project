@@ -67,7 +67,6 @@ nav {
 }
 
 #weatherSection {
-
     // rgb(223, 237, 255)
     display: flex;
 
@@ -95,7 +94,7 @@ nav {
     //         #tempSpaceInfo {
     //             align-self: center;
     //         }
-            
+
     //         #topRightInfo {
     //             justify-self: left;
     //             align-self: center;
@@ -131,56 +130,41 @@ nav {
     //     }
     // }
 
-    .weatherContainer{
+    .weatherContainer {
         background-color: red;
         text-align: center;
-        .topInfo{
-            Col{
-                #topTemp{
+        .topInfo {
+            justify-content: center;
+            #topTemp {
+                font-size: 4.5rem;
+            }
+            #topDate {
+                font-size: 1rem;
+            }
+            margin-bottom: 10%;
+        }
+        .middleInfo {
+            .info {
+                font-size: 45px;
+            }
+            #info1 {
+            }
+            #info2 {
+            }
+            #info3 {
+            }
+            margin-bottom: 5%;
+        }
+        .bottomInfo {
+            div {
+                font-size: 10px;
+            }
 
-                }
-                #topDate{
-
-                }
+            .iconBottom {
+                font-size: 3rem;
+    
             }
         }
-        .middleInfo{
-            Col{
-                .info{
-
-                }
-                #info1{
-
-                }
-                #info2{
-
-                }
-                #info3{
-
-                }
-            }
-        }
-        .bottomInfo{
-            Col{
-                
-                div{
-                    
-                }
-            }
-            .iconBottom{
-
-            }
-            #icon1{
-
-            }
-            #icon2{
-
-            }
-            #icon3{
-
-            }
-        }
-
     }
     justify-content: space-between;
 
@@ -205,14 +189,11 @@ nav {
     }
 }
 
-
-
-
-@media (max-width: 576px){
-    nav{
+@media (max-width: 576px) {
+    nav {
         position: relative;
         z-index: 100;
-        .navContainer{
+        .navContainer {
             width: 100%;
             .link {
                 &:hover {
@@ -268,14 +249,14 @@ nav {
     }
     .weatherInfo {
         width: 100%;
-        .weeklyWeather{
+        .weeklyWeather {
             transition: 0.3s ease-in-out;
             bottom: 10px;
             position: relative;
             z-index: -100;
             // margin-top: 15px;
             // margin-bottom: 15px;
-            .tempImg{
+            .tempImg {
                 grid-column: 1 / 2;
                 grid-row: 1 / 3;
                 background-image: url(../images/sun.svg);
@@ -288,7 +269,7 @@ nav {
                     transform: rotate(360deg);
                 }
             }
-            &#subOff{
+            &#subOff {
                 height: 120px;
                 width: 100%;
                 margin-left: 15px;
@@ -299,7 +280,7 @@ nav {
                 grid-template-columns: 25% 25% 25% 25%;
                 grid-template-rows: 50% 50%;
                 overflow: hidden;
-                .high{
+                .high {
                     grid-column: 2 / 3;
                     grid-row: 1 / 2;
                     font-weight: 1;
@@ -307,7 +288,7 @@ nav {
                     text-align: left;
                     color: white;
                 }
-                .low{
+                .low {
                     grid-column: 3 / 4;
                     grid-row: 1 / 2;
                     font-weight: 1;
@@ -315,7 +296,7 @@ nav {
                     text-align: left;
                     color: white;
                 }
-                .weekDay{
+                .weekDay {
                     grid-column: 2 / 3;
                     grid-row: 2 / 3;
                     font-weight: 1;
@@ -323,7 +304,7 @@ nav {
                     text-align: left;
                     color: white;
                 }
-                .weatherType{
+                .weatherType {
                     grid-column: 4 / 5;
                     grid-row: 1 / 3;
                     font-weight: 1;
@@ -332,7 +313,7 @@ nav {
                     color: white;
                 }
             }
-            &#subOn{
+            &#subOn {
                 overflow: hidden;
                 height: 120px;
                 width: 60%;
@@ -343,12 +324,12 @@ nav {
                 display: grid;
                 grid-template-columns: 30% 70%;
                 grid-template-rows: 50%;
-                .high{
+                .high {
                     color: white;
                     font-size: 30px;
                     text-align: center;
                 }
-                .low{
+                .low {
                     color: white;
                     font-size: 30px;
                     text-align: center;

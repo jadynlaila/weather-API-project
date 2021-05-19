@@ -89,6 +89,37 @@ nav .navContainer #humid:hover {
   text-align: center;
 }
 
+#weatherSection .weatherContainer .topInfo {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10%;
+}
+
+#weatherSection .weatherContainer .topInfo #topTemp {
+  font-size: 4.5rem;
+}
+
+#weatherSection .weatherContainer .topInfo #topDate {
+  font-size: 1rem;
+}
+
+#weatherSection .weatherContainer .middleInfo {
+  margin-bottom: 5%;
+}
+
+#weatherSection .weatherContainer .middleInfo .info {
+  font-size: 45px;
+}
+
+#weatherSection .weatherContainer .bottomInfo div {
+  font-size: 10px;
+}
+
+#weatherSection .weatherContainer .bottomInfo .iconBottom {
+  font-size: 3rem;
+}
+
 #weatherSection #img {
   background-position: center;
   height: 300px;
