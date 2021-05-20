@@ -195,6 +195,10 @@ nav .navContainer #humid:hover {
   text-align: center;
 }
 
+#MoreInfoPage .moreInfoTitle {
+  font-size: 20px;
+}
+
 @media (max-width: 576px) {
   nav {
     position: relative;

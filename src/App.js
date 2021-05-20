@@ -12,6 +12,7 @@ import secondCloud from "./images/cloud2.svg"
 const App = () => {
   const [showWeekly, setShowWeekly] = useState(false);
   const [showDaily, setShowDaily] = useState(true);
+  const [moreInfoPage, setMoreInfoPage] = useState(false);
   return (
     <>
       <Navigation onShowDaily={() =>{
@@ -31,6 +32,7 @@ const App = () => {
       {/* { showDaily && <img src={SunIcon} alt="no image" />} */}
       { showWeekly && <WeeklyPage/>}
       {/* <Button as="input" type="submit" value="Submit" />{' '} */}
+
     </>
   )
 }
