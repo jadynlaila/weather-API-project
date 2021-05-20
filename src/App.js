@@ -12,6 +12,7 @@ import secondCloud from "./images/cloud2.svg"
 const App = () => {
   const [showWeekly, setShowWeekly] = useState(false);
   const [showDaily, setShowDaily] = useState(true);
+  
   return (
     <>
       <Navigation onShowDaily={() =>{
