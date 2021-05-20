@@ -93,7 +93,6 @@ nav .navContainer #humid:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 10%;
 }
 
 #weatherSection .weatherContainer .topInfo #topTemp {
@@ -105,6 +104,7 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox {
+  text-align: left;
   background-color: #bdd9e6;
   height: 100px;
   margin: 5px;
@@ -113,26 +113,58 @@ nav .navContainer #humid:hover {
 
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertBoxName {
   background-color: #749fc7;
-  padding: 3px;
+  padding: 2px;
   text-align: left;
   padding-left: 5px;
   border-radius: 3px 3px 0px 0px;
   z-index: 5;
+  color: white;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages {
+  margin-top: 0;
 }
 
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert {
-  overflow-y: scroll;
+  height: 70px;
+  padding: 3px;
 }
 
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .alertName {
-  font-size: small;
-  background-color: slateblue;
+  font-size: 14px;
+  background-color: #76a6e4;
+  padding-left: 5px;
+  color: white;
 }
 
 #weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .alertText {
-  font-size: smaller;
+  padding-top: 3px;
+  font-size: 11px;
   background-color: white;
-  border: 1px black solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 13px;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .sunRise {
+  padding-bottom: 3px;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .sunSet {
+  padding-bottom: 3px;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .linkMoreInfo {
+  font-size: 8px;
+  text-align: right;
+  color: #a35d5d;
+  background-color: white;
+  padding-right: 5px;
+  font-weight: bolder;
+}
+
+#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .linkMoreInfo:hover {
+  color: #5c2835;
 }
 
 #weatherSection .weatherContainer .middleInfo {
@@ -171,6 +203,10 @@ nav .navContainer #humid:hover {
 
 #weatherSection .my-5 {
   text-align: center;
+}
+
+#MoreInfoPage .moreInfoTitle {
+  font-size: 20px;
 }
 
 @media (max-width: 576px) {

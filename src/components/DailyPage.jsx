@@ -211,19 +211,21 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                 <div className="alertMessages">
                                     {sunRiseAlert && <div className="alert">
                                         <div className="alertName">Sunrise Alert</div>
-                                        <div className="alertText">{sunRise}</div>
+                                        <div className="alertText sunRise">The sun will rise at {sunRise}</div>
                                         </div>}
                                     {sunSetAlert && <div className="alert">
-                                        <div className="alertName">Senset Alert</div>
-                                        <div className="alertText">{sunSet}</div>
+                                        <div className="alertName">Sunset Alert</div>
+                                        <div className="alertText sunSet">The sun will set at {sunSet}</div>
                                     </div>}
                                     {uviAlert && <div className="alert" id="uviNormal">
                                         <div className="alertName">UV Alert</div>
                                         <div className="alertText">There is a HIGH UV index!</div>
+                                        <div className="linkMoreInfo">Click here for more info!</div>
                                     </div>}
                                     {uviAlertExtr && <div className="alert" id="uviExtr">
                                         <div className="alertName">UV Alert</div>
                                         <div className="alertText">There is an EXTREMELY HIGH UV index!</div>
+                                        <div className="linkMoreInfo">Click here for more info!</div>
                                     </div>}
                                 </div>
                             </div>
