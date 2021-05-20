@@ -142,33 +142,59 @@ nav {
             #topDate{
                 font-size: 1rem;
             }   
-            margin-bottom: 10%;
             .col-lg-7{
                 .alertBox{
+                    text-align: left;
                     background-color: rgb(189, 217, 230);
                     height: 100px;
                     margin: 5px;
                     border-radius:3px;
                     .alertBoxName{
                         background-color: rgb(116, 159, 199);
-                        padding: 3px;
+                        padding: 2px;
                         text-align: left;
                         padding-left: 5px;
                         border-radius: 3px 3px 0px 0px;
                         z-index: 5;
+                        color: white;
                     }
                     .alertMessages{
-                        
+                        margin-top: 0;
                         .alert{
-                            overflow-y: scroll;
+                            height: 70px;
+                            // overflow-y: scroll;
+                            padding: 3px;
                             .alertName{
-                                font-size: small;
-                                background-color: slateblue;
+                                font-size: 14px;
+                                background-color: rgb(118, 166, 228);
+                                padding-left: 5px;
+                                color: white;
                             }
                             .alertText{
-                                font-size: smaller;
+                                padding-top: 3px;
+                                font-size: 11px;
                                 background-color: white;
-                                border: 1px black solid;
+                                padding-left: 5px;
+                                padding-right: 5px;
+                                line-height: 13px;
+                                
+                            }
+                            .sunRise{
+                                    padding-bottom: 3px;
+                                }
+                            .sunSet{
+                                    padding-bottom: 3px;
+                                }
+                            .linkMoreInfo{
+                                font-size: 8px;
+                                text-align: right;
+                                color: rgb(163, 93, 93);
+                                background-color: white;
+                                padding-right: 5px;
+                                font-weight: bolder;
+                            }
+                            .linkMoreInfo:hover{
+                                color: rgb(92, 40, 53);
                             }
                         }    
                     }
