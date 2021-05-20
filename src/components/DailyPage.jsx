@@ -132,19 +132,10 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     }
 
     const [showContent, setShowContent] = useState({
-        "atmosphere": false,
+        "atmosphere": true,
         "weather": false,
         "condition": false
     })
-    function showAtmosphere() {
-
-    }
-    function showWeather() {
-
-    }
-    function showCondition() {
-
-    }
     console.log(showContent);
     return (
         <>
