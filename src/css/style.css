@@ -140,7 +140,7 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection .weatherContainer .middleInfo .info {
-  font-size: 45px;
+  font-size: 2rem;
 }
 
 #weatherSection .weatherContainer .bottomInfo div {
