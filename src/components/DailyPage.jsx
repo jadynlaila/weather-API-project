@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import sunImg from '../images/sun.svg';
 import cloud1 from '../images/cloud1.svg';
 import cloud2 from '../images/cloud2.svg';
@@ -6,7 +6,6 @@ import moonImg from '../images/Moon.svg';
 import { TiWeatherSunny } from 'react-icons/ti';
 import { WiDayRainWind } from 'react-icons/wi';
 import { FiWind } from 'react-icons/fi';
-
 
 
 function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
@@ -26,6 +25,8 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     const [sunSet, setsunSet] = useState("");
     const [uviAlertExtr, setuviAlertExtr] = useState(false);
     const [uviAlert, setuviAlert] = useState(false)
+    const [flash, setFlash] = useState(true)
+    const [seconds, setSeconds] = useState(0);
 
     if (initialStuff == true) {
         getHourStats(0);
@@ -137,6 +138,14 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
         "condition": false
     })
     console.log(showContent);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFlash(flash + 1)
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <>
             <Container id="weatherSection">
@@ -145,7 +154,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     </div>
                     <div id="weatherSlider" className="weatherSlider">
                         <div className="my-5">
-                            <label htmlFor="customRange1">May 3 2021</label>
+                            <label className="dateDisplay" htmlFor="customRange1">May 3 2021</label>
                             <div className="hourDisplay">{formattedHour}</div>
                             <input
                                 type="range"
@@ -173,28 +182,51 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                         </div>
                     </div>
 
+                    {dayOrNight == false ?
+                        <div className="pageBg">
+                            <div className="star" id="star1"></div>
+                            <div className="star" id="star2"></div>
+                            <div className="star" id="star3"></div>
+                            <div className="star" id="star4"></div>
+                            <div className="star" id="star5"></div>
+                            <div className="star" id="star6"></div>
+                            <div className="star" id="star7"></div>
+                            <div className="star" id="star8"></div>
+                        </div> :
+                        <div className="pageBgoff">
+                            <div className="star starOff" id="star1"></div>
+                            <div className="star starOff" id="star2"></div>
+                            <div className="star starOff" id="star3"></div>
+                            <div className="star starOff" id="star4"></div>
+                            <div className="star starOff" id="star5"></div>
+                            <div className="star starOff" id="star6"></div>
+                            <div className="star starOff" id="star7"></div>
+                            <div className="star starOff" id="star8"></div>
+                        </div>
+                    }
+
                     {dayOrNight ?
                         (<Row>
-                        <Col className="imageContain" id="img" src={sunImg} > 
-                            {animation? 
-                            <div className="wrap">
-                                <div className="bgImg" id="sun" style={{backgroundImage: `url('${sunImg}')`}}></div>
-                                <div className="bgImg" id="moonHide" style={{backgroundImage: `url('${moonImg}')`}}></div>
-                            </div>:
-                                ''
-                            }
-                        </Col>
-                    </Row>) :
-                    (<Row className="imageAnimator">
-                        <Col className="imageContain" id="img" src={moonImg}  > 
-                        {animation? 
-                            <div className="wrap">
-                                <div className="bgImg" id="sunHide" style={{backgroundImage: `url('${sunImg}')`}}></div>
-                                <div className="bgImg" id="moon" style={{backgroundImage: `url('${moonImg}')`}}></div>
-                            </div>:
-                                ''
-                            }
-                        </Col>
+                            <Col className="imageContain" id="img" src={sunImg} >
+                                {animation ?
+                                    <div className="wrap">
+                                        <div className="bgImg" id="sun" style={{ backgroundImage: `url('${sunImg}')` }}></div>
+                                        <div className="bgImg" id="moonHide" style={{ backgroundImage: `url('${moonImg}')` }}></div>
+                                    </div> :
+                                    ''
+                                }
+                            </Col>
+                        </Row>) :
+                        (<Row className="imageAnimator">
+                            <Col className="imageContain" id="img" src={moonImg}  >
+                                {animation ?
+                                    <div className="wrap">
+                                        <div className="bgImg" id="sunHide" style={{ backgroundImage: `url('${sunImg}')` }}></div>
+                                        <div className="bgImg" id="moon" style={{ backgroundImage: `url('${moonImg}')` }}></div>
+                                    </div> :
+                                    ''
+                                }
+                            </Col>
                         </Row>)
                     }
 
@@ -212,7 +244,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                     {sunRiseAlert && <div className="alert">
                                         <div className="alertName">Sunrise Alert</div>
                                         <div className="alertText sunRise">The sun will rise at {sunRise}</div>
-                                        </div>}
+                                    </div>}
                                     {sunSetAlert && <div className="alert">
                                         <div className="alertName">Sunset Alert</div>
                                         <div className="alertText sunSet">The sun will set at {sunSet}</div>
@@ -334,7 +366,3 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
 }
 
 export default DailyPage
-
-
-
-
