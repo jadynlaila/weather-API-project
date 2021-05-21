@@ -81,6 +81,7 @@ nav .navContainer #humid:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: -5px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -94,9 +95,11 @@ nav .navContainer #humid:hover {
   background-color: blue;
   text-align: center;
   height: 92%;
+  color: orange;
 }
 
 #weatherSection .weatherContainer .topInfo {
+  height: 25%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -175,11 +178,20 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection .weatherContainer .middleInfo {
-  margin-bottom: 5%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 #weatherSection .weatherContainer .middleInfo .info {
-  font-size: 2.5rem;
+  font-size: 2.5vw;
+}
+
+#weatherSection .weatherContainer .bottomInfo {
+  height: 25%;
 }
 
 #weatherSection .weatherContainer .bottomInfo div {
@@ -187,7 +199,7 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection .weatherContainer .bottomInfo .iconBottom {
-  font-size: 3rem;
+  font-size: 3vw;
 }
 
 #weatherSection #img {
@@ -267,17 +279,10 @@ nav .navContainer #humid:hover {
   background-color: #89c9e7;
 }
 
-@media (max-width: 576px) {
-  nav {
-    position: relative;
-    z-index: 100;
-  }
-  nav .navContainer {
-    width: 100%;
-  }
-  nav .navContainer .link:hover {
-    background-size: cover;
-    background-position: center;
+@media (max-width: 768px) {
+  #weatherSection {
+    display: block;
+    margin: 0;
   }
 }
 
@@ -498,8 +503,8 @@ nav .navContainer #humid:hover {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
   top: 0px;
   bottom: 0px;
   opacity: 100%;
@@ -518,7 +523,8 @@ nav .navContainer #humid:hover {
   opacity: 0%;
 }
 
-.hourDisplay, .dateDisplay {
+.hourDisplay,
+.dateDisplay {
   color: white;
 }
 
@@ -553,8 +559,8 @@ nav .navContainer #humid:hover {
   width: 100px;
   opacity: 100%;
   background-color: red;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .starOff {
