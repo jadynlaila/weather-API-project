@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: black;
+    // color: black;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -256,8 +256,41 @@ nav {
 
 #MoreInfoPage{
     .moreInfoTitle{
-        font-size: 20px;
+        font-size: 24px;
     }
+    .moreInfoSubTitle{
+        font-size: 15px;
+        height: fit-content;
+    }
+      .moreInfoBox{
+        color: white;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: steelblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        &.UVIinfoBox{
+            background-color: rgb(207, 59, 59);
+            .moreInfoTitle{
+                font-size: 30px;
+            }
+        }
+        #icon{
+            font-size: 60px;
+        }
+
+        &.pressureInfoBox{
+            background-color: rgb(173, 173, 173);
+        }
+        &.visibilityInfoBox{
+            background-color: rgb(137, 201, 231);
+        }
+        }  
 }
 
 
