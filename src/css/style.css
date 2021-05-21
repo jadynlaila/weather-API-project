@@ -538,6 +538,7 @@ nav .navContainer #humid:hover {
   z-index: -1000;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
+  overflow: hidden;
 }
 
 .pageBgoff {
@@ -550,6 +551,7 @@ nav .navContainer #humid:hover {
   z-index: -1000;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
+  overflow: hidden;
 }
 
 .star {
@@ -558,9 +560,15 @@ nav .navContainer #humid:hover {
   height: 100px;
   width: 100px;
   opacity: 100%;
+  top: 0;
+  left: 0;
   background-color: red;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+.star:hover {
+  background-color: aqua;
 }
 
 .starOff {
