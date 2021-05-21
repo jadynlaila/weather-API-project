@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-function MoreInfoPage({}) {
+function MoreInfoPage({Col, Row, Container}) {
     return (
         <Container id="MoreInfoPage">
             {/* 
