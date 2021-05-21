@@ -66,11 +66,15 @@ nav {
     }
 }
 
+.rightSide{
+    border-radius: 5%;
+}
+
 #weatherSection {
 
     // rgb(223, 237, 255)
     display: flex;
-
+    align-items: center;
     font-family: monospace;
 
     // .shortWeatherInfo {
@@ -134,6 +138,7 @@ nav {
     .weatherContainer{
         background-color: blue;
         text-align: center;
+        height: 92%;
         .topInfo{
             justify-content: center;
             #topTemp{
@@ -142,12 +147,12 @@ nav {
             #topDate{
                 font-size: 1rem;
             }   
-            .col-lg-7{
+            #alertBoxContainer{
                 .alertBox{
                     text-align: left;
                     background-color: rgb(189, 217, 230);
                     height: 100px;
-                    margin: 5px;
+                    margin: 8px;
                     border-radius:3px;
                     .alertBoxName{
                         background-color: rgb(116, 159, 199);
@@ -205,7 +210,7 @@ nav {
         }
         .middleInfo{
                 .info{
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                 }
                 #info1{
 
