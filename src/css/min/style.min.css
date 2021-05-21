@@ -6,7 +6,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: black;
 }
 
 body {
@@ -74,10 +73,17 @@ nav .navContainer #humid:hover {
   background-image: url(../images/humidity.svg);
 }
 
+.rightSide {
+  border-radius: 5%;
+}
+
 #weatherSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: monospace;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -87,6 +93,7 @@ nav .navContainer #humid:hover {
 #weatherSection .weatherContainer {
   background-color: blue;
   text-align: center;
+  height: 92%;
 }
 
 #weatherSection .weatherContainer .topInfo {
@@ -103,15 +110,15 @@ nav .navContainer #humid:hover {
   font-size: 1rem;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox {
   text-align: left;
   background-color: #bdd9e6;
   height: 100px;
-  margin: 5px;
+  margin: 8px;
   border-radius: 3px;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertBoxName {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertBoxName {
   background-color: #749fc7;
   padding: 2px;
   text-align: left;
@@ -121,23 +128,23 @@ nav .navContainer #humid:hover {
   color: white;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages {
   margin-top: 0;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert {
   height: 70px;
   padding: 3px;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .alertName {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .alertName {
   font-size: 14px;
   background-color: #76a6e4;
   padding-left: 5px;
   color: white;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .alertText {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .alertText {
   padding-top: 3px;
   font-size: 11px;
   background-color: white;
@@ -146,15 +153,15 @@ nav .navContainer #humid:hover {
   line-height: 13px;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .sunRise {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .sunRise {
   padding-bottom: 3px;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .sunSet {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .sunSet {
   padding-bottom: 3px;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .linkMoreInfo {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .linkMoreInfo {
   font-size: 8px;
   text-align: right;
   color: #a35d5d;
@@ -163,7 +170,7 @@ nav .navContainer #humid:hover {
   font-weight: bolder;
 }
 
-#weatherSection .weatherContainer .topInfo .col-lg-7 .alertBox .alertMessages .alert .linkMoreInfo:hover {
+#weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .linkMoreInfo:hover {
   color: #5c2835;
 }
 
@@ -172,7 +179,7 @@ nav .navContainer #humid:hover {
 }
 
 #weatherSection .weatherContainer .middleInfo .info {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 #weatherSection .weatherContainer .bottomInfo div {
@@ -206,7 +213,58 @@ nav .navContainer #humid:hover {
 }
 
 #MoreInfoPage .moreInfoTitle {
-  font-size: 20px;
+  font-size: 24px;
+}
+
+#MoreInfoPage .moreInfoSubTitle {
+  font-size: 15px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#MoreInfoPage .moreInfoBox {
+  color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: steelblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#MoreInfoPage .moreInfoBox.UVIinfoBox {
+  background-color: #cf3b3b;
+}
+
+#MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoTitle {
+  font-size: 30px;
+}
+
+#MoreInfoPage .moreInfoBox #icon {
+  font-size: 60px;
+}
+
+#MoreInfoPage .moreInfoBox.pressureInfoBox {
+  background-color: #adadad;
+}
+
+#MoreInfoPage .moreInfoBox.visibilityInfoBox {
+  background-color: #89c9e7;
 }
 
 @media (max-width: 576px) {

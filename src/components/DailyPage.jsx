@@ -229,7 +229,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                             <div id="topTemp">{Math.round(currentHr.temp)}</div>
                             <div id="topDate">{formattedTime}</div>
                         </Col>
-                        <Col lg={7}>
+                        <Col lg={7} id="alertBoxContainer">
                             <div className="alertBox">
                                 <div className="alertBoxName">Alerts:</div>
                                 <div className="alertMessages">
