@@ -266,7 +266,7 @@ nav {
         font-size: 15px;
         height: fit-content;
     }
-      .moreInfoBox{
+    .moreInfoBox{
         color: white;
         height: 150px;
         width: 150px;
@@ -500,6 +500,7 @@ nav {
     background-color: rgb(0, 34, 61);
     z-index: -1000;
     transition: 0.4s ease-in-out;
+    overflow: hidden;
 }
 
 .pageBgoff{
@@ -511,6 +512,7 @@ nav {
     background-color: rgba(125, 199, 211, 0.767);
     z-index: -1000;
     transition: 0.4s ease-in-out;
+    overflow: hidden;
 }
 
 .star{
@@ -519,8 +521,13 @@ nav {
     height: 100px;
     width: 100px;
     opacity: 100%;
+    top: 0;
+    left: 0;
     background-color: red;
     transition: .4s;
+    &:hover{
+        background-color: aqua;
+    }
 }
 
 .starOff{
