@@ -257,45 +257,117 @@ nav {
         text-align: center;
     }
 }
+#popUpContent{
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+    width: 60%;
+    background-color: blue;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 16px;
+
+    
+    .infoContentTitle{
+        font-size: 2rem;
+        margin-left: 5%;
+        font-size: 4vh;
+    }
+    .infoContentText{
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 2vh;
+    }
+
+}
 
 
 #MoreInfoPage{
+    display: flex;
+    flex-direction: column;
+    // justify-items: center;
+    // align-items: center;
     .moreInfoTitle{
-        font-size: 24px;
+        font-size: 3vw;
+    }
+    .fix{
+        width: 100%;
+
     }
     .moreInfoSubTitle{
-        font-size: 15px;
+        font-size: 1vw;
         height: fit-content;
     }
-      .moreInfoBox{
+       .moreInfoBox{
         color: white;
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
-        background-color: steelblue;
+        // height:200px;
+        // width: 200px;
+        // border-radius: 50%;
+        // background-color: steelblue;
         display: flex;
         flex-direction: column;
         justify-content: center;
         justify-items: center;
         align-content: center;
         align-items: center;
+        .moreInfoBackground{
+            height:230px;
+            width: 230px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+        }
+        .moreInfoInnerBackground{
+            height:200px;
+            width: 200px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+        }
         &.UVIinfoBox{
-            background-color: rgb(207, 59, 59);
-            .moreInfoTitle{
-                font-size: 30px;
+            .moreInfoInnerBackground{
+                background-color: rgb(207, 59, 59);
             }
         }
+        
+
+        &.pressureInfoBox{
+            .moreInfoInnerBackground{
+                background-color: rgb(173, 173, 173);
+            }
+        }
+        &.visibilityInfoBox{
+            .moreInfoInnerBackground{
+                background-color: rgb(137, 201, 231);
+            }
+        }
+        .moreInfoBoxTitle{
+                font-size: 23px;
+            }
         #icon{
             font-size: 60px;
         }
+        .moreInfoInnerBackground:hover{
+            transition: 1s;
+            height: 230px;
+            width: 230px;
+        }
 
-        &.pressureInfoBox{
-            background-color: rgb(173, 173, 173);
-        }
-        &.visibilityInfoBox{
-            background-color: rgb(137, 201, 231);
-        }
-        }  
+        } 
+    
+
+      
+}
+
+.moreInfoContent{
 }
 
 

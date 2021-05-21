@@ -200,21 +200,49 @@ nav .navContainer #humid:hover {
   text-align: center;
 }
 
+#popUpContent {
+  position: absolute;
+  bottom: 15%;
+  left: 20%;
+  width: 60%;
+  background-color: blue;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 16px;
+}
+
+#popUpContent .infoContentTitle {
+  font-size: 2rem;
+  margin-left: 5%;
+  font-size: 4vh;
+}
+
+#popUpContent .infoContentText {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 2vh;
+}
+
+#MoreInfoPage {
+  display: flex;
+  flex-direction: column;
+}
+
 #MoreInfoPage .moreInfoTitle {
-  font-size: 24px;
+  font-size: 3vw;
+}
+
+#MoreInfoPage .fix {
+  width: 100%;
 }
 
 #MoreInfoPage .moreInfoSubTitle {
-  font-size: 15px;
+  font-size: 1vw;
   height: fit-content;
 }
 
 #MoreInfoPage .moreInfoBox {
   color: white;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background-color: steelblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -223,24 +251,54 @@ nav .navContainer #humid:hover {
   align-items: center;
 }
 
-#MoreInfoPage .moreInfoBox.UVIinfoBox {
+#MoreInfoPage .moreInfoBox .moreInfoBackground {
+  height: 230px;
+  width: 230px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+#MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+#MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
   background-color: #cf3b3b;
 }
 
-#MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoTitle {
-  font-size: 30px;
+#MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
+  background-color: #adadad;
+}
+
+#MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
+  background-color: #89c9e7;
+}
+
+#MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
+  font-size: 23px;
 }
 
 #MoreInfoPage .moreInfoBox #icon {
   font-size: 60px;
 }
 
-#MoreInfoPage .moreInfoBox.pressureInfoBox {
-  background-color: #adadad;
-}
-
-#MoreInfoPage .moreInfoBox.visibilityInfoBox {
-  background-color: #89c9e7;
+#MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
+  transition: 1s;
+  height: 230px;
+  width: 230px;
 }
 
 @media (max-width: 576px) {
