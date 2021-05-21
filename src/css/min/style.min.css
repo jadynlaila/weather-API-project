@@ -50,6 +50,7 @@ nav .navContainer .link {
   background-image: none;
   background-position: right;
   background-repeat: no-repeat;
+  color: white;
 }
 
 nav .navContainer .link:hover {
@@ -58,7 +59,6 @@ nav .navContainer .link:hover {
   background-size: contain;
   background-color: #00ccff;
   border-bottom: #dbdbdb solid 5px;
-  color: white;
   font-size: 115%;
 }
 
@@ -255,6 +255,7 @@ nav .navContainer #humid:hover {
   bottom: 10px;
   position: relative;
   z-index: -100;
+  margin-bottom: 15px;
 }
 
 .container .weatherInfo .weeklyWeather .tempImg {
@@ -385,7 +386,7 @@ nav .navContainer #humid:hover {
 
 .imageContain .wrap {
   height: 100%;
-  width: 100%;
+  width: 300px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.185);
   border-radius: 20px;
@@ -417,6 +418,49 @@ nav .navContainer #humid:hover {
 }
 
 .imageContain .wrap #moonHide {
+  opacity: 0%;
+}
+
+.hourDisplay, .dateDisplay {
+  color: white;
+}
+
+.pageBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00223d;
+  z-index: -1000;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.pageBgoff {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(125, 199, 211, 0.767);
+  z-index: -1000;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.star {
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  opacity: 100%;
+  background-color: red;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.starOff {
   opacity: 0%;
 }
 /*# sourceMappingURL=style.min.css.map */

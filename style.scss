@@ -44,13 +44,13 @@ nav {
             background-image: none;
             background-position: right;
             background-repeat: no-repeat;
+            color: white;
             &:hover {
                 background-position: left;
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-color: rgb(0, 204, 255);
                 border-bottom: rgb(219, 219, 219) solid 5px;
-                color: white;
                 font-size: 115%;
             }
         }
@@ -174,16 +174,6 @@ nav {
         .middleInfo{
                 .info{
                     font-size: 45px;
-
-                }
-                #info1{
-
-                }
-                #info2{
-
-                }
-                #info3{
-
                 }
             margin-bottom: 5%;
         }
@@ -196,14 +186,12 @@ nav {
             .iconBottom{
                 font-size: 3rem;
             }
-           
         }
 
     }
     justify-content: space-between;
 
     #img {
-        // background-image: url(../images/sun.svg);
         background-position: center;
         height: 300px;
         width: 300px;
@@ -291,8 +279,7 @@ nav {
             bottom: 10px;
             position: relative;
             z-index: -100;
-            // margin-top: 15px;
-            // margin-bottom: 15px;
+            margin-bottom: 15px;
             .tempImg{
                 grid-column: 1 / 2;
                 grid-row: 1 / 3;
@@ -381,7 +368,7 @@ nav {
     justify-content: center;
     .wrap{
         height: 100%;
-        width: 100%;
+        width: 300px;
         overflow: hidden;
         background-color: rgba(0, 0, 0, 0.185);
         border-radius: 20px;
@@ -412,4 +399,44 @@ nav {
             opacity: 0%;
         }
     }
+};
+
+.hourDisplay, .dateDisplay{
+    color: white;
+}
+
+.pageBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 34, 61);
+    z-index: -1000;
+    transition: 0.4s ease-in-out;
+}
+
+.pageBgoff{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(125, 199, 211, 0.767);
+    z-index: -1000;
+    transition: 0.4s ease-in-out;
+}
+
+.star{
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    opacity: 100%;
+    background-color: red;
+    transition: .4s;
+}
+
+.starOff{
+    opacity: 0%;
 }

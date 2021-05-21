@@ -18,8 +18,8 @@ const WeeklyPage = ({}) => {
         <>
             <div className="container">
                     <div className="arrows">
-                        <div onClick={() => counter != 0 ? (setCounter(counter - 1), setBottomCount(bottomCount - 120), setSubDis(subDis - 1), document.getElementById('arrowDown').style.opacity = '100%') : (document.getElementById('arrowUp').style.opacity = '50%')} className="arrowUp" id="arrowUp"></div>
-                        <div onClick={() => counter != 7 ? (setCounter(counter + 1), setBottomCount(bottomCount + 120), setSubDis(subDis + 1), document.getElementById('arrowUp').style.opacity = '100%') : (document.getElementById('arrowDown').style.opacity = '50%')} className="arrowDown" id="arrowDown"></div>
+                        <div onClick={() => counter != 0 ? (setCounter(counter - 1), setBottomCount(bottomCount - 135), setSubDis(subDis - 1), document.getElementById('arrowDown').style.opacity = '100%') : (document.getElementById('arrowUp').style.opacity = '50%')} className="arrowUp" id="arrowUp"></div>
+                        <div onClick={() => counter != 7 ? (setCounter(counter + 1), setBottomCount(bottomCount + 135), setSubDis(subDis + 1), document.getElementById('arrowUp').style.opacity = '100%') : (document.getElementById('arrowDown').style.opacity = '50%')} className="arrowDown" id="arrowDown"></div>
                     </div>
                     <div className="weatherInfo">
                         {subDis == 1 ?

@@ -12,6 +12,7 @@ import { FiWind } from 'react-icons/fi';
 function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
 
     const [range, setRange] = useState(0);
+    const [counter, setCounter] = useState(0)
     const [currentHr, setCurrentHr] = useState(0);
     const [currentDay, setCurrentDay] = useState(0);
     const [testHr, setTestHr] = useState(0);
@@ -131,15 +132,6 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
         }
     }
 
-    function showAtmosphere(){
-
-    }
-    function showWeather(){
-
-    }
-    function showCondition(){
-        
-    }
     return (
         <>
             <Container id="weatherSection">
@@ -148,7 +140,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     </div>
                     <div id="weatherSlider" className="weatherSlider">
                         <div className="my-5">
-                            <label htmlFor="customRange1">May 3 2021</label>
+                            <label className="dateDisplay" htmlFor="customRange1">May 3 2021</label>
                             <div className="hourDisplay">{formattedHour}</div>
                             <input
                                 type="range"
@@ -175,6 +167,29 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                             />
                         </div>
                     </div>
+
+                    {dayOrNight == false ? 
+                        <div className="pageBg">
+                            <div className="star" id="star1"></div>
+                            <div className="star" id="star2"></div>
+                            <div className="star" id="star3"></div>
+                            <div className="star" id="star4"></div>
+                            <div className="star" id="star5"></div>
+                            <div className="star" id="star6"></div>
+                            <div className="star" id="star7"></div>
+                            <div className="star" id="star8"></div>
+                        </div> :
+                        <div className="pageBgoff">
+                            <div className="star starOff" id="star1"></div>
+                            <div className="star starOff" id="star2"></div>
+                            <div className="star starOff" id="star3"></div>
+                            <div className="star starOff" id="star4"></div>
+                            <div className="star starOff" id="star5"></div>
+                            <div className="star starOff" id="star6"></div>
+                            <div className="star starOff" id="star7"></div>
+                            <div className="star starOff" id="star8"></div>
+                        </div>
+                    }
 
                     {dayOrNight ?
                         (<Row>

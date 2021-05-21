@@ -14,9 +14,8 @@ const App = () => {
   const [showDaily, setShowDaily] = useState(true);
   return (
     <>
+    <div className="webBackground"></div>
       <Navigation onShowDaily={() =>{
-        // setShowDaily(!showDaily);
-        // setShowWeekly(!showWeekly);
         setShowWeekly(false);
         setShowDaily(true);
       }}
