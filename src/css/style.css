@@ -72,8 +72,10 @@ nav .navContainer #humid:hover {
 #weatherSection {
   display: flex;
   font-family: monospace;
-  margin-right: 20px;
+  margin: 0 auto;
   margin-top: 3%;
+  width: 90%;
+  justify-items: center;
   justify-content: space-between;
 }
 
@@ -199,10 +201,19 @@ nav .navContainer #humid:hover {
   position: absolute;
 }
 
-#weatherSection input {
+#weatherSection #leftSide label {
+  font-size: 2rem;
+}
+
+#weatherSection #leftSide .hourDisplay {
+  font-size: 2rem;
+}
+
+#weatherSection #leftSide input {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  width: 80% !important;
 }
 
 #weatherSection .my-5 {
@@ -377,246 +388,33 @@ nav .navContainer #humid:hover {
   width: 230px;
 }
 
-@media (max-width: 1000px) {
-  #popUpContent {
-    top: 40%;
+#leftSide label {
+  font-size: 2rem;
+}
+
+#leftSide .hourDisplay {
+  font-size: 2rem;
+}
+
+#leftSide input {
+  color: yellow;
+}
+
+@media (max-width: 992px) {
+  #weatherSection {
+    margin-top: 0;
+    display: block;
+  }
+  #weatherSection .imageContain {
+    height: 60%;
+  }
+  #weatherSection .middleInfo .info {
+    font-size: 5vw !important;
+  }
+  #weatherSection .weatherContainer {
     width: 80%;
-    left: 10%;
-  }
-  #popUpContent .topPartInfo .infoContentTitle {
-    font-size: 4vw;
-    font-weight: 600;
-  }
-  #popUpContent .infoContentText {
-    margin-left: 5%;
-    margin-right: 5%;
-    font-size: 2.5vw;
-    text-align: left;
-  }
-  #popUpContent .linkToArticle {
-    color: white;
-    margin-left: 5%;
-    margin-right: 5%;
-    text-decoration: none;
-    text-align: right;
-    font-weight: 800;
-    font-size: 2.5vw;
-  }
-  #MoreInfoPage {
-    display: flex;
-    flex-direction: column;
-  }
-  #MoreInfoPage .moreInfoTitle {
-    font-size: 50px;
-  }
-  #MoreInfoPage .fix {
-    width: 100%;
-  }
-  #MoreInfoPage .moreInfoSubTitle {
-    font-size: 18px;
-    height: fit-content;
-  }
-  #MoreInfoPage .moreInfoContent {
-    --bs-gutter-x: 0;
-  }
-  #MoreInfoPage .moreInfoBox {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoBackground {
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
-    height: 140px;
-    width: 140px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
-    background-color: #cf3b3b;
-  }
-  #MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
-    background-color: #adadad;
-  }
-  #MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
-    background-color: #89c9e7;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
-    font-size: 18px;
-  }
-  #MoreInfoPage .moreInfoBox #icon {
-    font-size: 50px;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
-    transition: 1s;
-    height: 180px;
-    width: 180px;
-  }
-}
-
-@media (max-width: 500px) {
-  #popUpContent {
-    top: 30%;
-  }
-  #MoreInfoPage {
-    display: flex;
-    flex-direction: column;
-  }
-  #MoreInfoPage .moreInfoTitle {
-    font-size: 30px;
-  }
-  #MoreInfoPage .fix {
-    width: 100%;
-  }
-  #MoreInfoPage .moreInfoSubTitle {
-    font-size: 13px;
-    height: fit-content;
-  }
-  #MoreInfoPage .moreInfoContent {
-    --bs-gutter-x: 0;
-  }
-  #MoreInfoPage .moreInfoBox {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoBackground {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
-    background-color: #cf3b3b;
-  }
-  #MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
-    background-color: #adadad;
-  }
-  #MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
-    background-color: #89c9e7;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
-    font-size: 14px;
-  }
-  #MoreInfoPage .moreInfoBox #icon {
-    font-size: 30px;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
-    transition: 1s;
-    height: 100px;
-    width: 100px;
-  }
-}
-
-@media (max-width: 330px) {
-  #popUpContent {
-    top: 30%;
-  }
-  #MoreInfoPage {
-    display: flex;
-    flex-direction: column;
-  }
-  #MoreInfoPage .moreInfoTitle {
-    font-size: 18px;
-  }
-  #MoreInfoPage .fix {
-    width: 100%;
-  }
-  #MoreInfoPage .moreInfoSubTitle {
-    font-size: 6px;
-    height: fit-content;
-  }
-  #MoreInfoPage .moreInfoContent {
-    --bs-gutter-x: 0;
-  }
-  #MoreInfoPage .moreInfoBox {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoBackground {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
-    background-color: #cf3b3b;
-  }
-  #MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
-    background-color: #adadad;
-  }
-  #MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
-    background-color: #89c9e7;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
-    font-size: 10px;
-  }
-  #MoreInfoPage .moreInfoBox #icon {
-    font-size: 18px;
-  }
-  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
-    transition: 1s;
-    height: 70px;
-    width: 70px;
+    margin: 0 auto;
+    margin-top: 5%;
   }
 }
 
@@ -777,7 +575,7 @@ nav .navContainer #humid:hover {
 
 .imageContain .wrap {
   height: 100%;
-  width: 300px;
+  width: 80%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.185);
   border-radius: 20px;
@@ -819,13 +617,14 @@ nav .navContainer #humid:hover {
 .pageBg {
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: #00223d;
   z-index: -1000;
   transition: 0.4s ease-in-out;
-  overflow: hidden;
 }
 
 .pageBgoff {

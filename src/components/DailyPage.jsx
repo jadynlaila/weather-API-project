@@ -149,7 +149,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     return (
         <>
             <Container fluid id="weatherSection">
-                <Col id="leftSide" lg={7} md={7} sm={12}>
+                <Col id="leftSide" lg={7} md={12}>
                     <div id="weatherAnimation" className="weatherAnimation">
                     </div>
                     <div id="weatherSlider" className="weatherSlider">
@@ -231,7 +231,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     }
 
                 </Col>
-                <Col className="weatherContainer rightSide" lg={5} md={5} sm={12}>
+                <Col className="weatherContainer rightSide" lg={5} md={12}>
                     <Row className="topInfo"> 
                         <Col lg={5}>
                             <div id="topTemp">{Math.round(currentHr.temp)}</div>
@@ -290,16 +290,16 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                         </Col>
                     </Row>
                     <Row className="bottomInfo">
-                        <Col lg="4">
-                            <div id="icon1" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': true, 'weather': false }) }}><FiWind /></div>
+                        <Col lg="4" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': true, 'weather': false }) }}>
+                            <div id="icon1" className="iconBottom" ><FiWind /></div>
                             <div>atmosphere</div>
                         </Col>
-                        <Col lg="4">
-                            <div id="icon2" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': false, 'weather': true }) }}><TiWeatherSunny /></div>
+                        <Col lg="4" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': false, 'weather': true }) }}>
+                            <div id="icon2" className="iconBottom" ><TiWeatherSunny /></div>
                             <div>weather</div>
                         </Col>
-                        <Col lg="4">
-                            <div id="icon3" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': true, 'atmosphere': false, 'weather': false }) }}><WiDayRainWind /></div>
+                        <Col lg="4" onMouseOver={() => { setShowContent({ ...showContent, 'condition': true, 'atmosphere': false, 'weather': false }) }}>
+                            <div id="icon3" className="iconBottom" ><WiDayRainWind /></div>
                             <div>conditions</div>
                         </Col>
                     </Row>
