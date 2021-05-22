@@ -25,8 +25,6 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     const [sunSet, setsunSet] = useState("");
     const [uviAlertExtr, setuviAlertExtr] = useState(false);
     const [uviAlert, setuviAlert] = useState(false)
-    const [flash, setFlash] = useState(true)
-    const [seconds, setSeconds] = useState(0);
 
     if (initialStuff == true) {
         getHourStats(0);
@@ -137,19 +135,21 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
         "weather": false,
         "condition": false
     })
-    console.log(showContent);
+    // console.log(showContent);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setFlash(flash + 1)
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
+        const [seconds, setSeconds] = useState(0);
+
+        useEffect(() => {
+            const interval = setInterval(() => {
+                setSeconds(seconds => seconds + 1);
+            }, 2000);
+            return () => clearInterval(interval);
+        }, []);
 
     return (
         <>
             <Container fluid id="weatherSection">
-                <Col id="leftSide" lg={7} md={7} sm={12}>
+                <Col id="leftSide" lg={7} md={12}>
                     <div id="weatherAnimation" className="weatherAnimation">
                     </div>
                     <div id="weatherSlider" className="weatherSlider">
@@ -184,26 +184,38 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     </div>
 
                     {dayOrNight == false ?
-                        <div className="pageBg">
-                            <div className="star" id="star1"></div>
-                            <div className="star" id="star2"></div>
-                            <div className="star" id="star3"></div>
-                            <div className="star" id="star4"></div>
-                            <div className="star" id="star5"></div>
-                            <div className="star" id="star6"></div>
-                            <div className="star" id="star7"></div>
-                            <div className="star" id="star8"></div>
-                        </div> :
-                        <div className="pageBgoff">
-                            <div className="star starOff" id="star1"></div>
-                            <div className="star starOff" id="star2"></div>
-                            <div className="star starOff" id="star3"></div>
-                            <div className="star starOff" id="star4"></div>
-                            <div className="star starOff" id="star5"></div>
-                            <div className="star starOff" id="star6"></div>
-                            <div className="star starOff" id="star7"></div>
-                            <div className="star starOff" id="star8"></div>
-                        </div>
+                        <div className="bgContain">
+                            <div className="pageBg">
+                                {seconds % 2 == 0?
+                                <div className="starBox">
+                                    <div className="star" id="star1" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star2" style={{opacity: "40%"}}></div>
+                                    <div className="star" id="star3" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star4" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star5" style={{opacity: "70%"}}></div>
+                                    <div className="star" id="star6" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star7" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star8" style={{opacity: "20%"}}></div>
+                                </div> : 
+                                <div className="starBox">
+                                    <div className="star" id="star1" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star2" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star3" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star4" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star5" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star6" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star7" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star8" style={{opacity: "100%"}}></div>
+                                </div>
+                                }
+                            </div>
+                        </div> : ''
+                    }
+
+                    {dayOrNight ?
+                        <div className="bgContain">
+                            <div className="pageBgOff"></div>
+                        </div> : ''
                     }
 
                     {dayOrNight ?
@@ -232,7 +244,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     }
 
                 </Col>
-                <Col className="weatherContainer rightSide" lg={5} md={5} sm={12}>
+                <Col className="weatherContainer rightSide" lg={5} md={12}>
                     <Row className="topInfo"> 
                         <Col lg={5}>
                             <div id="topTemp">{Math.round(currentHr.temp)}</div>
@@ -291,16 +303,16 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                         </Col>
                     </Row>
                     <Row className="bottomInfo">
-                        <Col lg="4">
-                            <div id="icon1" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': true, 'weather': false }) }}><FiWind /></div>
+                        <Col lg="4" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': true, 'weather': false }) }}>
+                            <div id="icon1" className="iconBottom" ><FiWind /></div>
                             <div>atmosphere</div>
                         </Col>
-                        <Col lg="4">
-                            <div id="icon2" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': false, 'weather': true }) }}><TiWeatherSunny /></div>
+                        <Col lg="4" onMouseOver={() => { setShowContent({ ...showContent, 'condition': false, 'atmosphere': false, 'weather': true }) }}>
+                            <div id="icon2" className="iconBottom" ><TiWeatherSunny /></div>
                             <div>weather</div>
                         </Col>
-                        <Col lg="4">
-                            <div id="icon3" className="iconBottom" onMouseOver={() => { setShowContent({ ...showContent, 'condition': true, 'atmosphere': false, 'weather': false }) }}><WiDayRainWind /></div>
+                        <Col lg="4" onMouseOver={() => { setShowContent({ ...showContent, 'condition': true, 'atmosphere': false, 'weather': false }) }}>
+                            <div id="icon3" className="iconBottom" ><WiDayRainWind /></div>
                             <div>conditions</div>
                         </Col>
                     </Row>
