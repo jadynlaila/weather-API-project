@@ -7,14 +7,10 @@
     // color: black;
 }
 
-
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-        "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Roboto", sans-serif;
@@ -68,22 +64,18 @@ nav {
     }
 }
 
-.rightSide {
-    border-radius: 5%;
-}
-
 #weatherSection {
     // rgb(223, 237, 255)
     display: flex;
-    margin-left: -5px;
-    align-items: center;
+    // margin-left: -25px;
     font-family: monospace;
-
+    margin-right: 20px;
+    margin-top: 3%;
     .weatherContainer {
         background-color: blue;
         text-align: center;
-        height: 92%;
-        color: orange;
+        border-radius: 5%;
+        color: white;
         .topInfo {
             height: 25%;
             justify-content: center;
@@ -94,6 +86,7 @@ nav {
                 font-size: 1rem;
             }
             #alertBoxContainer {
+                color: black;
                 .alertBox {
                     text-align: left;
                     background-color: rgb(189, 217, 230);
@@ -158,27 +151,24 @@ nav {
             .info {
                 font-size: 2.5vw;
             }
-            #info1 {
-            }
-            #info2 {
-            }
-            #info3 {
-            }
+            // #info1 {
+            // }
+            // #info2 {
+            // }
+            // #info3 {
+            // }
         }
         .bottomInfo {
             height: 25%;
-
             div {
                 font-size: 10px;
             }
-
             .iconBottom {
                 font-size: 3vw;
             }
         }
     }
     justify-content: space-between;
-
     #img {
         background-position: center;
         height: 300px;
@@ -198,7 +188,8 @@ nav {
         text-align: center;
     }
 }
-#popUpContent{
+
+#popUpContent {
     position: absolute;
     top: 50%;
     left: 20%;
@@ -209,27 +200,25 @@ nav {
     color: white;
     text-align: right;
     border: 2px solid rgba(0, 0, 0, 0.041);
-
-    &.visibleInfo{
+    &.visibleInfo {
         background-color: rgb(137, 201, 231);
-        .linkToArticle:hover{
-            color:rgb(53, 128, 226);
+        .linkToArticle:hover {
+            color: rgb(53, 128, 226);
         }
     }
-    &.Pressureinfo{
+    &.Pressureinfo {
         background-color: rgb(173, 173, 173);
-        .linkToArticle:hover{
-            color:rgb(102, 102, 102);
+        .linkToArticle:hover {
+            color: rgb(102, 102, 102);
         }
     }
-    &.UVIinfo{
+    &.UVIinfo {
         background-color: rgb(207, 59, 59);
-        .linkToArticle:hover{
-            color:rgb(146, 21, 21);
+        .linkToArticle:hover {
+            color: rgb(146, 21, 21);
         }
     }
-
-    .topPartInfo{
+    .topPartInfo {
         margin-left: 5%;
         margin-right: 5%;
         display: flex;
@@ -238,36 +227,32 @@ nav {
         justify-content: space-between;
         align-content: center;
         align-items: center;
-        .infoContentTitle{
+        .infoContentTitle {
             font-size: 3vw;
             font-weight: 600;
         }
     }
-    
-    .infoContentText{
+    .infoContentText {
         margin-left: 5%;
         margin-right: 5%;
         font-size: 1.5vw;
         text-align: left;
     }
-    .linkToArticle{
+    .linkToArticle {
         color: white;
-        margin-left:5%;
+        margin-left: 5%;
         margin-right: 5%;
         text-decoration: none;
         text-align: right;
         font-weight: 800;
         font-size: 1.5vw;
     }
-    .linkToArticle:active{
+    .linkToArticle:active {
         text-decoration: none;
     }
-    
-    
-
 }
 
-#moreInfoBackground{
+#moreInfoBackground {
     position: absolute;
     top: 0;
     left: 0;
@@ -278,27 +263,26 @@ nav {
     transition: 0.4s ease-in-out;
     overflow: hidden;
 }
-#MoreInfoPage{
+
+#MoreInfoPage {
     display: flex;
     flex-direction: column;
     // justify-items: center;
     // align-items: center;
-    
-    .moreInfoTitle{
+    .moreInfoTitle {
         font-size: 55px;
     }
-    .fix{
+    .fix {
         width: 100%;
-
     }
-    .moreInfoSubTitle{
+    .moreInfoSubTitle {
         font-size: 20px;
         height: fit-content;
     }
-    .moreInfoContent{
+    .moreInfoContent {
         --bs-gutter-x: 0;
     }
-    .moreInfoBox{
+    .moreInfoBox {
         color: white;
         display: flex;
         flex-direction: column;
@@ -306,8 +290,8 @@ nav {
         justify-items: center;
         align-content: center;
         align-items: center;
-        .moreInfoBackground{
-            height:250px;
+        .moreInfoBackground {
+            height: 250px;
             width: 250px;
             border-radius: 50%;
             display: flex;
@@ -317,8 +301,8 @@ nav {
             align-content: center;
             align-items: center;
         }
-        .moreInfoInnerBackground{
-            height:200px;
+        .moreInfoInnerBackground {
+            height: 200px;
             width: 200px;
             border-radius: 50%;
             display: flex;
@@ -328,62 +312,55 @@ nav {
             align-content: center;
             align-items: center;
         }
-        &.UVIinfoBox{
-            .moreInfoInnerBackground{
+        &.UVIinfoBox {
+            .moreInfoInnerBackground {
                 background-color: rgb(207, 59, 59);
             }
         }
-        
-
-        &.pressureInfoBox{
-            .moreInfoInnerBackground{
+        &.pressureInfoBox {
+            .moreInfoInnerBackground {
                 background-color: rgb(173, 173, 173);
             }
         }
-        &.visibilityInfoBox{
-            .moreInfoInnerBackground{
+        &.visibilityInfoBox {
+            .moreInfoInnerBackground {
                 background-color: rgb(137, 201, 231);
             }
         }
-        .moreInfoBoxTitle{
-                font-size: 24px;
-            }
-        #icon{
+        .moreInfoBoxTitle {
+            font-size: 24px;
+        }
+        #icon {
             font-size: 50px;
         }
-        .moreInfoInnerBackground:hover{
+        .moreInfoInnerBackground:hover {
             transition: 1s;
             height: 230px;
             width: 230px;
         }
-
-        } 
-    
-
-      
+    }
 }
 
 @media (max-width: 1000px) {
-    #popUpContent{
+    #popUpContent {
         top: 40%;
         width: 80%;
         left: 10%;
-        .topPartInfo{
-            .infoContentTitle{
+        .topPartInfo {
+            .infoContentTitle {
                 font-size: 4vw;
                 font-weight: 600;
             }
         }
-        
-        .infoContentText{
+        .infoContentText {
             margin-left: 5%;
             margin-right: 5%;
             font-size: 2.5vw;
             text-align: left;
         }
-        .linkToArticle{
+        .linkToArticle {
             color: white;
-            margin-left:5%;
+            margin-left: 5%;
             margin-right: 5%;
             text-decoration: none;
             text-align: right;
@@ -391,25 +368,23 @@ nav {
             font-size: 2.5vw;
         }
     }
-    #MoreInfoPage{
+    #MoreInfoPage {
         display: flex;
         flex-direction: column;
-        
-        .moreInfoTitle{
+        .moreInfoTitle {
             font-size: 50px;
         }
-        .fix{
+        .fix {
             width: 100%;
-    
         }
-        .moreInfoSubTitle{
+        .moreInfoSubTitle {
             font-size: 18px;
             height: fit-content;
         }
-        .moreInfoContent{
+        .moreInfoContent {
             --bs-gutter-x: 0;
         }
-        .moreInfoBox{
+        .moreInfoBox {
             color: white;
             display: flex;
             flex-direction: column;
@@ -417,8 +392,8 @@ nav {
             justify-items: center;
             align-content: center;
             align-items: center;
-            .moreInfoBackground{
-                height:160px;
+            .moreInfoBackground {
+                height: 160px;
                 width: 160px;
                 border-radius: 50%;
                 display: flex;
@@ -428,7 +403,7 @@ nav {
                 align-content: center;
                 align-items: center;
             }
-            .moreInfoInnerBackground{
+            .moreInfoInnerBackground {
                 height: 140px;
                 width: 140px;
                 border-radius: 50%;
@@ -439,64 +414,57 @@ nav {
                 align-content: center;
                 align-items: center;
             }
-            &.UVIinfoBox{
-                .moreInfoInnerBackground{
+            &.UVIinfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(207, 59, 59);
                 }
             }
-            
-    
-            &.pressureInfoBox{
-                .moreInfoInnerBackground{
+            &.pressureInfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(173, 173, 173);
                 }
             }
-            &.visibilityInfoBox{
-                .moreInfoInnerBackground{
+            &.visibilityInfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(137, 201, 231);
                 }
             }
-            .moreInfoBoxTitle{
-                    font-size: 18px;
-                }
-            #icon{
+            .moreInfoBoxTitle {
+                font-size: 18px;
+            }
+            #icon {
                 font-size: 50px;
             }
-            .moreInfoInnerBackground:hover{
+            .moreInfoInnerBackground:hover {
                 transition: 1s;
                 height: 180px;
                 width: 180px;
             }
-    
-            } 
-        
-    
-          
+        }
     }
 }
+
 @media (max-width: 500px) {
-    #popUpContent{
+    #popUpContent {
         top: 30%;
     }
-    #MoreInfoPage{
+    #MoreInfoPage {
         display: flex;
         flex-direction: column;
-        
-        .moreInfoTitle{
+        .moreInfoTitle {
             font-size: 30px;
         }
-        .fix{
+        .fix {
             width: 100%;
-    
         }
-        .moreInfoSubTitle{
+        .moreInfoSubTitle {
             font-size: 13px;
             height: fit-content;
         }
-        .moreInfoContent{
+        .moreInfoContent {
             --bs-gutter-x: 0;
         }
-        .moreInfoBox{
+        .moreInfoBox {
             color: white;
             display: flex;
             flex-direction: column;
@@ -504,8 +472,8 @@ nav {
             justify-items: center;
             align-content: center;
             align-items: center;
-            .moreInfoBackground{
-                height:100px;
+            .moreInfoBackground {
+                height: 100px;
                 width: 100px;
                 border-radius: 50%;
                 display: flex;
@@ -515,7 +483,7 @@ nav {
                 align-content: center;
                 align-items: center;
             }
-            .moreInfoInnerBackground{
+            .moreInfoInnerBackground {
                 height: 90px;
                 width: 90px;
                 border-radius: 50%;
@@ -526,64 +494,57 @@ nav {
                 align-content: center;
                 align-items: center;
             }
-            &.UVIinfoBox{
-                .moreInfoInnerBackground{
+            &.UVIinfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(207, 59, 59);
                 }
             }
-            
-    
-            &.pressureInfoBox{
-                .moreInfoInnerBackground{
+            &.pressureInfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(173, 173, 173);
                 }
             }
-            &.visibilityInfoBox{
-                .moreInfoInnerBackground{
+            &.visibilityInfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(137, 201, 231);
                 }
             }
-            .moreInfoBoxTitle{
-                    font-size: 14px;
-                }
-            #icon{
+            .moreInfoBoxTitle {
+                font-size: 14px;
+            }
+            #icon {
                 font-size: 30px;
             }
-            .moreInfoInnerBackground:hover{
+            .moreInfoInnerBackground:hover {
                 transition: 1s;
                 height: 100px;
                 width: 100px;
             }
-    
-            } 
-        
-    
-          
+        }
     }
 }
+
 @media (max-width: 330px) {
-    #popUpContent{
+    #popUpContent {
         top: 30%;
     }
-    #MoreInfoPage{
+    #MoreInfoPage {
         display: flex;
         flex-direction: column;
-        
-        .moreInfoTitle{
+        .moreInfoTitle {
             font-size: 18px;
         }
-        .fix{
+        .fix {
             width: 100%;
-    
         }
-        .moreInfoSubTitle{
+        .moreInfoSubTitle {
             font-size: 6px;
             height: fit-content;
         }
-        .moreInfoContent{
+        .moreInfoContent {
             --bs-gutter-x: 0;
         }
-        .moreInfoBox{
+        .moreInfoBox {
             color: white;
             display: flex;
             flex-direction: column;
@@ -591,8 +552,8 @@ nav {
             justify-items: center;
             align-content: center;
             align-items: center;
-            .moreInfoBackground{
-                height:70px;
+            .moreInfoBackground {
+                height: 70px;
                 width: 70px;
                 border-radius: 50%;
                 display: flex;
@@ -602,7 +563,7 @@ nav {
                 align-content: center;
                 align-items: center;
             }
-            .moreInfoInnerBackground{
+            .moreInfoInnerBackground {
                 height: 60px;
                 width: 60px;
                 border-radius: 50%;
@@ -613,39 +574,33 @@ nav {
                 align-content: center;
                 align-items: center;
             }
-            &.UVIinfoBox{
-                .moreInfoInnerBackground{
+            &.UVIinfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(207, 59, 59);
                 }
             }
-            
-    
-            &.pressureInfoBox{
-                .moreInfoInnerBackground{
+            &.pressureInfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(173, 173, 173);
                 }
             }
-            &.visibilityInfoBox{
-                .moreInfoInnerBackground{
+            &.visibilityInfoBox {
+                .moreInfoInnerBackground {
                     background-color: rgb(137, 201, 231);
                 }
             }
-            .moreInfoBoxTitle{
-                    font-size: 10px;
-                }
-            #icon{
+            .moreInfoBoxTitle {
+                font-size: 10px;
+            }
+            #icon {
                 font-size: 18px;
             }
-            .moreInfoInnerBackground:hover{
+            .moreInfoInnerBackground:hover {
                 transition: 1s;
                 height: 70px;
                 width: 70px;
             }
-    
-            } 
-        
-    
-          
+        }
     }
 }
 
@@ -664,7 +619,6 @@ nav {
 //         }
 //     }
 // }
-
 .container {
     margin-top: 50px;
     width: 100%;
@@ -874,8 +828,8 @@ nav {
     top: 0;
     left: 0;
     background-color: red;
-    transition: .4s;
-    &:hover{
+    transition: 0.4s;
+    &:hover {
         background-color: aqua;
     }
 }
