@@ -828,7 +828,61 @@ nav .navContainer #humid:hover {
   overflow: hidden;
 }
 
-.pageBgoff {
+.pageBg .star {
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 0;
+  background: url(../images/star.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 1s;
+}
+
+.pageBg #star1 {
+  top: 50px;
+  left: 400px;
+}
+
+.pageBg #star2 {
+  top: 300px;
+  left: 600px;
+}
+
+.pageBg #star3 {
+  top: 600px;
+  left: 350px;
+}
+
+.pageBg #star4 {
+  top: 70px;
+  left: 200px;
+}
+
+.pageBg #star5 {
+  top: 200px;
+  left: 90px;
+}
+
+.pageBg #star6 {
+  top: 500px;
+  left: 700px;
+}
+
+.pageBg #star7 {
+  top: 30px;
+  left: 700px;
+}
+
+.pageBg #star8 {
+  top: 502px;
+  left: 60px;
+}
+
+.pageBgOff {
   position: absolute;
   top: 0;
   left: 0;
@@ -840,23 +894,7 @@ nav .navContainer #humid:hover {
   overflow: hidden;
 }
 
-.star {
-  display: block;
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  opacity: 100%;
-  top: 0;
-  left: 0;
-  background-color: red;
-  transition: 0.4s;
-}
-
-.star:hover {
-  background-color: aqua;
-}
-
-.starOff {
+.pageBgOff .star {
   opacity: 0%;
 }
 /*# sourceMappingURL=style.css.map */

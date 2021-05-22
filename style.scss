@@ -805,9 +805,54 @@ nav {
     z-index: -1000;
     transition: 0.4s ease-in-out;
     overflow: hidden;
+    .star{
+        display: block;
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        top: 0;
+        left: 0;
+        background: url(../images/star.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; 
+        transition: 1s;
+    }
+    #star1{
+        top: 50px;
+        left: 400px;
+    }
+    #star2{
+        top: 300px;
+        left: 600px;
+    }
+    #star3{
+        top: 600px;
+        left: 350px;
+    }
+    #star4{
+        top: 70px;
+        left: 200px;
+    }
+    #star5{
+        top: 200px;
+        left: 90px;
+    }
+    #star6{
+        top: 500px;
+        left: 700px;
+    }
+    #star7{
+        top: 30px;
+        left: 700px;
+    }
+    #star8{
+        top: 502px;
+        left: 60px;
+    }
 }
 
-.pageBgoff {
+.pageBgOff {
     position: absolute;
     top: 0;
     left: 0;
@@ -817,23 +862,7 @@ nav {
     z-index: -1000;
     transition: 0.4s ease-in-out;
     overflow: hidden;
-}
-
-.star {
-    display: block;
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    opacity: 100%;
-    top: 0;
-    left: 0;
-    background-color: red;
-    transition: 0.4s;
-    &:hover {
-        background-color: aqua;
+    .star{
+        opacity: 0%;
     }
-}
-
-.starOff {
-    opacity: 0%;
 }

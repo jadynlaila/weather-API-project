@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Roboto", sans-serif;
@@ -69,23 +69,19 @@ nav .navContainer #humid:hover {
   background-image: url(../images/humidity.svg);
 }
 
-.rightSide {
-  border-radius: 5%;
-}
-
 #weatherSection {
   display: flex;
-  margin-left: -5px;
-  align-items: center;
   font-family: monospace;
+  margin-right: 20px;
+  margin-top: 3%;
   justify-content: space-between;
 }
 
 #weatherSection .weatherContainer {
   background-color: blue;
   text-align: center;
-  height: 92%;
-  color: orange;
+  border-radius: 5%;
+  color: white;
 }
 
 #weatherSection .weatherContainer .topInfo {
@@ -99,6 +95,10 @@ nav .navContainer #humid:hover {
 
 #weatherSection .weatherContainer .topInfo #topDate {
   font-size: 1rem;
+}
+
+#weatherSection .weatherContainer .topInfo #alertBoxContainer {
+  color: black;
 }
 
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox {
@@ -828,7 +828,7 @@ nav .navContainer #humid:hover {
   overflow: hidden;
 }
 
-.pageBgoff {
+.pageBgOff {
   position: absolute;
   top: 0;
   left: 0;
@@ -849,7 +849,7 @@ nav .navContainer #humid:hover {
   top: 0;
   left: 0;
   background-color: red;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .star:hover {

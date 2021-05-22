@@ -25,8 +25,6 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     const [sunSet, setsunSet] = useState("");
     const [uviAlertExtr, setuviAlertExtr] = useState(false);
     const [uviAlert, setuviAlert] = useState(false)
-    const [flash, setFlash] = useState(true)
-    const [seconds, setSeconds] = useState(0);
 
     if (initialStuff == true) {
         getHourStats(0);
@@ -137,14 +135,16 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
         "weather": false,
         "condition": false
     })
-    console.log(showContent);
+    // console.log(showContent);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setFlash(flash + 1)
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
+        const [seconds, setSeconds] = useState(0);
+
+        useEffect(() => {
+            const interval = setInterval(() => {
+                setSeconds(seconds => seconds + 1);
+            }, 2000);
+            return () => clearInterval(interval);
+        }, []);
 
     return (
         <>
@@ -183,12 +183,38 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     </div>
 
                     {dayOrNight == false ?
-                        <div className="pageBg">
-                            <div className="star" id="star1"></div>
-                        </div> :
-                        <div className="pageBgoff">
-                            <div className="star starOff" id="star1"></div>
-                        </div>
+                        <div className="bgContain">
+                            <div className="pageBg">
+                                {seconds % 2 == 0?
+                                <div className="starBox">
+                                    <div className="star" id="star1" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star2" style={{opacity: "40%"}}></div>
+                                    <div className="star" id="star3" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star4" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star5" style={{opacity: "70%"}}></div>
+                                    <div className="star" id="star6" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star7" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star8" style={{opacity: "20%"}}></div>
+                                </div> : 
+                                <div className="starBox">
+                                    <div className="star" id="star1" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star2" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star3" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star4" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star5" style={{opacity: "100%"}}></div>
+                                    <div className="star" id="star6" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star7" style={{opacity: "50%"}}></div>
+                                    <div className="star" id="star8" style={{opacity: "100%"}}></div>
+                                </div>
+                                }
+                            </div>
+                        </div> : ''
+                    }
+
+                    {dayOrNight ?
+                        <div className="bgContain">
+                            <div className="pageBgOff"></div>
+                        </div> : ''
                     }
 
                     {dayOrNight ?
