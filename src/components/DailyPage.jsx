@@ -164,6 +164,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                 min={0}
                                 max={23}
                                 value={range}
+                                variant='light'
                                 onChange={(e) => {
                                     setRange(Math.round(e.target.value));
                                     getHourStats(Math.round(e.target.value));
