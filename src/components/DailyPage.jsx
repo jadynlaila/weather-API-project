@@ -185,23 +185,9 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     {dayOrNight == false ?
                         <div className="pageBg">
                             <div className="star" id="star1"></div>
-                            <div className="star" id="star2"></div>
-                            <div className="star" id="star3"></div>
-                            <div className="star" id="star4"></div>
-                            <div className="star" id="star5"></div>
-                            <div className="star" id="star6"></div>
-                            <div className="star" id="star7"></div>
-                            <div className="star" id="star8"></div>
                         </div> :
                         <div className="pageBgoff">
                             <div className="star starOff" id="star1"></div>
-                            <div className="star starOff" id="star2"></div>
-                            <div className="star starOff" id="star3"></div>
-                            <div className="star starOff" id="star4"></div>
-                            <div className="star starOff" id="star5"></div>
-                            <div className="star starOff" id="star6"></div>
-                            <div className="star starOff" id="star7"></div>
-                            <div className="star starOff" id="star8"></div>
                         </div>
                     }
 
