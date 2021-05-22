@@ -149,7 +149,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
     return (
         <>
             <Container fluid id="weatherSection">
-                <Col id="leftSide" lg={8} md={8} sm={12}>
+                <Col id="leftSide" lg={7} md={7} sm={12}>
                     <div id="weatherAnimation" className="weatherAnimation">
                     </div>
                     <div id="weatherSlider" className="weatherSlider">
@@ -217,7 +217,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                     }
 
                 </Col>
-                <Col className="weatherContainer rightSide" lg={4} md={4} sm={12}>
+                <Col className="weatherContainer rightSide" lg={5} md={5} sm={12}>
                     <Row className="topInfo"> 
                         <Col lg={5}>
                             <div id="topTemp">{Math.round(currentHr.temp)}</div>
