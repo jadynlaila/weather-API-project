@@ -13,6 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Roboto", sans-serif;
+  background-color: #47acff;
 }
 
 code {
@@ -593,6 +594,9 @@ nav .navContainer #humid:hover {
 }
 
 @media (max-width: 330px) {
+  .container .weatherInfo .weeklyWeather#subOff .weekday {
+    font-size: 1px;
+  }
   #popUpContent {
     top: 30%;
   }
@@ -931,7 +935,7 @@ nav .navContainer #humid:hover {
 }
 
 .pageBgOff {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
