@@ -38,8 +38,8 @@ nav .navContainer .link {
   font-weight: 500;
   text-align: center;
   line-height: 45px;
-  color: black;
   border-bottom: rgba(0, 204, 255, 0.712) 0px;
+  background-color: rgba(0, 204, 255, 0.418);
   transition: 0.3s;
   cursor: pointer;
   background-image: none;
@@ -53,6 +53,7 @@ nav .navContainer .link:hover {
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #00ccff;
+  color: white;
   border-bottom: #dbdbdb solid 5px;
   font-size: 115%;
 }
@@ -615,7 +616,7 @@ nav .navContainer #humid:hover {
 }
 
 .pageBg {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
