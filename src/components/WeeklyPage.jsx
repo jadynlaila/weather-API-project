@@ -143,6 +143,7 @@ const WeeklyPage = ({}) => {
                         }
                     </div>
             </div>
+        
         </>
     )
 }
