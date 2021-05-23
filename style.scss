@@ -10,7 +10,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Roboto", sans-serif;
@@ -367,6 +368,12 @@ nav {
 }
 
 @media (max-width: 992px) {
+    nav {
+        .navContainer {
+            width: 100%;
+        }
+    }
+
     #weatherSection {
         margin-top: 0;
         .imageContain {
@@ -374,7 +381,7 @@ nav {
         }
         .middleInfo {
             .info {
-                font-size: 5vw!important;
+                font-size: 5vw !important;
             }
         }
         .bottomInfo {
