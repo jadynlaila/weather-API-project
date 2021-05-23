@@ -25,13 +25,11 @@ nav {
   z-index: 100;
   overflow: hidden;
 }
-
 nav .navContainer {
   height: 100%;
   width: 50%;
   display: flex;
 }
-
 nav .navContainer .link {
   height: 50px;
   width: 500px;
@@ -47,25 +45,25 @@ nav .navContainer .link {
   background-repeat: no-repeat;
   color: white;
 }
-
 nav .navContainer .link:hover {
   background-position: left;
   background-repeat: no-repeat;
   background-size: contain;
+<<<<<<< HEAD
   background-color: #00ccff;
   color: white;
+=======
+  background-color: #47acff;
+>>>>>>> b0bf67d7ac0ed93aec2edcb45f4717991f19e2d0
   border-bottom: #dbdbdb solid 5px;
   font-size: 115%;
 }
-
 nav .navContainer #home:hover {
   background-image: url(../images/home.svg);
 }
-
 nav .navContainer #week:hover {
   background-image: url(../images/weekly.svg);
 }
-
 nav .navContainer #humid:hover {
   background-image: url(../images/humidity.svg);
 }
@@ -79,31 +77,25 @@ nav .navContainer #humid:hover {
   justify-items: center;
   justify-content: space-between;
 }
-
 #weatherSection .weatherContainer {
-  background-color: blue;
+  background-color: #00437a;
   text-align: center;
   border-radius: 5%;
   color: white;
 }
-
 #weatherSection .weatherContainer .topInfo {
   height: 25%;
   justify-content: center;
 }
-
 #weatherSection .weatherContainer .topInfo #topTemp {
   font-size: 4.5rem;
 }
-
 #weatherSection .weatherContainer .topInfo #topDate {
   font-size: 1rem;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer {
   color: black;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox {
   text-align: left;
   background-color: #bdd9e6;
@@ -111,9 +103,8 @@ nav .navContainer #humid:hover {
   margin: 8px;
   border-radius: 3px;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertBoxName {
-  background-color: #749fc7;
+  background-color: #0065b8;
   padding: 2px;
   text-align: left;
   padding-left: 5px;
@@ -121,23 +112,19 @@ nav .navContainer #humid:hover {
   z-index: 5;
   color: white;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages {
   margin-top: 0;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert {
   height: 70px;
   padding: 3px;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .alertName {
   font-size: 14px;
-  background-color: #76a6e4;
+  background-color: #47acff;
   padding-left: 5px;
   color: white;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .alertText {
   padding-top: 3px;
   font-size: 11px;
@@ -146,50 +133,40 @@ nav .navContainer #humid:hover {
   padding-right: 5px;
   line-height: 13px;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .sunRise {
   padding-bottom: 3px;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .sunSet {
   padding-bottom: 3px;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .linkMoreInfo {
   font-size: 8px;
   text-align: right;
-  color: #a35d5d;
+  color: #f8c740;
   background-color: white;
   padding-right: 5px;
-  font-weight: bolder;
+  font-weight: 900;
 }
-
 #weatherSection .weatherContainer .topInfo #alertBoxContainer .alertBox .alertMessages .alert .linkMoreInfo:hover {
-  color: #5c2835;
+  color: #cfb025;
 }
-
 #weatherSection .weatherContainer .middleInfo {
   height: 50%;
   display: flex;
   align-content: center;
 }
-
 #weatherSection .weatherContainer .middleInfo .info {
   font-size: 2.5vw;
 }
-
 #weatherSection .weatherContainer .bottomInfo {
   height: 25%;
 }
-
 #weatherSection .weatherContainer .bottomInfo div {
   font-size: 10px;
 }
-
 #weatherSection .weatherContainer .bottomInfo .iconBottom {
   font-size: 3vw;
 }
-
 #weatherSection #img {
   background-position: center;
   height: 300px;
@@ -197,26 +174,21 @@ nav .navContainer #humid:hover {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 #weatherSection #img #img {
   position: absolute;
 }
-
 #weatherSection #leftSide label {
   font-size: 2rem;
 }
-
 #weatherSection #leftSide .hourDisplay {
   font-size: 2rem;
 }
-
 #weatherSection #leftSide input {
   display: block;
   margin-right: auto;
   margin-left: auto;
   width: 80% !important;
 }
-
 #weatherSection .my-5 {
   text-align: center;
 }
@@ -233,31 +205,24 @@ nav .navContainer #humid:hover {
   text-align: right;
   border: 2px solid rgba(0, 0, 0, 0.041);
 }
-
 #popUpContent.visibleInfo {
   background-color: #89c9e7;
 }
-
 #popUpContent.visibleInfo .linkToArticle:hover {
   color: #3580e2;
 }
-
 #popUpContent.Pressureinfo {
   background-color: #adadad;
 }
-
 #popUpContent.Pressureinfo .linkToArticle:hover {
   color: #666666;
 }
-
 #popUpContent.UVIinfo {
   background-color: #cf3b3b;
 }
-
 #popUpContent.UVIinfo .linkToArticle:hover {
   color: #921515;
 }
-
 #popUpContent .topPartInfo {
   margin-left: 5%;
   margin-right: 5%;
@@ -268,19 +233,16 @@ nav .navContainer #humid:hover {
   align-content: center;
   align-items: center;
 }
-
 #popUpContent .topPartInfo .infoContentTitle {
   font-size: 3vw;
   font-weight: 600;
 }
-
 #popUpContent .infoContentText {
   margin-left: 5%;
   margin-right: 5%;
   font-size: 1.5vw;
   text-align: left;
 }
-
 #popUpContent .linkToArticle {
   color: white;
   margin-left: 5%;
@@ -290,7 +252,6 @@ nav .navContainer #humid:hover {
   font-weight: 800;
   font-size: 1.5vw;
 }
-
 #popUpContent .linkToArticle:active {
   text-decoration: none;
 }
@@ -301,7 +262,7 @@ nav .navContainer #humid:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: lightgray;
+  background-color: #47acff;
   z-index: -1000;
   transition: 0.4s ease-in-out;
   overflow: hidden;
@@ -310,25 +271,21 @@ nav .navContainer #humid:hover {
 #MoreInfoPage {
   display: flex;
   flex-direction: column;
+  color: white;
 }
-
 #MoreInfoPage .moreInfoTitle {
   font-size: 55px;
 }
-
 #MoreInfoPage .fix {
   width: 100%;
 }
-
 #MoreInfoPage .moreInfoSubTitle {
   font-size: 20px;
   height: fit-content;
 }
-
 #MoreInfoPage .moreInfoContent {
   --bs-gutter-x: 0;
 }
-
 #MoreInfoPage .moreInfoBox {
   color: white;
   display: flex;
@@ -338,7 +295,6 @@ nav .navContainer #humid:hover {
   align-content: center;
   align-items: center;
 }
-
 #MoreInfoPage .moreInfoBox .moreInfoBackground {
   height: 250px;
   width: 250px;
@@ -350,7 +306,6 @@ nav .navContainer #humid:hover {
   align-content: center;
   align-items: center;
 }
-
 #MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
   height: 200px;
   width: 200px;
@@ -362,27 +317,21 @@ nav .navContainer #humid:hover {
   align-content: center;
   align-items: center;
 }
-
 #MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
-  background-color: #cf3b3b;
+  background-color: #537591;
 }
-
 #MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
-  background-color: #adadad;
+  background-color: #acbece;
 }
-
 #MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
-  background-color: #89c9e7;
+  background-color: #75a2c7;
 }
-
 #MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
   font-size: 24px;
 }
-
 #MoreInfoPage .moreInfoBox #icon {
   font-size: 50px;
 }
-
 #MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
   transition: 1s;
   height: 230px;
@@ -392,11 +341,9 @@ nav .navContainer #humid:hover {
 #leftSide label {
   font-size: 2rem;
 }
-
 #leftSide .hourDisplay {
   font-size: 2rem;
 }
-
 #leftSide input {
   color: yellow;
 }
@@ -418,19 +365,16 @@ nav .navContainer #humid:hover {
     margin-top: 5%;
   }
 }
-
 .container {
   margin-top: 50px;
   width: 100%;
   height: 500px;
   display: flex;
 }
-
 .container .arrows {
   width: fit-content;
   height: fit-content;
 }
-
 .container .arrows .arrowUp {
   height: 50px;
   width: 50px;
@@ -438,17 +382,15 @@ nav .navContainer #humid:hover {
   background-size: cover;
   background-position: center;
   transform: scale(1.1) rotate(180deg);
-  background-color: rgba(0, 204, 255, 0.712);
+  background-color: #47acff;
   border-radius: 50%;
   cursor: pointer;
   opacity: 100%;
   transition: 0.3s;
 }
-
 .container .arrows .arrowUp:hover {
   transform: scale(1.15) rotate(180deg);
 }
-
 .container .arrows .arrowDown {
   margin-top: 20px;
   height: 50px;
@@ -457,21 +399,18 @@ nav .navContainer #humid:hover {
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
-  background-color: rgba(0, 204, 255, 0.712);
+  background-color: #47acff;
   border-radius: 50%;
   cursor: pointer;
   opacity: 100%;
   transition: 0.3s;
 }
-
 .container .arrows .arrowDown:hover {
   transform: scale(1.15);
 }
-
 .container .weatherInfo {
   width: 100%;
 }
-
 .container .weatherInfo .weeklyWeather {
   transition: 0.3s ease-in-out;
   bottom: 10px;
@@ -479,10 +418,9 @@ nav .navContainer #humid:hover {
   z-index: -100;
   margin-bottom: 15px;
 }
-
 .container .weatherInfo .weeklyWeather .tempImg {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
+  grid-column: 1/2;
+  grid-row: 1/3;
   background-image: url(../images/sun.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -490,60 +428,53 @@ nav .navContainer #humid:hover {
   margin: 5px;
   transition: 0.8s ease-in-out;
 }
-
 .container .weatherInfo .weeklyWeather .tempImg:hover {
   transform: rotate(360deg);
 }
-
 .container .weatherInfo .weeklyWeather#subOff {
   height: 120px;
   width: 100%;
   margin-left: 15px;
   margin-right: 15px;
-  background-color: rgba(0, 204, 255, 0.555);
+  background-color: #47acff;
   border-radius: 20px;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 50% 50%;
   overflow: hidden;
 }
-
 .container .weatherInfo .weeklyWeather#subOff .high {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  grid-column: 2/3;
+  grid-row: 1/2;
   font-weight: 1;
   font-size: 40px;
   text-align: left;
   color: white;
 }
-
 .container .weatherInfo .weeklyWeather#subOff .low {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
+  grid-column: 3/4;
+  grid-row: 1/2;
   font-weight: 1;
   font-size: 40px;
   text-align: left;
   color: white;
 }
-
 .container .weatherInfo .weeklyWeather#subOff .weekDay {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  grid-column: 2/3;
+  grid-row: 2/3;
   font-weight: 1;
   font-size: 40px;
   text-align: left;
   color: white;
 }
-
 .container .weatherInfo .weeklyWeather#subOff .weatherType {
-  grid-column: 4 / 5;
-  grid-row: 1 / 3;
+  grid-column: 4/5;
+  grid-row: 1/3;
   font-weight: 1;
   font-size: 30px;
   text-align: left;
   color: white;
 }
-
 .container .weatherInfo .weeklyWeather#subOn {
   overflow: hidden;
   height: 120px;
@@ -556,13 +487,11 @@ nav .navContainer #humid:hover {
   grid-template-columns: 30% 70%;
   grid-template-rows: 50%;
 }
-
 .container .weatherInfo .weeklyWeather#subOn .high {
   color: white;
   font-size: 30px;
   text-align: center;
 }
-
 .container .weatherInfo .weeklyWeather#subOn .low {
   color: white;
   font-size: 30px;
@@ -573,7 +502,6 @@ nav .navContainer #humid:hover {
   display: flex;
   justify-content: center;
 }
-
 .imageContain .wrap {
   height: 100%;
   width: 80%;
@@ -583,7 +511,6 @@ nav .navContainer #humid:hover {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
 .imageContain .wrap .bgImg {
   height: 100%;
   width: 100%;
@@ -596,16 +523,13 @@ nav .navContainer #humid:hover {
   bottom: 0px;
   opacity: 100%;
 }
-
 .imageContain .wrap #sunHide {
   top: 300px;
   opacity: 0%;
 }
-
 .imageContain .wrap #moon {
   top: -280px;
 }
-
 .imageContain .wrap #moonHide {
   opacity: 0%;
 }
@@ -628,7 +552,6 @@ nav .navContainer #humid:hover {
   transition: 0.4s ease-in-out;
   overflow: hidden;
 }
-
 .pageBg .star {
   display: block;
   position: absolute;
@@ -642,42 +565,34 @@ nav .navContainer #humid:hover {
   background-repeat: no-repeat;
   transition: 1s;
 }
-
 .pageBg #star1 {
   top: 50px;
   left: 400px;
 }
-
 .pageBg #star2 {
   top: 300px;
   left: 600px;
 }
-
 .pageBg #star3 {
   top: 600px;
   left: 350px;
 }
-
 .pageBg #star4 {
   top: 70px;
   left: 200px;
 }
-
 .pageBg #star5 {
   top: 200px;
   left: 90px;
 }
-
 .pageBg #star6 {
   top: 500px;
   left: 700px;
 }
-
 .pageBg #star7 {
   top: 30px;
   left: 700px;
 }
-
 .pageBg #star8 {
   top: 502px;
   left: 60px;
@@ -689,13 +604,11 @@ nav .navContainer #humid:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(125, 199, 211, 0.767);
+  background-color: #85c8ff;
   z-index: -1000;
   transition: 0.4s ease-in-out;
   overflow: hidden;
 }
-
 .pageBgOff .star {
   opacity: 0%;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

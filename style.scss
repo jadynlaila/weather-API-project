@@ -75,7 +75,7 @@ nav {
     width: 90%;
     justify-items: center;
     .weatherContainer {
-        background-color: blue;
+        background-color: rgb(0, 67, 122);
         text-align: center;
         border-radius: 5%;
         color: white;
@@ -97,7 +97,7 @@ nav {
                     margin: 8px;
                     border-radius: 3px;
                     .alertBoxName {
-                        background-color: rgb(116, 159, 199);
+                        background-color: rgb(0, 101, 184) ;
                         padding: 2px;
                         text-align: left;
                         padding-left: 5px;
@@ -113,7 +113,7 @@ nav {
                             padding: 3px;
                             .alertName {
                                 font-size: 14px;
-                                background-color: rgb(118, 166, 228);
+                                background-color: rgb(71, 172, 255);
                                 padding-left: 5px;
                                 color: white;
                             }
@@ -134,14 +134,15 @@ nav {
                             .linkMoreInfo {
                                 font-size: 8px;
                                 text-align: right;
-                                color: rgb(163, 93, 93);
+                                color: rgb(248, 199, 64);
                                 background-color: white;
                                 padding-right: 5px;
-                                font-weight: bolder;
+                                font-weight: 900;
+                                &:hover {
+                                color: rgb(207, 176, 37);
                             }
-                            .linkMoreInfo:hover {
-                                color: rgb(92, 40, 53);
                             }
+                            
                         }
                     }
                 }
@@ -270,7 +271,7 @@ nav {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(71, 172, 255);
     z-index: -1000;
     transition: 0.4s ease-in-out;
     overflow: hidden;
@@ -279,6 +280,7 @@ nav {
 #MoreInfoPage {
     display: flex;
     flex-direction: column;
+    color: white;
     // justify-items: center;
     // align-items: center;
     .moreInfoTitle {
@@ -326,17 +328,17 @@ nav {
         }
         &.UVIinfoBox {
             .moreInfoInnerBackground {
-                background-color: rgb(207, 59, 59);
+                background-color: rgb(83, 117, 145);
             }
         }
         &.pressureInfoBox {
             .moreInfoInnerBackground {
-                background-color: rgb(173, 173, 173);
+                background-color: rgb(172, 190, 206);
             }
         }
         &.visibilityInfoBox {
             .moreInfoInnerBackground {
-                background-color: rgb(137, 201, 231);
+                background-color: rgb(117, 162, 199);
             }
         }
         .moreInfoBoxTitle {
@@ -699,7 +701,7 @@ nav {
             background-size: cover;
             background-position: center;
             transform: scale(1.1) rotate(180deg);
-            background-color: rgba(0, 204, 255, 0.712);
+            background-color: rgb(71, 172, 255);
             border-radius: 50%;
             cursor: pointer;
             opacity: 100%;
@@ -716,7 +718,7 @@ nav {
             background-size: cover;
             background-position: center;
             transform: scale(1.1);
-            background-color: rgba(0, 204, 255, 0.712);
+            background-color: rgb(71, 172, 255);
             border-radius: 50%;
             cursor: pointer;
             opacity: 100%;
@@ -752,7 +754,7 @@ nav {
                 width: 100%;
                 margin-left: 15px;
                 margin-right: 15px;
-                background-color: rgba(0, 204, 255, 0.555);
+                background-color: rgba(71, 172, 255);
                 border-radius: 20px;
                 display: grid;
                 grid-template-columns: 25% 25% 25% 25%;
@@ -925,7 +927,7 @@ nav {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(125, 199, 211, 0.767);
+    background-color: rgb(133, 200, 255);
     z-index: -1000;
     transition: 0.4s ease-in-out;
     overflow: hidden;
