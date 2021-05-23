@@ -201,22 +201,22 @@ nav .navContainer #humid:hover {
   border: 2px solid rgba(0, 0, 0, 0.041);
 }
 #popUpContent.visibleInfo {
-  background-color: #89c9e7;
+  background-color: #75a2c7;
 }
 #popUpContent.visibleInfo .linkToArticle:hover {
-  color: #3580e2;
+  color: #456d8d;
 }
 #popUpContent.Pressureinfo {
-  background-color: #adadad;
+  background-color: #acbece;
 }
 #popUpContent.Pressureinfo .linkToArticle:hover {
-  color: #666666;
+  color: #5f7181;
 }
 #popUpContent.UVIinfo {
-  background-color: #cf3b3b;
+  background-color: #537591;
 }
 #popUpContent.UVIinfo .linkToArticle:hover {
-  color: #921515;
+  color: #334c61;
 }
 #popUpContent .topPartInfo {
   margin-left: 5%;
@@ -358,6 +358,249 @@ nav .navContainer #humid:hover {
     width: 80%;
     margin: 0 auto;
     margin-top: 5%;
+  }
+}
+@media (max-width: 1000px) {
+  #popUpContent {
+    top: 40%;
+    width: 80%;
+    left: 10%;
+  }
+  #popUpContent .topPartInfo .infoContentTitle {
+    font-size: 4vw;
+    font-weight: 600;
+  }
+  #popUpContent .infoContentText {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 2.5vw;
+    text-align: left;
+  }
+  #popUpContent .linkToArticle {
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-decoration: none;
+    text-align: right;
+    font-weight: 800;
+    font-size: 2.5vw;
+  }
+
+  #MoreInfoPage {
+    display: flex;
+    flex-direction: column;
+  }
+  #MoreInfoPage .moreInfoTitle {
+    font-size: 50px;
+  }
+  #MoreInfoPage .fix {
+    width: 100%;
+  }
+  #MoreInfoPage .moreInfoSubTitle {
+    font-size: 18px;
+    height: fit-content;
+  }
+  #MoreInfoPage .moreInfoContent {
+    --bs-gutter-x: 0;
+  }
+  #MoreInfoPage .moreInfoBox {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoBackground {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
+    background-color: #537591;
+  }
+  #MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
+    background-color: #acbece;
+  }
+  #MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
+    background-color: #75a2c7;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
+    font-size: 18px;
+  }
+  #MoreInfoPage .moreInfoBox #icon {
+    font-size: 50px;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
+    transition: 1s;
+    height: 180px;
+    width: 180px;
+  }
+}
+@media (max-width: 504px) {
+  #popUpContent {
+    top: 30%;
+  }
+
+  #MoreInfoPage {
+    display: flex;
+    flex-direction: column;
+  }
+  #MoreInfoPage .moreInfoTitle {
+    font-size: 30px;
+  }
+  #MoreInfoPage .fix {
+    width: 100%;
+  }
+  #MoreInfoPage .moreInfoSubTitle {
+    font-size: 13px;
+    height: fit-content;
+  }
+  #MoreInfoPage .moreInfoContent {
+    --bs-gutter-x: 0;
+  }
+  #MoreInfoPage .moreInfoBox {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoBackground {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
+    background-color: #537591;
+  }
+  #MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
+    background-color: #acbece;
+  }
+  #MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
+    background-color: #75a2c7;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
+    font-size: 14px;
+  }
+  #MoreInfoPage .moreInfoBox #icon {
+    font-size: 30px;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
+    transition: 1s;
+    height: 100px;
+    width: 100px;
+  }
+}
+@media (max-width: 330px) {
+  #popUpContent {
+    top: 30%;
+  }
+
+  #MoreInfoPage {
+    display: flex;
+    flex-direction: column;
+  }
+  #MoreInfoPage .moreInfoTitle {
+    font-size: 18px;
+  }
+  #MoreInfoPage .fix {
+    width: 100%;
+  }
+  #MoreInfoPage .moreInfoSubTitle {
+    font-size: 6px;
+    height: fit-content;
+  }
+  #MoreInfoPage .moreInfoContent {
+    --bs-gutter-x: 0;
+  }
+  #MoreInfoPage .moreInfoBox {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoBackground {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+  #MoreInfoPage .moreInfoBox.UVIinfoBox .moreInfoInnerBackground {
+    background-color: #537591;
+  }
+  #MoreInfoPage .moreInfoBox.pressureInfoBox .moreInfoInnerBackground {
+    background-color: #acbece;
+  }
+  #MoreInfoPage .moreInfoBox.visibilityInfoBox .moreInfoInnerBackground {
+    background-color: #75a2c7;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoBoxTitle {
+    font-size: 10px;
+  }
+  #MoreInfoPage .moreInfoBox #icon {
+    font-size: 18px;
+  }
+  #MoreInfoPage .moreInfoBox .moreInfoInnerBackground:hover {
+    transition: 1s;
+    height: 70px;
+    width: 70px;
   }
 }
 .container {
