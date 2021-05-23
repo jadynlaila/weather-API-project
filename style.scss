@@ -96,7 +96,7 @@ nav {
                     margin: 8px;
                     border-radius: 3px;
                     .alertBoxName {
-                        background-color: rgb(0, 101, 184) ;
+                        background-color: rgb(0, 101, 184);
                         padding: 2px;
                         text-align: left;
                         padding-left: 5px;
@@ -138,10 +138,9 @@ nav {
                                 padding-right: 5px;
                                 font-weight: 900;
                                 &:hover {
-                                color: rgb(207, 176, 37);
+                                    color: rgb(207, 176, 37);
+                                }
                             }
-                            }
-                            
                         }
                     }
                 }
@@ -377,6 +376,9 @@ nav {
                 font-size: 5vw!important;
             }
         }
+        .bottomInfo {
+            font-size: 4vw!important;
+        }
         // .wrap {
         //     height: 60%;
         //     width: 80%;
@@ -410,281 +412,285 @@ nav {
     }
 }
 
-// @media (max-width: 1000px) {
-//     #popUpContent {
-//         top: 40%;
-//         width: 80%;
-//         left: 10%;
-//         .topPartInfo {
-//             .infoContentTitle {
-//                 font-size: 4vw;
-//                 font-weight: 600;
-//             }
-//         }
-//         .infoContentText {
-//             margin-left: 5%;
-//             margin-right: 5%;
-//             font-size: 2.5vw;
-//             text-align: left;
-//         }
-//         .linkToArticle {
-//             color: white;
-//             margin-left: 5%;
-//             margin-right: 5%;
-//             text-decoration: none;
-//             text-align: right;
-//             font-weight: 800;
-//             font-size: 2.5vw;
-//         }
-//     }
-//     #MoreInfoPage {
-//         display: flex;
-//         flex-direction: column;
-//         .moreInfoTitle {
-//             font-size: 50px;
-//         }
-//         .fix {
-//             width: 100%;
-//         }
-//         .moreInfoSubTitle {
-//             font-size: 18px;
-//             height: fit-content;
-//         }
-//         .moreInfoContent {
-//             --bs-gutter-x: 0;
-//         }
-//         .moreInfoBox {
-//             color: white;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             justify-items: center;
-//             align-content: center;
-//             align-items: center;
-//             .moreInfoBackground {
-//                 height: 160px;
-//                 width: 160px;
-//                 border-radius: 50%;
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 justify-items: center;
-//                 align-content: center;
-//                 align-items: center;
-//             }
-//             .moreInfoInnerBackground {
-//                 height: 140px;
-//                 width: 140px;
-//                 border-radius: 50%;
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 justify-items: center;
-//                 align-content: center;
-//                 align-items: center;
-//             }
-//             &.UVIinfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(207, 59, 59);
-//                 }
-//             }
-//             &.pressureInfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(173, 173, 173);
-//                 }
-//             }
-//             &.visibilityInfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(137, 201, 231);
-//                 }
-//             }
-//             .moreInfoBoxTitle {
-//                 font-size: 18px;
-//             }
-//             #icon {
-//                 font-size: 50px;
-//             }
-//             .moreInfoInnerBackground:hover {
-//                 transition: 1s;
-//                 height: 180px;
-//                 width: 180px;
-//             }
-//         }
-//     }
-// }
-// @media (max-width: 500px) {
-//     #popUpContent {
-//         top: 30%;
-//     }
-//     #MoreInfoPage {
-//         display: flex;
-//         flex-direction: column;
-//         .moreInfoTitle {
-//             font-size: 30px;
-//         }
-//         .fix {
-//             width: 100%;
-//         }
-//         .moreInfoSubTitle {
-//             font-size: 13px;
-//             height: fit-content;
-//         }
-//         .moreInfoContent {
-//             --bs-gutter-x: 0;
-//         }
-//         .moreInfoBox {
-//             color: white;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             justify-items: center;
-//             align-content: center;
-//             align-items: center;
-//             .moreInfoBackground {
-//                 height: 100px;
-//                 width: 100px;
-//                 border-radius: 50%;
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 justify-items: center;
-//                 align-content: center;
-//                 align-items: center;
-//             }
-//             .moreInfoInnerBackground {
-//                 height: 90px;
-//                 width: 90px;
-//                 border-radius: 50%;
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 justify-items: center;
-//                 align-content: center;
-//                 align-items: center;
-//             }
-//             &.UVIinfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(207, 59, 59);
-//                 }
-//             }
-//             &.pressureInfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(173, 173, 173);
-//                 }
-//             }
-//             &.visibilityInfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(137, 201, 231);
-//                 }
-//             }
-//             .moreInfoBoxTitle {
-//                 font-size: 14px;
-//             }
-//             #icon {
-//                 font-size: 30px;
-//             }
-//             .moreInfoInnerBackground:hover {
-//                 transition: 1s;
-//                 height: 100px;
-//                 width: 100px;
-//             }
-//         }
-//     }
-// }
-// @media (max-width: 330px) {
-//     #popUpContent {
-//         top: 30%;
-//     }
-//     #MoreInfoPage {
-//         display: flex;
-//         flex-direction: column;
-//         .moreInfoTitle {
-//             font-size: 18px;
-//         }
-//         .fix {
-//             width: 100%;
-//         }
-//         .moreInfoSubTitle {
-//             font-size: 6px;
-//             height: fit-content;
-//         }
-//         .moreInfoContent {
-//             --bs-gutter-x: 0;
-//         }
-//         .moreInfoBox {
-//             color: white;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             justify-items: center;
-//             align-content: center;
-//             align-items: center;
-//             .moreInfoBackground {
-//                 height: 70px;
-//                 width: 70px;
-//                 border-radius: 50%;
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 justify-items: center;
-//                 align-content: center;
-//                 align-items: center;
-//             }
-//             .moreInfoInnerBackground {
-//                 height: 60px;
-//                 width: 60px;
-//                 border-radius: 50%;
-//                 display: flex;
-//                 flex-direction: column;
-//                 justify-content: center;
-//                 justify-items: center;
-//                 align-content: center;
-//                 align-items: center;
-//             }
-//             &.UVIinfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(207, 59, 59);
-//                 }
-//             }
-//             &.pressureInfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(173, 173, 173);
-//                 }
-//             }
-//             &.visibilityInfoBox {
-//                 .moreInfoInnerBackground {
-//                     background-color: rgb(137, 201, 231);
-//                 }
-//             }
-//             .moreInfoBoxTitle {
-//                 font-size: 10px;
-//             }
-//             #icon {
-//                 font-size: 18px;
-//             }
-//             .moreInfoInnerBackground:hover {
-//                 transition: 1s;
-//                 height: 70px;
-//                 width: 70px;
-//             }
-//         }
-//     }
-// }
-// @media (max-width: 576px) {
-//     nav {
-//         position: relative;
-//         z-index: 100;
-//         .navContainer {
-//             width: 100%;
-//             .link {
-//                 &:hover {
-//                     background-size: cover;
-//                     background-position: center;
-//                 }
-//             }
-//         }
-//     }
-// }
+@media (max-width: 1000px) {
+    #popUpContent {
+        top: 40%;
+        width: 80%;
+        left: 10%;
+        .topPartInfo {
+            .infoContentTitle {
+                font-size: 4vw;
+                font-weight: 600;
+            }
+        }
+        .infoContentText {
+            margin-left: 5%;
+            margin-right: 5%;
+            font-size: 2.5vw;
+            text-align: left;
+        }
+        .linkToArticle {
+            color: white;
+            margin-left: 5%;
+            margin-right: 5%;
+            text-decoration: none;
+            text-align: right;
+            font-weight: 800;
+            font-size: 2.5vw;
+        }
+    }
+    #MoreInfoPage {
+        display: flex;
+        flex-direction: column;
+        .moreInfoTitle {
+            font-size: 50px;
+        }
+        .fix {
+            width: 100%;
+        }
+        .moreInfoSubTitle {
+            font-size: 18px;
+            height: fit-content;
+        }
+        .moreInfoContent {
+            --bs-gutter-x: 0;
+        }
+        .moreInfoBox {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+            .moreInfoBackground {
+                height: 160px;
+                width: 160px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+            }
+            .moreInfoInnerBackground {
+                height: 140px;
+                width: 140px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+            }
+            &.UVIinfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(207, 59, 59);
+                }
+            }
+            &.pressureInfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(173, 173, 173);
+                }
+            }
+            &.visibilityInfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(137, 201, 231);
+                }
+            }
+            .moreInfoBoxTitle {
+                font-size: 18px;
+            }
+            #icon {
+                font-size: 50px;
+            }
+            .moreInfoInnerBackground:hover {
+                transition: 1s;
+                height: 180px;
+                width: 180px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    #popUpContent {
+        top: 30%;
+    }
+    #MoreInfoPage {
+        display: flex;
+        flex-direction: column;
+        .moreInfoTitle {
+            font-size: 30px;
+        }
+        .fix {
+            width: 100%;
+        }
+        .moreInfoSubTitle {
+            font-size: 13px;
+            height: fit-content;
+        }
+        .moreInfoContent {
+            --bs-gutter-x: 0;
+        }
+        .moreInfoBox {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+            .moreInfoBackground {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+            }
+            .moreInfoInnerBackground {
+                height: 90px;
+                width: 90px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+            }
+            &.UVIinfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(207, 59, 59);
+                }
+            }
+            &.pressureInfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(173, 173, 173);
+                }
+            }
+            &.visibilityInfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(137, 201, 231);
+                }
+            }
+            .moreInfoBoxTitle {
+                font-size: 14px;
+            }
+            #icon {
+                font-size: 30px;
+            }
+            .moreInfoInnerBackground:hover {
+                transition: 1s;
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    #popUpContent {
+        top: 30%;
+    }
+    #MoreInfoPage {
+        display: flex;
+        flex-direction: column;
+        .moreInfoTitle {
+            font-size: 18px;
+        }
+        .fix {
+            width: 100%;
+        }
+        .moreInfoSubTitle {
+            font-size: 6px;
+            height: fit-content;
+        }
+        .moreInfoContent {
+            --bs-gutter-x: 0;
+        }
+        .moreInfoBox {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;
+            .moreInfoBackground {
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+            }
+            .moreInfoInnerBackground {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+            }
+            &.UVIinfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(207, 59, 59);
+                }
+            }
+            &.pressureInfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(173, 173, 173);
+                }
+            }
+            &.visibilityInfoBox {
+                .moreInfoInnerBackground {
+                    background-color: rgb(137, 201, 231);
+                }
+            }
+            .moreInfoBoxTitle {
+                font-size: 10px;
+            }
+            #icon {
+                font-size: 18px;
+            }
+            .moreInfoInnerBackground:hover {
+                transition: 1s;
+                height: 70px;
+                width: 70px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        position: relative;
+        z-index: 100;
+        .navContainer {
+            width: 100%;
+            .link {
+                &:hover {
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}
+
 .container {
     margin-top: 50px;
     width: 100%;
@@ -873,7 +879,7 @@ nav {
     z-index: -1000;
     transition: 0.4s ease-in-out;
     overflow: hidden;
-    .star{
+    .star {
         display: block;
         position: absolute;
         height: 100px;
@@ -883,38 +889,38 @@ nav {
         background: url(../images/star.svg);
         background-position: center;
         background-size: contain;
-        background-repeat: no-repeat; 
+        background-repeat: no-repeat;
         transition: 1s;
     }
-    #star1{
+    #star1 {
         top: 50px;
         left: 400px;
     }
-    #star2{
+    #star2 {
         top: 300px;
         left: 600px;
     }
-    #star3{
+    #star3 {
         top: 600px;
         left: 350px;
     }
-    #star4{
+    #star4 {
         top: 70px;
         left: 200px;
     }
-    #star5{
+    #star5 {
         top: 200px;
         left: 90px;
     }
-    #star6{
+    #star6 {
         top: 500px;
         left: 700px;
     }
-    #star7{
+    #star7 {
         top: 30px;
         left: 700px;
     }
-    #star8{
+    #star8 {
         top: 502px;
         left: 60px;
     }
@@ -930,7 +936,7 @@ nav {
     z-index: -1000;
     transition: 0.4s ease-in-out;
     overflow: hidden;
-    .star{
+    .star {
         opacity: 0%;
     }
 }
