@@ -224,7 +224,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                 {animation ?
                                     <div className="wrap">
                                         <div className="bgImg" id="sun" style={{ backgroundImage: `url('${sunImg}')` }}></div>
-                                        <div className="bgImg" id="moonHide" style={{ backgroundImage: `url('${moonImg}')` }}></div>
+                                        <div className="bgImg" id="moonHide" style={{ backgroundImage: `url('../images/Moon.svg')` }}></div>
                                     </div> :
                                     ''
                                 }
@@ -235,7 +235,7 @@ function DailyPage({ slider, dailyInfo, Col, Row, Container, Carousel }) {
                                 {animation ?
                                     <div className="wrap">
                                         <div className="bgImg" id="sunHide" style={{ backgroundImage: `url('${sunImg}')` }}></div>
-                                        <div className="bgImg" id="moon" style={{ backgroundImage: `url('${moonImg}')` }}></div>
+                                        <div className="bgImg" id="moon" style={{ backgroundImage: `url('../images/Moon.svg')` }}></div>
                                     </div> :
                                     ''
                                 }
